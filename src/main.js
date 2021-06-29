@@ -4,6 +4,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 
+// Components
 import App from './App.vue'
 import Dashboard from "@/components/Dashboard";
 import Login from "@/components/Login";
