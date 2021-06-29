@@ -2,7 +2,12 @@
   <div id="container">
     <div id="header">
       <div class="header-item">
-        <i class="fab -user-circle" />
+        <a>
+          <img src="@/assets/icon_512_8bit.png" style="width: 40px" />
+        </a>
+      </div>
+      <div class="header-item">
+        <i class="fas fa-user-circle" />
       </div>
     </div>
     ffas
