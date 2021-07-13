@@ -12,6 +12,7 @@ import Login from "@/components/Login";
 // UI and stuff
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
+import Landing from "@/components/Landing";
 
 // Connect the "addons"
 Vue.use(Vuex)
@@ -41,13 +42,20 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Dashboard
+      name: 'Landing',
+      component: Landing
     },
     {
       component: Login,
       name: 'Login',
       path: '/login'
+    },
+    {
+      component: Dashboard,
+      name: 'Dashboard',
+      path: '/dashboard' +
+          '' +
+          ''
     }
   ],
   mode: 'history'
