@@ -22,7 +22,7 @@ Vue.use(VueRouter)
 // Initialize Vuex Store
 const store = new Vuex.Store({
   state: {
-    count: 0,
+    mainViewHeight: 0,
     name: "Daniel Gran"
   },
   getters: {
@@ -33,6 +33,9 @@ const store = new Vuex.Store({
   mutations: {
     increment (state) {
       state.count++
+    },
+    setMainViewHeight (state, value) {
+      state.mainViewHeight = value
     }
   }
 })

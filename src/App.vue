@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header id="header">
+    </Header>
     <router-view id="main-view">
     </router-view>
   </div>
@@ -12,8 +13,22 @@ export default {
   name: 'App',
   components: {
     Header
-
-  }
+  },
+  methods: {
+    matchHeight: function () {
+      let height = document.getElementById('main-view').clientHeight;
+      this.$store.commit({
+        type: 'setMainViewHeight',
+        amount: height
+      })
+    }
+  },
+  created() {
+    window.addEventListener("resize", this.matchHeight);
+  },
+  mounted() {
+    this.matchHeight();
+  },
 }
 </script>
 
@@ -96,9 +111,21 @@ input[type=button]:hover {
   cursor: pointer;
 }
 
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #ECECEC;
+}
+
+#header {
+  height: auto;
+}
 
 #main-view {
-  overflow: hidden;
+  overflow: visible;
+  height: 100%;
+  width: 100vw;
 }
 
 

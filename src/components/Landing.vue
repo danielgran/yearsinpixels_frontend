@@ -1,14 +1,18 @@
 <template>
-  <div id="landing">
-    <div id="container">
-      <img src="@/assets/icon_512_8bit.png" class="imgbgblur" />
-      <img src="@/assets/icon_512_8bit.png" class="imgbgblur"/>
-      <div id="content">
-        <div id="middle">
-          <h1>Wie war dein Tag?</h1>
-          <router-link to="/dashboard">
-            <button>Erzähl es mir!</button>
-          </router-link>
+  <div>
+    <div id="landing">
+      <div id="background">
+        <img src="@/assets/icon_512_8bit.png" class="imgbgblur" />
+        <img src="@/assets/icon_512_8bit.png" class="imgbgblur"/>
+      </div>
+      <div id="container">
+        <div id="content">
+          <div id="middle">
+            <h1>Wie war dein Tag?</h1>
+            <router-link to="/dashboard">
+              <button>Erzähl es mir!</button>
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -22,20 +26,20 @@ export default {
 </script>
 
 <style scoped>
-
-#container {
-  position: fixed;
-  background: #ECECEC;
-  height: 100vh;
-  width: 100vw;
-}
-
 #landing {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
   overflow: hidden;
+}
+
+#container {
+  background: #ECECEC;
+  height: 100%;
+  width: 100%;
 }
 
 #content {
@@ -43,6 +47,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 10;
   height: 100%;
 }
 
@@ -58,12 +63,15 @@ export default {
   width: 180px;
 }
 
-.imgbgblur {
+#background {
   position: absolute;
-  float: none;
+  z-index: 11;
+  transform: translate(-50%);
+}
+
+.imgbgblur {
   opacity: 0.2;
   width: 800px;
-  z-index: -9999;
 }
 
 .imgbgblur:nth-of-type(1) {

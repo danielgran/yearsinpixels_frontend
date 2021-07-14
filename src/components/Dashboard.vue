@@ -1,32 +1,33 @@
 <template>
-  <div id="dashboard">
-    <div id="container">
-      <div id="content">
-        <div id="greeting">
-          <h4>Hallo,</h4>
-          <h3>Wheetel</h3>
+  <div>
+    <div id="dashboard">
+      <div id="container">
+        <div id="content">
+          <div id="greeting">
+            <h4>Hallo,</h4>
+            <h3>Wheetel</h3>
+          </div>
+          <div id="date">
+            <h3>Heute ist der</h3>
+            <h1>13</h1>
+            <h2>07</h2>
+            <h2>2021</h2>
+          </div>
+          <div id="daystatus">
+            <p>Dein heutiger Tag war <b style="color: #07E878">fantastisch</b>.</p>
+          </div>
         </div>
-        <div id="date">
-          <h3>Heute ist der</h3>
-          <h1>13</h1>
-          <h2>07</h2>
-          <h2>2021</h2>
+        <div id="footer">
+          <button>
+            <img src="@/assets/icon_512_8bit.png" id="imageAddDay"/>
+          </button>
         </div>
-        <div id="daystatus">
-          <p>Dein heutiger Tag war <b style="color: #07E878">fantastisch</b>.</p>
-        </div>
-      </div>
-      <div id="footer">
-        <button>
-          <img src="@/assets/icon_512_8bit.png" style="width: 40px" />
-        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "Dashboard",
   computed: {
@@ -40,19 +41,24 @@ export default {
 <style scoped>
 #dashboard {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  background: #ECECEC;
+  height: 100%;
 }
 
 #container {
-  background: #ECECEC;
-  height: 100vh;
-  max-height: 100vh;
-  min-width: 480px;
-  width: 100%;
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 0px 100px rgba(1,1,1, 0.5);
+  justify-content: center;
+  align-items: center;
+  background: #ECECEC;
+  max-width: 960px;
+  width: 100%;
+  height: inherit;
+  box-shadow: 0px 0px 100px rgba(1,1,1, 0.1);
+  border-radius: 30px;
 }
 
 #content {
@@ -63,7 +69,7 @@ export default {
 }
 
 #greeting {
-  padding: 29px 78px;
+  margin: 55px 0 0 78px
 }
 
 #date {
@@ -77,12 +83,15 @@ export default {
 }
 
 #daystatus p,b {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 #footer {
   height: 60px;
-  box-shadow: 0px 0px 22px black;
+  width: 92%;
+  background: #ECECEC;
+  box-shadow: 0px 0px 22px rgba(1, 1, 1, 0.2);
   border-top-left-radius: 1.3rem 1.3rem;
   border-top-right-radius: 1.3rem 1.3rem;
   text-align: center;
@@ -116,6 +125,9 @@ button {
   transform: translate(-50%, -40%);
 }
 
-
+#imageAddDay {
+  width: 48px;
+  transform: translate(-23%, 3%);
+}
 
 </style>
