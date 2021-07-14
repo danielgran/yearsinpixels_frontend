@@ -1,20 +1,6 @@
 <template>
   <div id="dashboard">
     <div id="container">
-      <div id="header">
-        <div class="header-item">
-          <a>
-            <router-link to="/">
-              <img src="@/assets/icon_512_8bit.png" style="width: 48px" />
-            </router-link>
-          </a>
-        </div>
-        <div class="header-item">
-        <span style="color: #C08FC2; font-size: 24px">
-          <i class="fas fa-user-circle" style="padding: 0; margin: 0"/>
-        </span>
-        </div>
-      </div>
       <div id="content">
         <div id="greeting">
           <h4>Hallo,</h4>
@@ -67,18 +53,6 @@ export default {
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 100px rgba(1,1,1, 0.5);
-}
-
-#header {
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-.header-item {
-  margin: 0 10px;
 }
 
 #content {

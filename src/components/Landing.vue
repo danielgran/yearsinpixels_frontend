@@ -3,18 +3,6 @@
     <div id="container">
       <img src="@/assets/icon_512_8bit.png" class="imgbgblur" />
       <img src="@/assets/icon_512_8bit.png" class="imgbgblur"/>
-      <div id="header">
-        <div class="header-item">
-          <a>
-            <img src="@/assets/icon_512_8bit.png" style="width: 32px" />
-          </a>
-        </div>
-        <div class="header-item">
-          <button>
-            Zur App
-          </button>
-        </div>
-      </div>
       <div id="content">
         <div id="middle">
           <h1>Wie war dein Tag?</h1>
@@ -42,26 +30,6 @@ export default {
   width: 100vw;
 }
 
-#header {
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px;
-}
-#header button {
-  font-family: basic-sans;
-  font-weight: bold;
-  font-size: 0.8rem;
-  background: #3C1EFA;
-  padding: 4px 20px;
-  color: #ECECEC;
-  border-radius: 14px;
-}
-
-.header-item {
-  margin: 0 10px;
-}
 #landing {
   display: flex;
   flex-direction: column;
