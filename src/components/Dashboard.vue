@@ -17,22 +17,25 @@
             <p>Dein heutiger Tag war <b style="color: #07E878">fantastisch</b>.</p>
           </div>
         </div>
-        <div id="footer">
-          <button>
-            <img src="@/assets/icon_512_8bit.png" id="imageAddDay"/>
-          </button>
-        </div>
+        <AddDay id="bottomsheet" height="500px">
+        </AddDay>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import AddDay from "@/components/AddDay";
+
 export default {
   name: "Dashboard",
+  components: {AddDay},
   computed: {
     username() {
       return this.$store.getters.getName
+    },
+    screenWidth() {
+      return window.innerHeight;
     }
   }
 }
@@ -88,7 +91,7 @@ export default {
 }
 
 #footer {
-  height: 60px;
+  height: 660px;
   width: 92%;
   background: #ECECEC;
   box-shadow: 0px 0px 22px rgba(1, 1, 1, 0.2);
@@ -114,20 +117,6 @@ h3 {
 
 h4 {
   font-size: 1.3rem;
-}
-
-button {
-  background: #3C1EFA;
-  border-radius: 20px;
-  height: 64px;
-  width: 64px;
-  position: absolute;
-  transform: translate(-50%, -40%);
-}
-
-#imageAddDay {
-  width: 48px;
-  transform: translate(-23%, 3%);
 }
 
 </style>

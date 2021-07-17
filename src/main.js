@@ -8,11 +8,13 @@ import VueRouter from 'vue-router'
 import App from './App.vue'
 import Dashboard from "@/components/Dashboard";
 import Login from "@/components/Login";
+import Landing from "@/components/Landing";
+
 
 // UI and stuff
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
-import Landing from "@/components/Landing";
+
 
 // Connect the "addons"
 Vue.use(Vuex)

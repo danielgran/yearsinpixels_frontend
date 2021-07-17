@@ -72,29 +72,31 @@ button {
   border-radius: 20px;
 }
 
-input {
+
+input, textarea {
   font-size: 1.2rem;
 }
 
 /* Width repair */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], textarea {
   box-sizing: border-box;
+  font-size: 1.2rem;
 }
 
 /* Size matching of different input types */
-input[type=text], input[type=password], input[type=button] {
+input[type=text], input[type=password], input[type=button], textarea {
   border: none;
   padding: 15px 20px;
   border-radius: 30px;
 }
 
 /* Remove standard outlines (they are odd) */
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus, input[type=password]:focus, textarea {
   outline: none;
 }
 
 /* Placeholder color */
-input[type=text]::placeholder, input[type=password]::placeholder {
+input[type=text]::placeholder, input[type=password]::placeholder, textarea::placeholder {
   color: gray;
   font-weight: bold;
 }
@@ -123,7 +125,7 @@ input[type=button]:hover {
 }
 
 #main-view {
-  overflow: visible;
+  overflow: hidden;
   height: 100%;
   width: 100vw;
 }
