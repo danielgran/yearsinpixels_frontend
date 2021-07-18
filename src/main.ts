@@ -5,10 +5,10 @@ import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 
 // Components
-import App from './App.vue'
-import Dashboard from "@/components/Dashboard";
-import Login from "@/components/Login";
-import Landing from "@/components/Landing";
+import App from "./App.vue"
+import Dashboard from "./components/Dashboard.vue";
+import Login from "./components/Login.vue";
+import Landing from "./components/Landing.vue";
 
 
 // UI and stuff
@@ -33,10 +33,10 @@ const store = new Vuex.Store({
     }
   },
   mutations: {
-    increment (state) {
-      state.count++
+    increment (state: any) {
+      console.log(state)
     },
-    setMainViewHeight (state, value) {
+    setMainViewHeight (state: any, value: any) {
       state.mainViewHeight = value
     }
   }
