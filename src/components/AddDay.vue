@@ -5,7 +5,6 @@
   <div id="addDay">
     <div id="content">
       <h2>Your day was...</h2>
-
       <form>
         <input type="text" placeholder="Title">
         <textarea placeholder="Notes">
