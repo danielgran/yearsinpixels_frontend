@@ -33,9 +33,9 @@ export default {
 </script>
 
 <style>
-/**********++++******/
+/****************/
 /* Standard Styling */
-/************++++****/
+/****************/
 html, body , h1, h2, h3, h4, h5, h6, button {
   margin: 0;
   padding: 0;
