@@ -2,33 +2,17 @@
   <div id="app">
     <Header id="header">
     </Header>
-    <router-view id="main-view">
-    </router-view>
+    <router-view id="main-view"/>
   </div>
 </template>
 
-<script>
+<script lang="js">
 import Header from "@/components/Header";
 export default {
   name: 'App',
   components: {
     Header
-  },
-  methods: {
-    matchHeight: function () {
-      let height = document.getElementById('main-view').clientHeight;
-      this.$store.commit({
-        type: 'setMainViewHeight',
-        amount: height
-      })
-    }
-  },
-  created() {
-    window.addEventListener("resize", this.matchHeight);
-  },
-  mounted() {
-    this.matchHeight();
-  },
+  }
 }
 </script>
 
