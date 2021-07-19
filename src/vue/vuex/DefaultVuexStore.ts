@@ -1,18 +1,19 @@
-import {IVueStore} from "@/vue/IVueStore";
-import {Store} from "vuex";
+import { IVueStore } from "@/vue/IVueStore";
+import { Store } from "vuex";
 import Vuex from "vuex";
 
-export class VuexStore implements IVueStore {
+export class DefaultVuexStore implements IVueStore {
 
-  plugin: any
+  plugin: any;
 
   // Should a new store instance
-  store: Store<any>;
+  store: Store<any> | undefined;
 
-  constructor(vueinstance: any) {
+  constructor() {
     this.plugin = Vuex;
-    vueinstance.use(this.plugin)
+  }
 
+  Init(){
     this.store = new Vuex.Store({
       state: {
         mainViewHeight: 0,
@@ -20,18 +21,18 @@ export class VuexStore implements IVueStore {
       },
       getters: {
         getName() {
-          return "Daniel Gran"
+          return "Daniel Gran";
         }
       },
       mutations: {
         increment(state: any) {
-          console.log(state)
+          console.log(state);
         },
         setMainViewHeight(state: any, value: any) {
-          state.mainViewHeight = value
+          state.mainViewHeight = value;
         }
       }
-    })
-
+    });
   }
+
 }
