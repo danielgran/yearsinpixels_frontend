@@ -5,4 +5,8 @@ import Vue from "vue";
 export default class Login extends Vue{
   cnt_box1 = ""
   cnt_box2 = ""
+
+  loginUser() {
+    console.log("Dummy")
+  }
 }
