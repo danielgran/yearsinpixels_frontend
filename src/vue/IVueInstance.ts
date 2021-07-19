@@ -1,6 +1,6 @@
 import Vue from "vue";
 
-export interface IVue {
+export interface IVueInstance {
 
   VueInstance: any
 

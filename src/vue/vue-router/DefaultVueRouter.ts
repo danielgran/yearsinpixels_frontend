@@ -3,14 +3,13 @@ import { IRoute } from "@/vue/IRoute";
 
 import VueRouter from "vue-router";
 
-import StandardRoutes from "@/vue/vue-router/routes";
+import StandardRoutes from "@/vue/vue-router/DefaultRoutes";
 
 
-export class StandardVueRouter implements IVueRouter {
+export class DefaultVueRouter implements IVueRouter {
   plugin: any;
   router: VueRouter;
   routes: IRoute[];
-
 
   constructor() {
     this.routes = StandardRoutes;

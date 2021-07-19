@@ -1,4 +1,4 @@
-import { IVue } from "@/vue/IVue";
+import { IVueInstance } from "@/vue/IVueInstance";
 
 // UI and stuff
 import "@fortawesome/fontawesome-free/css/all.css";
@@ -9,10 +9,10 @@ import Vue from "vue";
 import App from "@/App.vue";
 import { IVueStore } from "@/vue/IVueStore";
 import { DefaultVuexStore } from "@/vue/vuex/DefaultVuexStore";
-import { StandardVueRouter } from "@/vue/vue-router/StandardVueRouter";
+import { DefaultVueRouter } from "@/vue/vue-router/DefaultVueRouter";
 import { IVueRouter } from "@/vue/IVueRouter";
 
-export class DefaultVueInstance implements IVue {
+export class DefaultVueInstance implements IVueInstance {
   Vue: any;
   VueInstance: any;
 
@@ -27,7 +27,7 @@ export class DefaultVueInstance implements IVue {
 
     // Initialize Vue-Router
 
-    let router: IVueRouter = new StandardVueRouter();
+    let router: IVueRouter = new DefaultVueRouter();
     router.plugin.install(this.Vue);
 
     this.Vue.productionTip = false
@@ -38,11 +38,9 @@ export class DefaultVueInstance implements IVue {
       store: stmgmt.store,
       render: h => h(App)
     })
-
-
-
-
   }
+
+
 
 
 }
