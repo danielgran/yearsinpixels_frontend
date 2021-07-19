@@ -22,8 +22,8 @@
   </div>
 </template>
 
-<script>
-import Header from "@/static/Header/Header.vue";
+<script lang="ts">
+import Header from "./Header";
 
 export default Header;
 </script>

@@ -16,9 +16,10 @@
   </div>
 </template>
 
-<script>
-import AddDay from "@/static/BottomSheets/AddDay/AddDay.vue"
-export default AddDay
+<script lang="ts">
+import AddDay from "./AddDay";
+
+export default AddDay;
 </script>
 
 <style scoped>

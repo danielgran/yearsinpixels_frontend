@@ -23,8 +23,9 @@
 </template>
 
 <script lang="ts">
-  import Dashboard from "./Dashboard"
-  export default Dashboard
+import Dashboard from "./Dashboard";
+
+export default Dashboard;
 </script>
 
 <style>
