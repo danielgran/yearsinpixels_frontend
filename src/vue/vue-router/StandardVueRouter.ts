@@ -14,7 +14,6 @@ export class StandardVueRouter implements IVueRouter {
 
 
   constructor(vueinstance: any) {
-    console.log(StandardRoutes)
     this.routes = StandardRoutes
 
     let realRoutes = []

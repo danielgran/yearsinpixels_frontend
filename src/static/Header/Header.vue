@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <!--<div id="header">
+  <div v-if="shouldRender">
+    <div id="header">
       <div class="header-item">
         <a>
           <router-link to="/">
@@ -10,7 +10,7 @@
       </div>
       <div>
         <p>
-          yearsinpixels.com
+          {{ title }}
         </p>
       </div>
       <div class="header-item">
@@ -18,7 +18,7 @@
             <i class="fas fa-user-circle" style="padding: 0; margin: 0" />
           </span>
       </div>
-    </div>-->
+    </div>
   </div>
 </template>
 
