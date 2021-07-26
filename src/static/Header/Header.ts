@@ -11,11 +11,11 @@ export default class Header extends Vue {
   shouldRender = true
 
   // Gets called when the Header is created
-  created(){
+  created() {
     let route = this.$router.currentRoute.name
     console.log(route)
 
-    if(["Login"].includes(<string>route)) {
+    if (["Login"].includes(<string>route)) {
       this.shouldRender = false;
     }
   }

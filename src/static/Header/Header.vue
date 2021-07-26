@@ -4,7 +4,7 @@
       <div class="header-item">
         <a>
           <router-link to="/">
-            <img src="@/assets/icon_512_8bit.png" style="width: 48px"/>
+            <img src="@/assets/icon_512_8bit.png" style="width: 48px" />
           </router-link>
         </a>
       </div>
@@ -14,15 +14,15 @@
         </p>
       </div>
       <div class="header-item">
-          <span style="color: #C08FC2; font-size: 24px">
-            <i class="fas fa-user-circle" style="padding: 0; margin: 0"/>
-          </span>
+        <span style="color: #c08fc2; font-size: 24px">
+          <i class="fas fa-user-circle" style="padding: 0; margin: 0" />
+        </span>
       </div>
     </div>
   </div>
 </template>
 
-<script lang="js">
+<script lang="ts">
 import Header from "./Header";
 
 export default Header;

@@ -1,16 +1,16 @@
-import {IVueInstance} from "@/vue/IVueInstance";
+import { IVueInstance } from "@/vue/IVueInstance";
 
 // UI and stuff
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 
 import Vue from "vue";
-import App from "@/vue/App.vue";
+import App from "src/vue/App.vue"
 
-import {IVueStore} from "@/vue/VueStore/IVueStore";
-import {DefaultVuexStore} from "@/vue/VueStore/DefaultVuexStore";
-import {DefaultVueRouter} from "@/vue/VueRouter/DefaultVueRouter";
-import {IVueRouter} from "@/vue/VueRouter/IVueRouter";
+import { IVueStore } from "@/vue/VueStore/IVueStore";
+import { DefaultVuexStore } from "@/vue/VueStore/DefaultVuexStore";
+import { DefaultVueRouter } from "@/vue/VueRouter/DefaultVueRouter";
+import { IVueRouter } from "@/vue/VueRouter/IVueRouter";
 
 export class DefaultVueInstance implements IVueInstance {
   Vue: any;
