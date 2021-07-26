@@ -1,16 +1,16 @@
-import { IVueInstance } from "@/vue/IVueInstance";
+import {IVueInstance} from "@/vue/IVueInstance";
 
 // UI and stuff
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 
 import Vue from "vue";
+import App from "@/vue/App.vue";
 
-import App from "@/App.vue";
-import { IVueStore } from "@/vue/IVueStore";
-import { DefaultVuexStore } from "@/vue/vuex/DefaultVuexStore";
-import { DefaultVueRouter } from "@/vue/vue-router/DefaultVueRouter";
-import { IVueRouter } from "@/vue/IVueRouter";
+import {IVueStore} from "@/vue/VueStore/IVueStore";
+import {DefaultVuexStore} from "@/vue/VueStore/DefaultVuexStore";
+import {DefaultVueRouter} from "@/vue/VueRouter/DefaultVueRouter";
+import {IVueRouter} from "@/vue/VueRouter/IVueRouter";
 
 export class DefaultVueInstance implements IVueInstance {
   Vue: any;
@@ -21,8 +21,7 @@ export class DefaultVueInstance implements IVueInstance {
 
     let stmgmt: IVueStore = new DefaultVuexStore();
     stmgmt.plugin.install(this.Vue);
-
-    //stmgmt.Init();
+    stmgmt.Init();
 
 
     // Initialize Vue-Router
@@ -39,8 +38,6 @@ export class DefaultVueInstance implements IVueInstance {
       render: h => h(App)
     })
   }
-
-
 
 
 }

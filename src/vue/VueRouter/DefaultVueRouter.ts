@@ -1,9 +1,9 @@
-import { IVueRouter } from "@/vue/IVueRouter";
-import { IRoute } from "@/vue/IRoute";
+import {IVueRouter} from "@/vue/VueRouter/IVueRouter";
+import {IRoute} from "@/vue/VueRouter/IRoute";
 
 import VueRouter from "vue-router";
 
-import StandardRoutes from "@/vue/vue-router/DefaultRoutes";
+import StandardRoutes from "@/vue/VueRouter/DefaultRoutes";
 
 
 export class DefaultVueRouter implements IVueRouter {

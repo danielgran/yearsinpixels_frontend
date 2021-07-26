@@ -1,4 +1,4 @@
-import { IRoute } from "@/vue/IRoute";
+import {IRoute} from "@/vue/VueRouter/IRoute";
 import Dashboard from "@/static/dashboard/Dashboard.vue";
 import Login from "@/static/login/Login.vue";
 import Landing from "@/static/landing/Landing.vue";

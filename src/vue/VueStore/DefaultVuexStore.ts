@@ -1,5 +1,5 @@
-import { IVueStore } from "@/vue/IVueStore";
-import { Store } from "vuex";
+import {IVueStore} from "@/vue/VueStore/IVueStore";
+import {Store} from "vuex";
 import Vuex from "vuex";
 
 export class DefaultVuexStore implements IVueStore {
@@ -13,7 +13,7 @@ export class DefaultVuexStore implements IVueStore {
     this.plugin = Vuex;
   }
 
-  Init(){
+  Init() {
     this.store = new Vuex.Store({
       state: {
         mainViewHeight: 0,

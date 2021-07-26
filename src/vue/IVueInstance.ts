@@ -1,5 +1,3 @@
 export interface IVueInstance {
-
-  VueInstance: any
-
+  VueInstance: any;
 }
