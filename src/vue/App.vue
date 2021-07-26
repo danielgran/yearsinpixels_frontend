@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header id="header"/>
-    <router-view id="main-view"/>
+    <Header id="header" />
+    <router-view id="main-view" />
   </div>
 </template>
 
@@ -9,18 +9,26 @@
 import Header from "@/static/Header/Header.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Header
-  }
-}
+    Header,
+  },
+};
 </script>
 
 <style>
 /****************/
 /* Standard Styling */
 /****************/
-html, body, h1, h2, h3, h4, h5, h6, button {
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
   margin: 0;
   padding: 0;
   border: none;
@@ -32,17 +40,16 @@ html, body, h1, h2, h3, h4, h5, h6, button {
 
 a {
   outline: none;
-  color: #3C1EFA;
+  color: #3c1efa;
   text-decoration: none !important;
   font-size: 1.1rem;
 }
 
 a:hover {
   cursor: pointer;
-  color: #3C79FA;
+  color: #3c79fa;
   text-decoration: none;
 }
-
 
 /****************/
 /* Input Styling*/
@@ -51,50 +58,59 @@ a:hover {
 button {
   font-size: 1.1rem;
   font-weight: bold;
-  background: #3C1EFA;
-  color: #ECECEC;
+  background: #3c1efa;
+  color: #ececec;
   padding: 5px 20px;
   border-radius: 20px;
 }
 
-
-input, textarea {
+input,
+textarea {
   font-size: 1.2rem;
 }
 
 /* Width repair */
-input[type=text], input[type=password], textarea {
+input[type="text"],
+input[type="password"],
+textarea {
   box-sizing: border-box;
   font-size: 1.2rem;
 }
 
 /* Size matching of different input types */
-input[type=text], input[type=password], input[type=button], textarea {
+input[type="text"],
+input[type="password"],
+input[type="button"],
+textarea {
   border: none;
   padding: 15px 20px;
   border-radius: 30px;
 }
 
 /* Remove standard outlines (they are odd) */
-input[type=text]:focus, input[type=password]:focus, textarea {
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea {
   outline: none;
 }
 
 /* Placeholder color */
-input[type=text]::placeholder, input[type=password]::placeholder, textarea::placeholder {
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder {
   color: gray;
   font-weight: bold;
 }
 
 /* Button Color styling */
-input[type=button] {
-  color: #ECECEC;
-  background: #3C1EFA;
+input[type="button"] {
+  color: #ececec;
+  background: #3c1efa;
 }
 
 /* Button hover and click effect*/
-input[type=button]:hover {
-  background: #3C79FA;
+input[type="button"]:hover {
+  background: #3c79fa;
   cursor: pointer;
 }
 
@@ -102,7 +118,7 @@ input[type=button]:hover {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: #ECECEC;
+  background: #ececec;
 }
 
 #header {
@@ -114,6 +130,4 @@ input[type=button]:hover {
   height: 100%;
   width: 100vw;
 }
-
-
 </style>

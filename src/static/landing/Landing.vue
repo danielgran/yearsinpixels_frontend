@@ -2,8 +2,8 @@
   <div>
     <div id="landing">
       <div id="background">
-        <img src="@/assets/icon_512_8bit.png" class="imgbgblur"/>
-        <img src="@/assets/icon_512_8bit.png" class="imgbgblur"/>
+        <img src="@/assets/icon_512_8bit.png" class="imgbgblur" />
+        <img src="@/assets/icon_512_8bit.png" class="imgbgblur" />
       </div>
       <div id="container">
         <div id="content">
@@ -19,7 +19,7 @@
   </div>
 </template>
 
-<script lang="js">
+<script lang="ts">
 import Landing from "./Landing";
 
 export default Landing;

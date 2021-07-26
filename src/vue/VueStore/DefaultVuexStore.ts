@@ -1,5 +1,5 @@
-import {IVueStore} from "@/vue/VueStore/IVueStore";
-import {Store} from "vuex";
+import { IVueStore } from "@/vue/VueStore/IVueStore";
+import { Store } from "vuex";
 import Vuex from "vuex";
 
 export class DefaultVuexStore implements IVueStore {

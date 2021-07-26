@@ -1,5 +1,5 @@
-import {IVueRouter} from "@/vue/VueRouter/IVueRouter";
-import {IRoute} from "@/vue/VueRouter/IRoute";
+import { IVueRouter } from "@/vue/VueRouter/IVueRouter";
+import { IRoute } from "@/vue/VueRouter/IRoute";
 
 import VueRouter from "vue-router";
 

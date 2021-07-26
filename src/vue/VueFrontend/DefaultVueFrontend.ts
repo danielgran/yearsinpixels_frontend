@@ -1,5 +1,5 @@
-import {IFrontend} from "@/struct/IFrontend";
-import {DefaultVueInstance} from "@/vue/VueInstance/DefaultVueInstance";
+import { IFrontend } from "@/struct/IFrontend";
+import { DefaultVueInstance } from "@/vue/VueInstance/DefaultVueInstance";
 
 export class DefaultVueFrontend implements IFrontend {
   Instance: any;
