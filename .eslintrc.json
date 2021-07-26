@@ -22,6 +22,7 @@
     "@typescript-eslint"
   ],
   "rules": {
-    "prefer-const": "off"
+    "prefer-const": "off",
+    "no-unused-vars": "warn"
   }
 }
