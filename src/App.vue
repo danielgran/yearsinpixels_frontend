@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    <Header id="header" />
+    <Header id="header"/>
     <router-view id="main-view"/>
   </div>
 </template>
 
 <script lang="ts">
 import Header from "@/static/Header/Header.vue";
+
 export default {
   name: 'App',
   components: {
@@ -19,11 +20,12 @@ export default {
 /****************/
 /* Standard Styling */
 /****************/
-html, body , h1, h2, h3, h4, h5, h6, button {
+html, body, h1, h2, h3, h4, h5, h6, button {
   margin: 0;
   padding: 0;
   border: none;
 }
+
 * {
   font-family: basic-sans, Arial, sans-serif;
 }
