@@ -140,3 +140,12 @@ input[type="button"]:hover {
 }
 
 /* #endregion */
+
+
+/* #region No troll clients */
+@media only screen and (max-width: 255px){
+  #app {
+    display: none;
+  }
+}
+/* #endregion */

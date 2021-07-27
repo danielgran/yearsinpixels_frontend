@@ -16,9 +16,15 @@
   max-width: 960px;
   width: 100%;
   height: inherit;
-  box-shadow: 0px 0px 100px rgba(1, 1, 1, 0.1);
-  border-radius: 30px;
 }
+
+@media only screen and (min-width: 960px) {
+  #container {
+    border-radius: 30px;
+    box-shadow: 0px 0px 100px rgba(1, 1, 1, 0.1);
+  }
+}
+
 
 #content {
   width: 100%;
@@ -28,7 +34,11 @@
 }
 
 #greeting {
-  margin: 55px 0 0 78px
+  margin: 25px 0 0 35px
+}
+ 
+#greeting h4 {
+  color: black;
 }
 
 #date {

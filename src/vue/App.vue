@@ -18,6 +18,6 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
 @import "../static/css/style.css";
 </style>
