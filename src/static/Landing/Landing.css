@@ -31,7 +31,14 @@
 }
 
 #middle h1 {
-  font-size: 5.0rem;
+  font-size: 1.9rem;
+  padding-bottom: 30px;
+}
+
+@media only screen and (min-width: 640px){
+  #middle h1 {
+    font-size: 4.0rem;
+  }
 }
 
 #middle button {
