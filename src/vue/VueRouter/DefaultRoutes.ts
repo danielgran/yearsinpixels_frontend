@@ -3,7 +3,7 @@ import { IRoute } from "@/vue/VueRouter/IRoute";
 
 import Dashboard from "@/static/Dashboard/Dashboard.vue";
 import Login from "@/static/login/Login.vue";
-import Landing from "@/static/landing/Landing.vue";
+import Landing from "@/static/Landing/Landing.vue";
 
 
 const DefaultRoutes: IRoute[] = [
