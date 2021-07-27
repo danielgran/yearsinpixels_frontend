@@ -1,22 +1,11 @@
-import Component from "vue-class-component";
-import Vue from "vue"
+import { defineComponent } from 'vue'
 
-@Component
-export default class Header extends Vue {
-  shouldDisplay(): boolean {
-    return false;
+export default defineComponent({
+  name: "Header",
+  data: function() {
+    return {
+      shouldRender: true,
+      title: "yearsinpixels.com"
+    };
   }
-
-  title = "yearsinpixels.com"
-  shouldRender = true
-
-  // Gets called when the Header is created
-  created() {
-    let route = this.$router.currentRoute.name
-    console.log(route)
-
-    if (["Login"].includes(<string>route)) {
-      this.shouldRender = false;
-    }
-  }
-}
+})

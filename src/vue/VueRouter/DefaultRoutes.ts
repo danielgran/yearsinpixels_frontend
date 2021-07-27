@@ -3,22 +3,19 @@ import Dashboard from "@/static/Dashboard/Dashboard";
 import Login from "@/static/login/Login";
 import Landing from "@/static/landing/Landing";
 
-const StandardRoutes: IRoute[] = [
+const DefaultRoutes: IRoute[] = [
   {
     comp: Landing,
-    name: "Landing",
     path: "/"
   },
   {
     comp: Dashboard,
-    name: "Dashboard",
     path: "/dashboard"
   },
   {
     comp: Login,
-    name: "Login",
     path: "/login"
   }
 ]
 
-export default StandardRoutes
+export default DefaultRoutes

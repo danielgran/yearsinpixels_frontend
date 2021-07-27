@@ -1,6 +1,7 @@
 import { IVueStore } from "@/vue/VueStore/IVueStore";
 import { Store } from "vuex";
-import Vuex from "vuex";
+
+import { createStore } from "vuex";
 
 export class DefaultVuexStore implements IVueStore {
 
@@ -10,9 +11,18 @@ export class DefaultVuexStore implements IVueStore {
   store: Store<any> | undefined;
 
   constructor() {
-    this.plugin = Vuex;
-  }
+    let store = createStore({
+      state () {
+        return {
+          count: 1
+        }
+      }
+    })
+    this.plugin = store
 
+
+  }
+/*
   Init() {
     this.store = new Vuex.Store({
       state: {
@@ -34,5 +44,6 @@ export class DefaultVuexStore implements IVueStore {
       }
     });
   }
+  */
 
 }

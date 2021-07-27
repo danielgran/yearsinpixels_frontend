@@ -1,42 +1,38 @@
-import { IVueInstance } from "@/vue/IVueInstance";
 
 // UI and stuff
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 
-import Vue from "vue";
-import App from "src/vue/App.vue"
+import { createApp } from 'vue';
 
-import { IVueStore } from "@/vue/VueStore/IVueStore";
+
+import { IVueInstance } from "@/vue/IVueInstance";
+import { IVueUsable } from "../IVueUsable";
+
 import { DefaultVuexStore } from "@/vue/VueStore/DefaultVuexStore";
 import { DefaultVueRouter } from "@/vue/VueRouter/DefaultVueRouter";
-import { IVueRouter } from "@/vue/VueRouter/IVueRouter";
 
+import App from '@/vue/App.vue'
+
+// This is the default Vue instance loaded in the project
 export class DefaultVueInstance implements IVueInstance {
-  Vue: any;
-  VueInstance: any;
+  Instance: any;
 
   constructor() {
-    this.Vue = Vue
+    // The Vue Instance
+    this.Instance = createApp(App)
 
-    let stmgmt: IVueStore = new DefaultVuexStore();
-    stmgmt.plugin.install(this.Vue);
-    stmgmt.Init();
-
+    // Initialize State management
+    let stmgmt: IVueUsable = new DefaultVuexStore();
+    this.Instance.use(stmgmt.plugin)
 
     // Initialize Vue-Router
+    let router: IVueUsable = new DefaultVueRouter();
+    this.Instance.use(router.plugin)
 
-    let router: IVueRouter = new DefaultVueRouter();
-    router.plugin.install(this.Vue);
+    this.Instance.com
 
-    this.Vue.productionTip = false
-
-    this.VueInstance = new Vue({
-      el: '#app',
-      router: router.router,
-      store: stmgmt.store,
-      render: h => h(App)
-    })
+    this.Instance.mount('#app');
   }
 
 

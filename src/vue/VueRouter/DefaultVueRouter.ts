@@ -1,36 +1,33 @@
+import {createRouter, createWebHistory} from "vue-router";
+
 import { IVueRouter } from "@/vue/VueRouter/IVueRouter";
 import { IRoute } from "@/vue/VueRouter/IRoute";
 
-import VueRouter from "vue-router";
-
-import StandardRoutes from "@/vue/VueRouter/DefaultRoutes";
+import DefaultRoutes from "@/vue/VueRouter/DefaultRoutes";
 
 
 export class DefaultVueRouter implements IVueRouter {
   plugin: any;
-  router: VueRouter;
   routes: IRoute[];
 
   constructor() {
-    this.routes = StandardRoutes;
+    this.routes = DefaultRoutes;
 
-    this.plugin = VueRouter
-
+    // Convert the interface array back to a normal array
     let realRoutes = [];
-    for (let i = 0; i < StandardRoutes.length; i++) {
+    for (let i = 0; i < this.routes.length; i++) {
       realRoutes.push({
-        "component": StandardRoutes[i].comp,
-        "name": StandardRoutes[i].name,
-        "path": StandardRoutes[i].path
+        component: this.routes[i].comp,
+        path: this.routes[i].path
       });
     }
 
-    const router = new VueRouter({
+    const router = createRouter({
       routes: realRoutes,
-      mode: "history"
+      history: createWebHistory()
     });
 
-    this.router = router;
+    this.plugin = router;
   }
 
 

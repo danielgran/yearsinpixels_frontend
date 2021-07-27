@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "es2015",
+    "target": "es6",
+    "module": "esnext",
     "strict": true,
     "jsx": "preserve",
-    "importHelpers": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
@@ -16,11 +16,7 @@
     ],
     "paths": {
       "@/*": [
-        "src/*",
-        "./*"
-      ],
-      "#": [
-        "src/"
+        "src/*"
       ]
     },
     "lib": [

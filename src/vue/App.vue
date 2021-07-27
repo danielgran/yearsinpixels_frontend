@@ -6,14 +6,16 @@
 </template>
 
 <script lang="ts">
-import Header from "@/static/Header/Header.vue";
+import { defineComponent } from "vue";
 
-export default {
+import Header from '@/static/Header/Header.vue'
+
+export default defineComponent({
   name: "App",
   components: {
-    Header,
-  },
-};
+    Header
+  }
+});
 </script>
 
 <style>
