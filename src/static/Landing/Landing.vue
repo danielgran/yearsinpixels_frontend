@@ -25,6 +25,5 @@ import Landing from "./Landing";
 export default Landing;
 </script>
 
-<style scoped>
-@import "./Landing.css";
+<style scoped src="./Landing.css">
 </style>

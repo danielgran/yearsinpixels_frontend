@@ -2,14 +2,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 
 #container {
-  background: #ECECEC;
   height: 100%;
   width: 100%;
 }
@@ -29,6 +28,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#middle h1 {
+  font-size: 5.0rem;
 }
 
 #middle button {

@@ -35,6 +35,5 @@ import Login from "./Login";
 export default Login;
 </script>
 
-<style scoped>
-@import "./Login.css";
+<style scoped src="./Login.css">
 </style>

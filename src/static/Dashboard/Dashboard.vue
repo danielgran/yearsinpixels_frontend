@@ -30,6 +30,5 @@ import Dashboard from "./Dashboard";
 export default Dashboard;
 </script>
 
-<style>
-@import "./Dashboard.css";
+<style scoped src="./Dashboard.css">
 </style>

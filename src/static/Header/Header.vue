@@ -28,6 +28,5 @@ import Header from "./Header";
 export default Header;
 </script>
 
-<style scoped>
-@import "./Header.css";
+<style scoped src="./Header.css">
 </style>
