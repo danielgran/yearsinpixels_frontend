@@ -18,7 +18,8 @@ export class DefaultVueRouter implements IVueRouter {
     for (let i = 0; i < this.routes.length; i++) {
       realRoutes.push({
         component: this.routes[i].comp,
-        path: this.routes[i].path
+        path: this.routes[i].path,
+        name: this.routes[i].name
       });
     }
 
