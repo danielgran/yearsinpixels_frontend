@@ -1,7 +1,10 @@
-
 // UI and stuff
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
+
+// Global CSS defines
+import "@/static/css/style.css"
+
 
 import { createApp } from 'vue';
 

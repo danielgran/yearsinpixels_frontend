@@ -4,7 +4,7 @@
       <div class="header-item">
         <a>
           <router-link to="/">
-            <img src="@/assets/icon_512_8bit.png" style="width: 48px" />
+            <img id="logo" src="@/assets/icon_512_8bit.png" />
           </router-link>
         </a>
       </div>
@@ -14,8 +14,8 @@
         </p>
       </div>
       <div class="header-item">
-        <span style="color: #c08fc2; font-size: 24px">
-          <i class="fas fa-user-circle" style="padding: 0; margin: 0" />
+        <span>
+          <i class="fas fa-user-circle" />
         </span>
       </div>
     </div>

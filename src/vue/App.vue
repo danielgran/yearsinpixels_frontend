@@ -17,7 +17,3 @@ export default defineComponent({
   }
 });
 </script>
-
-<style scoped>
-@import "../static/css/style.css";
-</style>

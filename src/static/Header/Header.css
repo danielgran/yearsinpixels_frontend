@@ -1,5 +1,5 @@
 #header {
-  height: 52px;
+  height: 43px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -7,9 +7,26 @@
   background: transparent;
 }
 
+@media only screen and (min-width: 380px) {
+  #header {
+    height: 52px;
+  }
+}
+
+
 .header-item {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 14px 0 14px;
+}
+
+#logo {
+ width: 29px;
+}
+
+
+span {
+  color: #c08fc2;
+  font-size: 24px;
 }
