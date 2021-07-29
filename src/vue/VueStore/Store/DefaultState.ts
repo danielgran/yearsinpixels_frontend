@@ -1,5 +1,7 @@
-export default {
+import { Day } from "@/Model/Day";
+import IState from "./IState";
 
-  name: "Testing"
-
+export const DefaultState:IState = {
+  name: "Wheetelwhee",
+  days: [new Day()],
 }

@@ -34,6 +34,9 @@ export class DefaultVueInstance implements IVueInstance {
     this.Instance.use(router.plugin);
 
 
+    this.Instance.provide("MAININST", this.Instance);
+
+
     this.Instance.mount('#app');
   }
 

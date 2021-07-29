@@ -2,7 +2,7 @@
 
 import { Mood } from './Mood'
 
-export interface IDay {
+export class Day {
 
   date: Date
 
@@ -10,4 +10,17 @@ export interface IDay {
   notes: String
 
   mood: Mood
+
+  constructor() {
+  
+    this.date = new Date();
+    this.title = "";
+    this.notes = "";
+    this.mood = new Mood();
+
+
+  }
+
+
+
 } 

@@ -1,3 +1,10 @@
-export interface UserProfile {
+export class UserProfile {
   username: string
+
+
+  constructor() {
+  
+    this.username = ""
+  
+  }
 }
