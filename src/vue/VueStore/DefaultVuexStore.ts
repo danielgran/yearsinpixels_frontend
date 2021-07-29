@@ -1,9 +1,11 @@
-import { IVueStore } from "@/vue/VueStore/IVueStore";
 import { Store } from "vuex";
 
-import { createStore } from "vuex";
+import { IVueStorePlugin } from "@/vue/VueStore/IVueStorePlugin";
 
-export class DefaultVuexStore implements IVueStore {
+import DefaultStore from "./Store/DefaultStore";
+
+
+export class DefaultVuexStore implements IVueStorePlugin {
 
   plugin: any;
 
@@ -11,39 +13,7 @@ export class DefaultVuexStore implements IVueStore {
   store: Store<any> | undefined;
 
   constructor() {
-    let store = createStore({
-      state () {
-        return {
-          count: 1
-        }
-      }
-    })
+    let store = DefaultStore
     this.plugin = store
-
-
   }
-/*
-  Init() {
-    this.store = new Vuex.Store({
-      state: {
-        mainViewHeight: 0,
-        name: "Daniel Gran"
-      },
-      getters: {
-        getName() {
-          return "Daniel Gran";
-        }
-      },
-      mutations: {
-        increment(state: any) {
-          console.log(state);
-        },
-        setMainViewHeight(state: any, value: any) {
-          state.mainViewHeight = value;
-        }
-      }
-    });
-  }
-  */
-
 }
