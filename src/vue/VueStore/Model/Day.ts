@@ -11,4 +11,12 @@ export class Day {
 
   mood: Mood
 
+  constructor() {
+    
+    this.date = new Date();
+    this.title = "";
+    this.notes = "";
+    this.mood = new Mood();
+  }
+
 } 

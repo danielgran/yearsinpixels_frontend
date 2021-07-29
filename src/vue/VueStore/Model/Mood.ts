@@ -2,8 +2,15 @@
 
 export class Mood {
 
-  id: bigint
+  id: number
 
   text: string
+
+
+  constructor() {
+    this.id = -1;
+    this.text = "";
+  }
+
 
 }
