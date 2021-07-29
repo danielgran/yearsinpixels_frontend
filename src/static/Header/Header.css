@@ -25,6 +25,13 @@
  width: 29px;
 }
 
+@media only screen and (min-width: 380px) {
+  #logo {
+    width: 36px;
+  } 
+}
+
+
 
 span {
   color: #c08fc2;
