@@ -1,16 +1,8 @@
 // This class is describing a selectable MoodState in the day selection
 
-export class Mood {
+export interface IMood {
 
   id: number
 
   text: string
-
-
-  constructor() {
-    this.id = -1;
-    this.text = "";
-  }
-
-
 }
