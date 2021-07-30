@@ -2,9 +2,9 @@ import { Store } from "vuex";
 
 import { IVueStorePlugin } from "@/vue/VueStore/IVueStorePlugin";
 
-import DefaultStore, { DefaultStoreToBe } from "./Store/DefaultStore";
-import { DefaultStateToBe } from "./Store/DefaultState";
-import { DefaultMutationsToBe } from "./Store/DefaultMutations";
+import { DefaultState } from "./Store/DefaultState";
+import { DefaultMutations } from "./Store/DefaultMutations";
+import { DefaultStore } from "./Store/DefaultStore";
 
 
 export class DefaultVuexStore implements IVueStorePlugin {
@@ -16,10 +16,10 @@ export class DefaultVuexStore implements IVueStorePlugin {
 
   constructor() {
 
-    let state = new DefaultStateToBe();
-    let mutations = new DefaultMutationsToBe(state);
+    let state = new DefaultState();
+    let mutations = new DefaultMutations(state);
 
-    let store = new DefaultStoreToBe(
+    let store = new DefaultStore(
     {
       state: state,
       mutations: mutations.Mutations

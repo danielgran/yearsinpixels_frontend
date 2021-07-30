@@ -1,16 +1,16 @@
-import { DefaultStateToBe } from "./DefaultState"
+import { DefaultState } from "./DefaultState"
 import IState from "./IState"
 
 const a = {
   mut() {}
 }
 
-export class DefaultMutationsToBe {
+export class DefaultMutations {
 
   Mutations: any
   state: IState
 
-  constructor(somestate: DefaultStateToBe){
+  constructor(somestate: DefaultState){
 
     this.state = somestate
 
