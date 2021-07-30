@@ -10,7 +10,6 @@
 import { defineComponent } from "vue";
 
 import Header from '@/static/Header/Header.vue'
-import DefaultStore from "./VueStore/Store/DefaultStore";
 
 export default defineComponent({
   name: "App",

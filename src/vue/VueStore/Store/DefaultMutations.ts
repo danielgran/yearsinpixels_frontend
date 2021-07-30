@@ -1,13 +1,23 @@
-import { DefaultState } from "./DefaultState"
+import { DefaultStateToBe } from "./DefaultState"
+import IState from "./IState"
 
-const DefaultMutations = {
-
-  mockday() {
-    DefaultState.name = "Whoop"
-  }
-
-  
+const a = {
+  mut() {}
 }
 
+export class DefaultMutationsToBe {
 
-export default DefaultMutations
+  Mutations: any
+  state: IState
+
+  constructor(somestate: DefaultStateToBe){
+
+    this.state = somestate
+
+    this.Mutations = {
+      mockday() {
+        somestate.name = "Whoop"
+      }
+    }
+  }
+}
