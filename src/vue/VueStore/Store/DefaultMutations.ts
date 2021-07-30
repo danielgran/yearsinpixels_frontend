@@ -1,10 +1,6 @@
 import { DefaultState } from "./DefaultState"
 import IState from "./IState"
 
-const a = {
-  mut() {}
-}
-
 export class DefaultMutations {
 
   Mutations: any
