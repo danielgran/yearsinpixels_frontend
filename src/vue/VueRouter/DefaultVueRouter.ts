@@ -1,12 +1,12 @@
 import {createRouter, createWebHistory} from "vue-router";
 
-import { IVueRouter } from "@/vue/VueRouter/IVueRouter";
+import { IVueRouterPlugin } from "@/vue/VueRouter/IVueRouter";
 import { IRoute } from "@/vue/VueRouter/IRoute";
 
 import DefaultRoutes from "@/vue/VueRouter/DefaultRoutes";
 
 
-export class DefaultVueRouter implements IVueRouter {
+export class DefaultVueRouter implements IVueRouterPlugin {
   plugin: any;
   routes: IRoute[];
 
