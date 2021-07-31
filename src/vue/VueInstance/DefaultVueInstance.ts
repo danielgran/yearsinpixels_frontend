@@ -6,7 +6,7 @@ import "@fortawesome/fontawesome-free/js/all.js";
 import "@/static/css/style.css"
 
 
-import { createApp } from 'vue';
+import { App, createApp } from 'vue';
 
 
 import { IVueInstance } from "@/vue/IVueInstance";
@@ -14,17 +14,17 @@ import { IVueInstance } from "@/vue/IVueInstance";
 import { DefaultVuexStore } from "@/vue/VueStore/DefaultVuexStore";
 import { DefaultVueRouter } from "@/vue/VueRouter/DefaultVueRouter";
 
-import App from '@/vue/App.vue'
+import YearsInPixels from '@/vue/YearsInPixels.vue'
 import { IVueStorePlugin } from "../VueStore/IVueStorePlugin";
 import { IVueRouterPlugin } from "../VueRouter/IVueRouter";
 
 // This is the default Vue instance loaded in the project
 export class DefaultVueInstance implements IVueInstance {
-  Instance: any;
+  Instance: App;
 
   constructor() {
     // The Vue Instance
-    this.Instance = createApp(App);
+    this.Instance = createApp(YearsInPixels);
     
     // Initialize State management
     let stmgmt: IVueStorePlugin = new DefaultVuexStore();

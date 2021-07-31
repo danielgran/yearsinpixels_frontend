@@ -12,7 +12,7 @@ import { defineComponent } from "vue";
 import Header from '@/static/Header/Header.vue'
 
 export default defineComponent({
-  name: "App",
+  name: "YearsInPixels",
   components: {
     Header
   },
