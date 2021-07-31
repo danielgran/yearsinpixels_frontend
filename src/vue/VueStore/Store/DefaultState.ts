@@ -6,7 +6,7 @@ export class DefaultState implements IState {
   days: Day[];
 
   constructor() {
-    this.name = "Debug Testing"
+    this.name = "Testing key"
     this.days = []
     this.days.push(new Day());
 
