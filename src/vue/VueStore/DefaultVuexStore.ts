@@ -26,7 +26,5 @@ export class DefaultVuexStore implements IVueStorePlugin {
 
     this.plugin = store
     this.store = store
-
-    console.log(store)
   }
 }
