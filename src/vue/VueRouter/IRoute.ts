@@ -1,7 +1,5 @@
-import { Component } from "vue";
-
 export interface IRoute {
-  comp: Component
+  comp: any
   path: string
   name: string
 }
