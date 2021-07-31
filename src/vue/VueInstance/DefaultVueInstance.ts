@@ -23,6 +23,7 @@ export class DefaultVueInstance implements IVueInstance {
 
   constructor() {
     // The Vue Instance
+    this.Instance = createApp(App);
     
     // Initialize State management
     let stmgmt: IVueUsable = new DefaultVuexStore();
@@ -32,7 +33,6 @@ export class DefaultVueInstance implements IVueInstance {
     let router: IVueUsable = new DefaultVueRouter();
     this.Instance.use(router.plugin);
     
-    this.Instance = createApp(App);
     
     this.Instance.mount('#app');
   }
