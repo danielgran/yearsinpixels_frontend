@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/danielgran/yearsinpixels_frontend/actions/workflows/node.js.yml/badge.svg)](https://github.com/danielgran/yearsinpixels_frontend/actions/workflows/node.js.yml)
+
 # frontend
 
 ## Project setup
