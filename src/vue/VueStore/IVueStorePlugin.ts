@@ -1,4 +1,4 @@
-import { IVueUsable } from "@/vue/IVueUsable";
+import IVueUsable  from "@/vue/IVueUsable";
 
 export interface IVueStorePlugin extends IVueUsable {
   store: any

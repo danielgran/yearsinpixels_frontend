@@ -1,6 +1,7 @@
-import {createRouter, createWebHistory, Router} from "vue-router";
+import {createMemoryHistory, createRouter, createWebHistory, Router} from "vue-router";
 
-import { IVueRouterPlugin } from "@/vue/VueRouter/IVueRouter";
+
+import IVueRouterPlugin from "./IVueRouterPlugin";
 import { IRoute } from "@/vue/VueRouter/IRoute";
 
 import DefaultRoutes from "@/vue/VueRouter/DefaultRoutes";

@@ -16,7 +16,7 @@ import { DefaultVueRouter } from "@/vue/VueRouter/DefaultVueRouter";
 
 import YearsInPixels from '@/vue/YearsInPixels.vue'
 import { IVueStorePlugin } from "../VueStore/IVueStorePlugin";
-import { IVueRouterPlugin } from "../VueRouter/IVueRouter";
+import IVueRouterPlugin from "../VueRouter/IVueRouterPlugin";
 
 // This is the default Vue instance loaded in the project
 export class DefaultVueInstance implements IVueInstance {
@@ -39,7 +39,7 @@ export class DefaultVueInstance implements IVueInstance {
     let router: IVueRouterPlugin = new DefaultVueRouter();
     this.Instance.use(router.plugin);
 
-    
+
     this.Instance.mount('#app');
   }
 
