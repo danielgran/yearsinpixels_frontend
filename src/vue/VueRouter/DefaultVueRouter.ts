@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory} from "vue-router";
+import {createRouter, createWebHistory, Router} from "vue-router";
 
 import { IVueRouterPlugin } from "@/vue/VueRouter/IVueRouter";
 import { IRoute } from "@/vue/VueRouter/IRoute";
@@ -7,7 +7,7 @@ import DefaultRoutes from "@/vue/VueRouter/DefaultRoutes";
 
 
 export class DefaultVueRouter implements IVueRouterPlugin {
-  plugin: any;
+  plugin: Router;
   routes: IRoute[];
 
   constructor() {
@@ -23,6 +23,7 @@ export class DefaultVueRouter implements IVueRouterPlugin {
       });
     }
 
+    // That is the "implementation of the adapter" which connects to another interface
     const router = createRouter({
       routes: realRoutes,
       history: createWebHistory()
