@@ -1,17 +1,21 @@
 import { IFrontend } from "@/struct/IFrontend";
 import { DefaultVueInstance } from "@/vue/VueInstance/DefaultVueInstance";
+import { IVueInstance } from "../IVueInstance";
 
 export class DefaultVueFrontend implements IFrontend {
-  Instance: DefaultVueInstance;
+  Instance: IVueInstance ;
 
   constructor() {
     this.Instance = new DefaultVueInstance();
   }
 
 
-  InitInstance(): any {
-
+  StartFrontend(): void {
+    this.Instance.StartInstance();
   }
-
-
+  
+  StopFrontend(): void {
+    this.Instance.StopInstance();
+  }
+  
 }

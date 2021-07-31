@@ -1,4 +1,6 @@
 export interface IFrontend {
   Instance: any
-  InitInstance(): any
+
+  StartFrontend(): void
+  StopFrontend(): void
 }

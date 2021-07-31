@@ -20,12 +20,17 @@ import { IVueRouterPlugin } from "../VueRouter/IVueRouter";
 
 // This is the default Vue instance loaded in the project
 export class DefaultVueInstance implements IVueInstance {
-  Instance: App;
+  Instance: App | undefined;
 
   constructor() {
+    this.Instance = createApp({});
+  }
+
+  StartInstance(): void {
     // The Vue Instance
     this.Instance = createApp(YearsInPixels);
-    
+    console.log("Wheetelwhee");
+
     // Initialize State management
     let stmgmt: IVueStorePlugin = new DefaultVuexStore();
     this.Instance.use(stmgmt.plugin);
@@ -33,10 +38,13 @@ export class DefaultVueInstance implements IVueInstance {
     // Initialize Vue-Router
     let router: IVueRouterPlugin = new DefaultVueRouter();
     this.Instance.use(router.plugin);
-    
+
     
     this.Instance.mount('#app');
   }
 
-
+  StopInstance(): void {
+    this.Instance?.unmount()
+    console.log("Deleting Instance")
+  }
 }
