@@ -8,13 +8,13 @@
             tabindex="0"
             type="text"
             placeholder="E-Mail"
-            v-model="cnt_box1"
+            v-model="emailbox"
           />
           <input
             tabindex="1"
             type="password"
             placeholder="Password"
-            v-model="cnt_box2"
+            v-model="passwordbox"
           />
           <input
             tabindex="2"

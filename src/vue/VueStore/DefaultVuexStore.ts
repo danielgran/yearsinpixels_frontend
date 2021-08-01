@@ -4,7 +4,10 @@ import { IVueStorePlugin } from "@/vue/VueStore/IVueStorePlugin";
 
 import { DefaultState } from "./Store/DefaultState";
 import { DefaultMutations } from "./Store/DefaultMutations";
-import { createApp } from "vue";
+
+import DefaultActions from "./Store/DefaultActions";
+
+import createPersistedState from "vuex-persistedstate"
 
 
 export class DefaultVuexStore implements IVueStorePlugin {
@@ -18,10 +21,15 @@ export class DefaultVuexStore implements IVueStorePlugin {
 
     let state = new DefaultState();
     let mutations = new DefaultMutations(state);
+    let actions = new DefaultActions(state);
 
     let store = createStore({
       state: state,
-      mutations: mutations.Mutations
+      mutations: mutations.Mutations,
+      actions: actions.Actions,
+      plugins: [
+        createPersistedState(),
+      ]
     })
 
     this.plugin = store

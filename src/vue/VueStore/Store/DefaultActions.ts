@@ -1,15 +1,37 @@
 import IState from "./IState";
 
 import { DefaultState } from "./DefaultState";
+import { User } from "@/Model/User";
 
-export class DefaultActions {
+export default class DefaultActions {
 
-  state: IState
+  State: IState
+  Actions: {}
 
   constructor(state: DefaultState) {
   
-    this.state = state
-  } 
+    this.State = state
+
+    this.Actions =
+    {
+      loginUser (state: any, bumm: { email: string, password: string }) {
+
+        // some api calls to finally receive the user from the backend
+
+        let tempUser = new User();
+        tempUser.email = bumm.email;
+        tempUser.username = "Ein krasser Benutzername"; // TODO
+
+        state.commit("SetUser", tempUser);
+
+
+
+      }
+    }
+
+
+  }
+
 
 
 

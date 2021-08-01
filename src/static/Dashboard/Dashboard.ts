@@ -4,7 +4,7 @@ export default defineComponent({
   name: "Dashboard",
   data: function() {
     return {
-      shouldRender: true
+      username: this.$store.state.localUser.email
     };
   }
 })

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <p>{{ testdata }}</p>
+    <p>localUser: {{ testdata }}</p>
     <Header id="header" />
     <router-view id="main-view" />
   </div>
@@ -23,7 +23,7 @@ export default defineComponent({
     
     console.log(this.$store)
     return {
-      testdata: this.$store.state.name
+      testdata: this.$store.state.localUser
     }
   },
 

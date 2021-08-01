@@ -5,7 +5,7 @@
         <div id="content">
           <div id="greeting">
             <h4>Hallo,</h4>
-            <h3>Wheetel</h3>
+            <h3>{{ username }}</h3>
           </div>
           <div id="date">
             <h3>Heute ist der</h3>

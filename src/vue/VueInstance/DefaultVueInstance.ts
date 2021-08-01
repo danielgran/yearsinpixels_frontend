@@ -39,7 +39,6 @@ export class DefaultVueInstance implements IVueInstance {
     let router: IVueRouterPlugin = new DefaultVueRouter();
     this.Instance.use(router.plugin);
 
-
     this.Instance.mount('#app');
   }
 
