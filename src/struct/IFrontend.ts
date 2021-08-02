@@ -1,4 +1,4 @@
-export interface IFrontend {
+export default interface IFrontend {
   Instance: any
 
   StartFrontend(): void

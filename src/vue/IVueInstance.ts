@@ -1,4 +1,4 @@
-export interface IVueInstance {
+export default interface IVueInstance {
   Instance: any;
 
   StartInstance(): void

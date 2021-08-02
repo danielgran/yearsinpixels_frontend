@@ -8,7 +8,7 @@ import IMutations from "./IMutations";
 import IActions from "./IActions";
 
 
-export class VuexStore implements IVueStorePlugin {
+export default class VuexStore implements IVueStorePlugin {
 
   plugin: any;
   store: Store<any> | undefined;

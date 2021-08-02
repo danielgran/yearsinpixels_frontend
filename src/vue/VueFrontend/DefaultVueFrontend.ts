@@ -1,9 +1,11 @@
-import { IFrontend } from "@/struct/IFrontend";
-import { DefaultVueInstance } from "@/vue/VueInstance/DefaultVueInstance";
-import { IVueInstance } from "../IVueInstance";
+import IFrontend from "@/struct/IFrontend";
+import IVueInstance from "@/vue/IVueInstance";
 
-export class DefaultVueFrontend implements IFrontend {
-  Instance: IVueInstance ;
+import DefaultVueInstance from "@/vue/VueInstance/DefaultVueInstance";
+
+
+export default class DefaultVueFrontend implements IFrontend {
+  Instance: IVueInstance;
 
   constructor() {
     this.Instance = new DefaultVueInstance();

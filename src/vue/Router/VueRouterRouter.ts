@@ -5,7 +5,7 @@ import IVueRouterPlugin from "@/vue/Router/IVueRouterPlugin";
 import IRoute from "@/vue/Router/IRoute";
 
 
-export class VueRouterRouter implements IVueRouterPlugin {
+export default class VueRouterRouter implements IVueRouterPlugin {
   plugin: Router;
   routes: IRoute[];
 
