@@ -39,9 +39,8 @@ export default class DefaultVueInstance implements IVueInstance {
   }
 
   StartInstance(): void {
-    // The Vue Instance
+    // Create the Root Vue Instance
     this.Instance = createApp(YearsInPixels);
-    console.log("Wheetelwhee");
 
     // Initialize State management
     let stmgmt: IVueStorePlugin = new VuexStore(new DefaultState(), new DefaultMutations(), new DefaultActions());
