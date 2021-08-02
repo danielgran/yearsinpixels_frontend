@@ -1,8 +1,7 @@
-// This is the model of a day object
+import Mood from "./Mood";
 
-import { Mood } from './Mood'
 
-export class Day {
+export default class Day {
 
   date: Date
 

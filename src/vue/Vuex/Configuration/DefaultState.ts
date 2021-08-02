@@ -1,8 +1,9 @@
-import { Day } from "@/Model/Day";
-import { User } from "@/Model/User";
-import IState from "./IState";
 
-export class DefaultState implements IState {
+import Day from "@/Model/Day";
+import User from "@/Model/User";
+import IState from "@/vue/Vuex/IState";
+
+export default class DefaultState implements IState {
   name: String;
   days: Day[];
   localUser: User;
@@ -13,6 +14,5 @@ export class DefaultState implements IState {
     this.days.push(new Day());
 
     this.localUser = new User();
-
   }
 }

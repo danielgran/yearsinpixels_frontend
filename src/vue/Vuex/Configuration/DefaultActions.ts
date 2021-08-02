@@ -1,16 +1,13 @@
-import IState from "./IState";
+import IActions from "@/vue/Vuex/IActions";
 
-import { DefaultState } from "./DefaultState";
-import { User } from "@/Model/User";
+import User from "@/Model/User";
 
-export default class DefaultActions {
 
-  State: IState
+export default class DefaultActions implements IActions {
+
   Actions: {}
 
-  constructor(state: DefaultState) {
-  
-    this.State = state
+  constructor() {
 
     this.Actions =
     {
@@ -23,16 +20,7 @@ export default class DefaultActions {
         tempUser.username = "Ein krasser Benutzername"; // TODO
 
         state.commit("SetUser", tempUser);
-
-
-
       }
     }
-
-
   }
-
-
-
-
 }

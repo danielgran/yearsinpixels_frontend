@@ -5,18 +5,22 @@ import "@fortawesome/fontawesome-free/js/all.js";
 // Global CSS defines
 import "@/static/css/style.css"
 
-
 import { App, createApp } from 'vue';
+
+import YearsInPixels from '@/vue/YearsInPixels.vue'
 
 
 import { IVueInstance } from "@/vue/IVueInstance";
 
-import { DefaultVuexStore } from "@/vue/VueStore/DefaultVuexStore";
-import { DefaultVueRouter } from "@/vue/VueRouter/DefaultVueRouter";
-
-import YearsInPixels from '@/vue/YearsInPixels.vue'
-import { IVueStorePlugin } from "../VueStore/IVueStorePlugin";
 import IVueRouterPlugin from "../VueRouter/IVueRouterPlugin";
+import { DefaultVueRouter } from "@/vue/VueRouter/DefaultVueRouter";
+import IVueStorePlugin from "../Vuex/IVueStorePlugin";
+import DefaultState from "../Vuex/Configuration/DefaultState";
+import DefaultMutations from "../Vuex/Configuration/DefaultMutations";
+import DefaultActions from "../Vuex/Configuration/DefaultActions";
+import { VuexStore } from "../Vuex/VuexStore";
+
+
 
 // This is the default Vue instance loaded in the project
 export class DefaultVueInstance implements IVueInstance {
@@ -32,7 +36,7 @@ export class DefaultVueInstance implements IVueInstance {
     console.log("Wheetelwhee");
 
     // Initialize State management
-    let stmgmt: IVueStorePlugin = new DefaultVuexStore();
+    let stmgmt: IVueStorePlugin = new VuexStore(new DefaultState(), new DefaultMutations(), new DefaultActions());
     this.Instance.use(stmgmt.plugin);
     
     // Initialize Vue-Router

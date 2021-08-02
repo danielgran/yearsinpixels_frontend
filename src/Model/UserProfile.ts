@@ -1,4 +1,4 @@
-export class UserProfile {
+export default class UserProfile {
   username: string
 
 

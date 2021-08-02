@@ -1,6 +1,7 @@
-import { UserProfile } from "./UserProfile"
+import UserProfile from "./UserProfile";
 
-export class User {
+
+export default class User {
   username: string
   email: string
   profile: UserProfile
