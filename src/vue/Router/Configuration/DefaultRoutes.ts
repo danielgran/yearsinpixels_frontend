@@ -1,4 +1,4 @@
-import { IRoute } from "@/vue/VueRouter/IRoute";
+import IRoute from "@/vue/Router/IRoute";
 
 
 import Dashboard from "@/static/Dashboard/Dashboard.vue";

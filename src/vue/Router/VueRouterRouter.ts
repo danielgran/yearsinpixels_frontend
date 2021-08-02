@@ -1,18 +1,16 @@
-import {createMemoryHistory, createRouter, createWebHistory, Router} from "vue-router";
+import { createRouter, createWebHistory, Router} from "vue-router";
 
 
-import IVueRouterPlugin from "./IVueRouterPlugin";
-import { IRoute } from "@/vue/VueRouter/IRoute";
-
-import DefaultRoutes from "@/vue/VueRouter/DefaultRoutes";
+import IVueRouterPlugin from "@/vue/Router/IVueRouterPlugin";
+import IRoute from "@/vue/Router/IRoute";
 
 
-export class DefaultVueRouter implements IVueRouterPlugin {
+export class VueRouterRouter implements IVueRouterPlugin {
   plugin: Router;
   routes: IRoute[];
 
-  constructor() {
-    this.routes = DefaultRoutes;
+  constructor(routes: IRoute[]) {
+    this.routes = routes;
 
     // Convert the interface array back to a normal array
     let realRoutes = [];

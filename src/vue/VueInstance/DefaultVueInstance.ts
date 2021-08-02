@@ -12,13 +12,14 @@ import YearsInPixels from '@/vue/YearsInPixels.vue'
 
 import { IVueInstance } from "@/vue/IVueInstance";
 
-import IVueRouterPlugin from "../VueRouter/IVueRouterPlugin";
-import { DefaultVueRouter } from "@/vue/VueRouter/DefaultVueRouter";
-import IVueStorePlugin from "../Vuex/IVueStorePlugin";
-import DefaultState from "../Vuex/Configuration/DefaultState";
-import DefaultMutations from "../Vuex/Configuration/DefaultMutations";
-import DefaultActions from "../Vuex/Configuration/DefaultActions";
-import { VuexStore } from "../Vuex/VuexStore";
+import IVueRouterPlugin from "../Router/IVueRouterPlugin";
+import IVueStorePlugin from "../Statemanagement/IVueStorePlugin";
+import DefaultState from "../Statemanagement/Configuration/DefaultState";
+import DefaultMutations from "../Statemanagement/Configuration/DefaultMutations";
+import DefaultActions from "../Statemanagement/Configuration/DefaultActions";
+import { VuexStore } from "../Statemanagement/VuexStore";
+import { VueRouterRouter } from "../Router/VueRouterRouter";
+import DefaultRoutes from "../Router/Configuration/DefaultRoutes";
 
 
 
@@ -40,7 +41,7 @@ export class DefaultVueInstance implements IVueInstance {
     this.Instance.use(stmgmt.plugin);
     
     // Initialize Vue-Router
-    let router: IVueRouterPlugin = new DefaultVueRouter();
+    let router: IVueRouterPlugin = new VueRouterRouter(DefaultRoutes);
     this.Instance.use(router.plugin);
 
     this.Instance.mount('#app');
