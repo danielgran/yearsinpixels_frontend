@@ -9,15 +9,15 @@ export default defineComponent({
         { name: "Jan" },
         { name: "Feb" },
         { name: "Mar" },
-        { name: "April" },
+        { name: "Apr" },
         { name: "May" },
         { name: "Jun" },
         { name: "Jul" },
-        { name: "August" },
-        { name: "September" },
-        { name: "Oktober" },
-        { name: "November" },
-        { name: "Dezember" }
+        { name: "Aug" },
+        { name: "Sep" },
+        { name: "Okt" },
+        { name: "Nov" },
+        { name: "Dez" }
       ]
     };
   },
