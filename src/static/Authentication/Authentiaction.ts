@@ -1,18 +1,19 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "Login",
+  name: "Authentication",
   data: function() {
     return {
-      emailbox: "",
-      passwordbox: ""
+      box1: "",
+      box2: "",
+      box3: ""
     };
   },
   methods:
   {
     loginUser()
     {
-      this.$store.dispatch('loginUser', {email: this.emailbox, password: this.passwordbox})
+      this.$store.dispatch('loginUser', {email: this.box1, password: this.box2})
     }
   }
 

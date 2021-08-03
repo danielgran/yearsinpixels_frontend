@@ -8,13 +8,13 @@
             tabindex="0"
             type="text"
             placeholder="E-Mail"
-            v-model="emailbox"
+            v-model="box2"
           />
           <input
             tabindex="1"
             type="password"
             placeholder="Password"
-            v-model="passwordbox"
+            v-model="box2"
           />
           <input
             tabindex="2"
@@ -30,10 +30,10 @@
 </template>
 
 <script lang="ts">
-import Login from "./Login";
+import Authentication from "./Authentication";
 
-export default Login;
+export default Authentication;
 </script>
 
-<style scoped src="./Login.css">
+<style scoped src="./Authentication.css">
 </style>
