@@ -1,5 +1,6 @@
 <template>
   <div>
+
   </div>
 </template>
 
@@ -9,5 +10,5 @@ import Login from "./Pixels";
 export default Login;
 </script>
 
-<style scoped src="./Login.css">
+<style scoped src="./Pixels.css">
 </style>
