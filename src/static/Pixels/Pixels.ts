@@ -1,12 +1,18 @@
 import { defineComponent } from 'vue'
 
+import PixelTable from '@/static/PixelTable/PixelTable.vue'
+
+
 export default defineComponent({
   name: "Pixels",
+  components: {
+    PixelTable
+  },
   data: function() {
     return {
-      box1: "",
+      year: "2020",
       box2: "",
-      box3: ""
+      box3: "",
     };
   },
   methods:
