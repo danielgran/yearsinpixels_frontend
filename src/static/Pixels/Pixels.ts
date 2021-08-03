@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: "Authentication",
+  name: "Pixels",
   data: function() {
     return {
       box1: "",
@@ -11,10 +11,6 @@ export default defineComponent({
   },
   methods:
   {
-    loginUser()
-    {
-      this.$store.dispatch('loginUser', {email: this.box1, password: this.box2})
-    }
+    
   }
-
 })

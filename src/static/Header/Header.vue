@@ -9,14 +9,18 @@
         </a>
       </div>
       <div>
-        <p>
-          {{ title }}
-        </p>
+        <router-link to="/">
+          <p id="title">
+            {{ title }}
+          </p>
+        </router-link>
       </div>
       <div class="header-item">
-        <span>
-          <i class="fas fa-user-circle" />
-        </span>
+        <router-link to="/profile">
+          <span>
+            <i class="fas fa-user-circle" />
+          </span>
+        </router-link>
       </div>
     </div>
   </div>

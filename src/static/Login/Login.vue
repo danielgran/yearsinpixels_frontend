@@ -23,17 +23,19 @@
             v-on:click="loginUser"
           />
         </form>
-        <a>Register instead</a>
+        <router-link to="/register">
+          <a>Register instead</a>
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Authentication from "./Authentication";
+import Login from "./Login";
 
-export default Authentication;
+export default Login;
 </script>
 
-<style scoped src="./Authentication.css">
+<style scoped src="./Login.css">
 </style>
