@@ -7,7 +7,7 @@ import Landing from "@/static/Landing/Landing.vue";
 import Login from "@/static/Login/Login.vue";
 import Register from "@/static/Register/Register.vue";
 import Profile from "@/static/Profile/Profile.vue";
-import Pixels from "@/static/Pixels/Pixels";
+import Pixels from "@/static/Pixels/Pixels.vue";
 
 
 const DefaultRoutes: IRoute[] = [
