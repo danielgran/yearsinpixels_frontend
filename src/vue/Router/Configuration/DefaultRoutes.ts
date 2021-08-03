@@ -2,7 +2,6 @@ import IRoute from "@/vue/Router/IRoute";
 
 
 import Dashboard from "@/static/Dashboard/Dashboard.vue";
-
 import Landing from "@/static/Landing/Landing.vue";
 import Login from "@/static/Login/Login.vue";
 import Register from "@/static/Register/Register.vue";
