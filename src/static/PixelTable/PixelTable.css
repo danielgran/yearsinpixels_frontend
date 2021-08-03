@@ -22,7 +22,6 @@ table {
 th {
   transform: translate(3px, -5px) rotate(-55deg);
   font-size: 0.8rem;
-  width: 14px;
 }
 
 td {
