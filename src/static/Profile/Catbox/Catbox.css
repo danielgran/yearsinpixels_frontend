@@ -1,0 +1,34 @@
+.catbox {
+  width: 100vw;
+  margin-top: 21px;
+}
+
+.cattitle {
+  font-size: 1.08rem;
+  font-weight: 600;
+  padding: 0 0 4px 14px
+
+}
+
+.editbox {
+  padding: 8px 14px 8px 14px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(112, 112, 112, 0.3);
+
+}
+
+.editbox:last-of-type {
+  border-bottom: 1px solid rgba(112, 112, 112, 0.3);
+}
+
+.editvars {
+  display: flex;
+}
+.editvars span{
+  margin-left: 16px;
+}
+
+p {
+  font-weight: 400;
+}

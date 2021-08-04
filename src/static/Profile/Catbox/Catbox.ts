@@ -1,11 +1,17 @@
 import { defineComponent } from 'vue'
 
-import Catbox from './Catbox/Catbox.vue';
+import IPreference from '@/Model/Preference';
 
 export default defineComponent({
-  name: "Profile",
-  components: {
-    Catbox
+  name: "Catbox",
+  props: {
+    categoryname: {
+      type: String,
+      required: true
+    },
+    preferences: {
+      type: Array
+    }
   },
   data: function() {
     return {

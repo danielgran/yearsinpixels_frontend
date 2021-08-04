@@ -1,6 +1,8 @@
 <template>
   <div>
-    That is the user profile of the currently logged in User
+    <div id="profile">
+      <Catbox />
+    </div>
   </div>
 </template>
 

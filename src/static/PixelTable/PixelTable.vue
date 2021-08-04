@@ -22,7 +22,6 @@
               {{month.name}}
               -->
               <div class="daypixel" :style="{backgroundColor: randomColor()}">
-                
               </div>
             </td>
           </tr>

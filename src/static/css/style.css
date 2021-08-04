@@ -149,3 +149,9 @@ input[type="button"]:hover {
   }
 }
 /* #endregion */
+
+
+p {
+  color: #707070;
+  font-size: 0.95rem;
+}
