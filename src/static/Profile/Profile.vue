@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="profile">
-      <Catbox />
+      <Catbox categoryname="Personal Data" :preferences="[{name: 'E-Mail', value: 'sag.ich@net.de'}, {name: 'Username', value: 'danielkillergriller'}]" />
     </div>
   </div>
 </template>

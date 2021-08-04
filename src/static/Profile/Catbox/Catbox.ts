@@ -4,15 +4,7 @@ import IPreference from '@/Model/Preference';
 
 export default defineComponent({
   name: "Catbox",
-  props: {
-    categoryname: {
-      type: String,
-      required: true
-    },
-    preferences: {
-      type: Array
-    }
-  },
+  props: ['categoryname', 'preferences'],
   data: function() {
     return {
       box1: "",
