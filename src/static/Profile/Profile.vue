@@ -7,11 +7,10 @@
 </template>
 
 <script lang="ts">
-import Login from "./Profile";
+import Profile from "./Profile";
 
-export default Login;
+export default Profile;
 </script>
 
 <style scoped src="./Profile.css">
 </style>
-
