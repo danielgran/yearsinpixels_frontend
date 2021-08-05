@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue'
 
-import IPreference from '@/Model/Preference';
+import IPreference from '@/Model/Preference/IPreference';
 
 export default defineComponent({
   name: "Catbox",
