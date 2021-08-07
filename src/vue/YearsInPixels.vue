@@ -21,8 +21,9 @@ export default defineComponent({
     this.$store.commit("mockday");
     console.log(this.$store);
     return {
-      testdata: this.$store.state.localUser,
+      testdata: this.$store.state,
     };
   },
 });
-</script>
+</script>s
+<style scoped src="./YearsInPixels.css" />

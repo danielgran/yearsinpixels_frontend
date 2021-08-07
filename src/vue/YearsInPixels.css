@@ -1,0 +1,16 @@
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #ececec;
+}
+
+#header {
+  height: auto;
+}
+
+#main-view {
+  overflow: hidden;
+  height: 100%;
+  width: 100vw;
+}
