@@ -11,9 +11,11 @@
   width: 108px;
   height: 108px;
   border: 0.15rem solid gray;
+  padding: -3px;
 }
 
 img {
   max-width:102%;
   max-height:102%;
+  transform: scale(1.1);
 }
