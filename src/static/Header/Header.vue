@@ -18,7 +18,7 @@
       <div class="header-item">
         <router-link to="/profile">
           <span>
-            <i class="fas fa-user-circle" />
+            <i class="fas fa-user-circle fa-sm" />
           </span>
         </router-link>
       </div>
