@@ -10,7 +10,6 @@ a {
   outline: none;
   color: #3c1efa;
   text-decoration: none !important;
-  font-size: 1.1rem;
 }
 
 a:hover {
@@ -24,49 +23,37 @@ h3,
 h4,
 h5,
 h6 {
-  color: #C08FC2;
+  color: #c08fc2;
 }
 /* #endregion */
 
-
-/* #region Input Styling */
+/* #region Button Styling */
 button {
-  font-size: 1.1rem;
-  font-weight: bold;
   background: #3c1efa;
   color: #ececec;
-  padding: 5px 20px;
-  border-radius: 20px;
-}
-
-input,
-textarea {
-  font-size: 1.2rem;
 }
 /* #endregion */
-
 
 /* #region Width repair */
 input[type="text"],
 input[type="password"],
-textarea {
+input[type="button"] textarea {
   box-sizing: border-box;
-  font-size: 1.2rem;
 }
 /*#endregion */
-
 
 /* #region Size matching of different input types */
 input[type="text"],
 input[type="password"],
 input[type="button"],
 textarea {
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
   border: none;
   padding: 15px 20px;
   border-radius: 30px;
 }
 /*#endregion */
-
 
 /* #region Remove standard outlines (they are odd) */
 input[type="text"]:focus,
@@ -76,10 +63,9 @@ textarea {
 }
 /* #endregion */
 
-
 /* #region Font Sizes */
 h1 {
-  font-size: 8.0rem;
+  font-size: 8rem;
 }
 
 h2 {
@@ -94,23 +80,22 @@ h4 {
   font-size: 1.3rem;
 }
 
-p {
+a,
+p,
+input,
+textarea {
   font-size: 1rem;
 }
 
 /* #endregion */
-
-
 
 /* #region Placeholder color */
 input[type="text"]::placeholder,
 input[type="password"]::placeholder,
 textarea::placeholder {
   color: gray;
-  font-weight: bold;
 }
 /* #endregion */
-
 
 /* #region Button Color styling */
 input[type="button"] {
@@ -119,27 +104,23 @@ input[type="button"] {
 }
 /* #endregion */
 
-
 /* #region Button hover and click effect*/
-
 input[type="button"]:hover {
   background: #3c79fa;
   cursor: pointer;
 }
-
 /* #endregion */
 
-
 /* #region No troll clients */
-@media only screen and (max-width: 255px){
+@media only screen and (max-width: 255px) {
   html {
     display: none;
   }
 }
 /* #endregion */
 
-
+/* #region Color styling */
 p {
   color: #707070;
-  font-size: 0.95rem;
 }
+/* #endregion */
