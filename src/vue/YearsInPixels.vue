@@ -9,24 +9,20 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import Header from '@/static/Header/Header.vue'
+import Header from "@/static/Header/Header.vue";
 
 export default defineComponent({
   name: "YearsInPixels",
   components: {
-    Header
+    Header,
   },
 
   data: function() {
-
-    this.$store.commit('mockday');
-    
-    console.log(this.$store)
+    this.$store.commit("mockday");
+    console.log(this.$store);
     return {
-      testdata: this.$store.state.localUser
-    }
+      testdata: this.$store.state.localUser,
+    };
   },
-
-
 });
-</script> 
+</script>
