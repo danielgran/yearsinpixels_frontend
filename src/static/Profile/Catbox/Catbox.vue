@@ -2,14 +2,14 @@
   <div>
     <div class="catbox">
       <p class="cattitle">
-        {{categoryname}}
+        {{categoryName}}
       </p>
       <div class="editbox" v-for="preference in preferences" :key="preference">
-        <p>{{preference.name}}</p>
+        <p :style="preference.CSSname">{{preference.name}}</p>
         <div class="editvars">
-          <p>{{preference.value}}</p>
-          <span>
-            <i class="fas fa-pen" />
+          <p class="preferenceValue">{{preference.value}}</p>
+          <span v-if="preference.displayEdit">
+            <i class="editIcon fas fa-pencil-alt fa-sm" />
           </span>
         </div>
       </div>
