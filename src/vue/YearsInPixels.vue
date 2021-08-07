@@ -25,5 +25,5 @@ export default defineComponent({
     };
   },
 });
-</script>s
+</script>
 <style scoped src="./YearsInPixels.css" />
