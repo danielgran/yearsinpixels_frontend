@@ -1,4 +1,4 @@
-import IRequest from "@/API/IRequest";
+import IRequest from "@/API/Request/IRequest";
 import IResponse from "./IResponse";
 
 export default interface IAPI

@@ -16,7 +16,6 @@ export default class DefaultActions implements IActions {
         // some api calls to finally receive the user from the backend
 
         let tempUser = new User();
-        tempUser.email = bumm.email;
         tempUser.username = "Ein krasser Benutzername"; // TODO
 
         state.commit("SetUser", tempUser);
