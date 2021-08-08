@@ -1,10 +1,7 @@
-import IFrontend  from "@/struct/IFrontend";
-
+import IFrontend from "@/struct/IFrontend";
 import VueFrontend from "@/vue/VueFrontend/VueFrontend";
 
+import YearsInPixels from "@/vue/YearsInPixels.vue";
 
-import YearsInPixels from "@/vue/YearsInPixels.vue"
-
-
-let frontend: IFrontend = new VueFrontend(YearsInPixels)
+let frontend: IFrontend = new VueFrontend(YearsInPixels);
 frontend.StartFrontend();
