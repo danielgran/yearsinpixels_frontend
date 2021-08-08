@@ -46,11 +46,11 @@ export default class VueInstance implements IVueInstance {
       new DefaultMutations(),
       new DefaultActions()
     );
-    this.Instance.use(stmgmt.plugin);
+    this.Instance.use(stmgmt.Plugin);
 
     // Initialize Vue-Router
     let router: IVueRouterPlugin = new VueRouterRouter(DefaultRoutes);
-    this.Instance.use(router.plugin);
+    this.Instance.use(router.Plugin);
 
     // Finally mount the app
     this.Instance.mount("#app");

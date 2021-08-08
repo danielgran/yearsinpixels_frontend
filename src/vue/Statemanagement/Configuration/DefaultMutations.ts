@@ -1,26 +1,20 @@
-import IMutations from "@/vue/Statemanagement/IMutations"
+import IMutations from "@/vue/Statemanagement/IMutations";
 
-import User from "@/Model/User"
-
+import User from "@/Model/User";
 
 export default class DefaultMutations implements IMutations {
+  Mutations: {};
 
-  Mutations: {}
-
-  constructor(){
+  constructor() {
     this.Mutations = {
-      
-      mockday(state: any)
-      {
-        state.name = "Whoop"
+      mockday(state: any) {
+        state.name = "Whoop";
       },
 
-      SetUser(state: any, payload: User)
-      {
-        console.log(payload)
-        state.localUser = payload
-      }
-
-    }
+      SetUser(state: any, payload: User) {
+        console.log(payload);
+        state.localUser = payload;
+      },
+    };
   }
 }

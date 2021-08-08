@@ -1,3 +1,3 @@
 export default interface IVueUsable {
-    plugin: any
+  Plugin: any;
 }

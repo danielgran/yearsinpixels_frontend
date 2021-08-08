@@ -1,9 +1,8 @@
-import { Day } from "@/Model/Day";
-import { User } from "@/Model/User";
+import Day from "@/Model/Day";
+import User from "@/Model/User";
 
 export default interface IState {
-  name: String;
-  localUser: User;
-  days: Day[];
-
+  Name: String;
+  LocalUser: User;
+  Days: Day[];
 }

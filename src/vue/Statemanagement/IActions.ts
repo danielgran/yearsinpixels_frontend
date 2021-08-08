@@ -1,4 +1,3 @@
-export default interface IActions
-{
-  Actions: {}
+export default interface IActions {
+  Actions: {};
 }
