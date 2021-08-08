@@ -1,7 +1,7 @@
 import IFrontend from "@/struct/IFrontend";
 import IVueInstance from "@/vue/IVueInstance";
 
-import VueInstance from "@/vue/VueInstance/VueInstance";
+import VueInstance from "@/vue/VueInstance";
 import { Component } from "vue";
 
 export default class VueFrontend implements IFrontend {

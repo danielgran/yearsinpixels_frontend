@@ -1,5 +1,5 @@
 import IFrontend from "@/struct/IFrontend";
-import VueFrontend from "@/vue/VueFrontend/VueFrontend";
+import VueFrontend from "@/vue/VueFrontend";
 
 import YearsInPixels from "@/vue/YearsInPixels.vue";
 
