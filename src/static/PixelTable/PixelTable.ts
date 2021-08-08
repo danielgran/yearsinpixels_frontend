@@ -3,7 +3,9 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: "PixelTable",
+  inject: ['rrrr'],
   data: function() {
+    console.log(this.rrrr);
     return {
       months: [
         { name: "Jan" },
