@@ -1,11 +1,11 @@
 import UserProfile from "./UserProfile";
 
 export default class User {
-  username: string;
-  profile: UserProfile;
+  Username: string;
+  Profile: UserProfile;
 
   constructor() {
-    this.username = "";
-    this.profile = new UserProfile();
+    this.Username = "";
+    this.Profile = new UserProfile();
   }
 }

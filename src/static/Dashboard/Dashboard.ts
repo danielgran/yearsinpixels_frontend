@@ -4,7 +4,7 @@ export default defineComponent({
   name: "Dashboard",
   data: function() {
     return {
-      username: this.$store.state.LocalUser.Email,
+      username: this.$store.state.LocalUser.Username
     };
   },
 });
