@@ -14,5 +14,4 @@ import ProfilePicture from "./ProfilePicture";
 export default ProfilePicture;
 </script>
 
-<style scoped src="./ProfilePicture.css">
-</style>
+<style scoped src="./ProfilePicture.css" />

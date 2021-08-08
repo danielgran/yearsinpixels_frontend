@@ -3,7 +3,7 @@ import IRequest from "@/API/Request/IRequest";
 import IResponse from "@/API/IResponse";
 
 export default class APIGraphQL implements IAPI {
-  request(request: IRequest): IResponse {
+  Request(request: IRequest): IResponse {
     throw new Error("Method not implemented.");
   }
 }

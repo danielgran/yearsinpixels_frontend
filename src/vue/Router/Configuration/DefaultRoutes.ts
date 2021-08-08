@@ -10,29 +10,29 @@ import Pixels from "@/static/Pixels/Pixels.vue";
 
 const DefaultRoutes: IRoute[] = [
   {
-    comp: Landing,
-    path: "/",
-    name: "Landing"
+    Component: Landing,
+    Path: "/",
+    Name: "Landing"
   },
   {
-    comp: Dashboard,
-    path: "/dashboard",
-    name: "Dashboard"
+    Component: Dashboard,
+    Path: "/dashboard",
+    Name: "Dashboard"
   },
   {
-    comp: Login,
-    path: "/login",
-    name: "Login"
+    Component: Login,
+    Path: "/login",
+    Name: "Login"
   },
   {
-    comp: Profile,
-    path: "/profile",
-    name: "Profile"
+    Component: Profile,
+    Path: "/profile",
+    Name: "Profile"
   },
   {
-    comp: Pixels,
-    path: "/pixels",
-    name: "Pixels"
+    Component: Pixels,
+    Path: "/pixels",
+    Name: "Pixels"
   }
 ]
 

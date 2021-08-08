@@ -1,6 +1,6 @@
 <template>
   <div class="landing">
-   <div class="background">
+    <div class="background">
       <img src="@/assets/icon_512_8bit.png" class="imgbgblur" />
       <img src="@/assets/icon_512_8bit.png" class="imgbgblur" />
     </div>

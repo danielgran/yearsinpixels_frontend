@@ -1,12 +1,11 @@
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
-import PixelTable from '@/static/PixelTable/PixelTable.vue'
-
+import PixelTable from "@/static/PixelTable/PixelTable.vue";
 
 export default defineComponent({
   name: "Pixels",
   components: {
-    PixelTable
+    PixelTable,
   },
   data: function() {
     return {
@@ -15,8 +14,5 @@ export default defineComponent({
       box3: "",
     };
   },
-  methods:
-  {
-    
-  }
-})
+  methods: {},
+});

@@ -1,25 +1,17 @@
 import Mood from "./Mood";
 
-
 export default class Day {
+  Date: Date;
 
-  date: Date
+  Title: String;
+  Notes: String;
 
-  title: String
-  notes: String
-
-  mood: Mood
+  Mood: Mood;
 
   constructor() {
-  
-    this.date = new Date();
-    this.title = "";
-    this.notes = "";
-    this.mood = new Mood();
-
-
+    this.Date = new Date();
+    this.Title = "";
+    this.Notes = "";
+    this.Mood = new Mood();
   }
-
-
-
-} 
+}

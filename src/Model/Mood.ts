@@ -1,15 +1,12 @@
 // This class is describing a selectable MoodState in the day selection
 
 export default class Mood {
+  ID: number;
 
-  id: number
-
-  text: string
-
+  Text: string;
 
   constructor() {
-    this.id = 0
-    this.text = "";
+    this.ID = 0;
+    this.Text = "";
   }
-
 }

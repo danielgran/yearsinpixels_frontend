@@ -1,7 +1,6 @@
-export default interface IUserAttribute
-{
-  dbidentifier: String
-  value: String | Date | Number
+export default interface IUserAttribute {
+  DBIdentifier: String;
+  Value: String | Date | Number;
 
-  editAttribute(value: String | Date | Number ) : Boolean;
+  editAttribute(value: String | Date | Number): Boolean;
 }

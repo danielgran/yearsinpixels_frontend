@@ -1,10 +1,7 @@
 export default class UserProfile {
-  username: string
-
+  Username: string;
 
   constructor() {
-  
-    this.username = ""
-  
+    this.Username = "";
   }
 }

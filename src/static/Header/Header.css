@@ -13,7 +13,6 @@
   }
 }
 
-
 .header-item {
   display: flex;
   justify-content: center;
@@ -26,16 +25,14 @@
 }
 
 #logo {
- width: 29px;
+  width: 29px;
 }
 
 @media only screen and (min-width: 380px) {
   #logo {
     width: 36px;
-  } 
+  }
 }
-
-
 
 span {
   color: #c08fc2;

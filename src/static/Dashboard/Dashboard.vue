@@ -14,9 +14,7 @@
             <h2>2021</h2>
           </div>
           <div id="daystatus">
-            <p>
-              Dein heutiger Tag war <b style="color: #07e878">fantastisch</b>.
-            </p>
+            <p>Dein heutiger Tag war <b style="color: #07e878">fantastisch</b>.</p>
           </div>
         </div>
       </div>
@@ -30,5 +28,4 @@ import Dashboard from "./Dashboard";
 export default Dashboard;
 </script>
 
-<style scoped src="./Dashboard.css">
-</style>
+<style scoped src="./Dashboard.css" />

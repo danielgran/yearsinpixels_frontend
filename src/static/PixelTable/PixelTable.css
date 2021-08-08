@@ -30,7 +30,6 @@ td {
 }
 
 td:not(:first-of-type) {
-
   border: 0.05rem solid #707070;
 }
 

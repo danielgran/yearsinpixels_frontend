@@ -5,7 +5,7 @@ export default defineComponent({
   props: {
     linkPicture: {
       type: String,
-      default: "https://www.grandaniel.com/profile.png"
+      default: "https://www.grandaniel.com/profile.png",
     },
   },
   data: function() {

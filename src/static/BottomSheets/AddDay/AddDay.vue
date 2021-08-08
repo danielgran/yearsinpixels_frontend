@@ -20,5 +20,4 @@ import AddDay from "./AddDay";
 export default AddDay;
 </script>
 
-<style scoped src="./AddDay.css">
-</style>
+<style scoped src="./AddDay.css" />

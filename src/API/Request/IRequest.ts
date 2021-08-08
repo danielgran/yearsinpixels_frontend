@@ -1,5 +1,1 @@
-export default interface IRequest {
-
-  
-  
-}
+export default interface IRequest {}

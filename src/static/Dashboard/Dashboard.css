@@ -1,5 +1,5 @@
 #dashboard {
-  background: #ECECEC;
+  background: #ececec;
   height: 100%;
 }
 
@@ -7,7 +7,7 @@
   height: inherit;
   width: 100%;
   align-items: center;
-  background: #ECECEC;
+  background: #ececec;
   max-width: 960px;
 }
 
@@ -28,7 +28,7 @@
 
 #greeting {
 }
- 
+
 #greeting h4 {
   color: #010101;
 }
@@ -39,9 +39,8 @@
 }
 
 #date h1 {
-  font-size: 6.0rem;
+  font-size: 6rem;
 }
-
 
 #daystatus {
   text-align: center;
@@ -56,7 +55,7 @@ b {
 #footer {
   height: 660px;
   width: 92%;
-  background: #ECECEC;
+  background: #ececec;
   box-shadow: 0px 0px 22px rgba(1, 1, 1, 0.2);
   border-top-left-radius: 1.3rem 1.3rem;
   border-top-right-radius: 1.3rem 1.3rem;

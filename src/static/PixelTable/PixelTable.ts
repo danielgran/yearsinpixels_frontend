@@ -1,9 +1,8 @@
-import { defineComponent } from 'vue'
-
+import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "PixelTable",
-  inject: ['rrrr'],
+  inject: ["rrrr"],
   data: function() {
     console.log(this.rrrr);
     return {
@@ -19,17 +18,16 @@ export default defineComponent({
         { name: "Sep" },
         { name: "Okt" },
         { name: "Nov" },
-        { name: "Dez" }
-      ]
+        { name: "Dez" },
+      ],
     };
   },
-  methods:
-  {
+  methods: {
     randomColor() {
       const r = () => Math.floor(256 * Math.random());
 
-      let rgb =  `rgb(${r()}, ${r()}, ${r()})`;
+      let rgb = `rgb(${r()}, ${r()}, ${r()})`;
       return rgb;
-    }
-  }
-})
+    },
+  },
+});

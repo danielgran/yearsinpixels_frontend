@@ -6,7 +6,7 @@
 .cattitle {
   font-size: 1rem;
   font-weight: 600;
-  padding: 0 0 4px 14px
+  padding: 0 0 4px 14px;
 }
 
 .editbox {
@@ -14,7 +14,6 @@
   display: flex;
   justify-content: space-between;
   border-top: 1px solid rgba(112, 112, 112, 0.3);
-
 }
 
 .editbox:last-of-type {
@@ -24,7 +23,7 @@
 .editvars {
   display: flex;
 }
-.editvars span{
+.editvars span {
   margin-left: 16px;
 }
 
@@ -38,6 +37,6 @@ p {
 }
 
 .editIcon {
-  color: #C08FC2;
+  color: #c08fc2;
   width: 10pxs;
 }
