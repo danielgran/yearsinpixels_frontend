@@ -29,5 +29,3 @@ export default class VueRouterRouter implements IVueRouterPlugin {
     this.Plugin = router;
   }
 }
-
-// inverse a binary tree
