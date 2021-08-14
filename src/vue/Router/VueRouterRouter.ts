@@ -14,9 +14,9 @@ export default class VueRouterRouter implements IVueRouterPlugin {
     let realRoutes = [];
     for (let i = 0; i < this.Routes.length; i++) {
       realRoutes.push({
-        Component: this.Routes[i].Component,
-        Path: this.Routes[i].Path,
-        Name: this.Routes[i].Name,
+        component: this.Routes[i].Component,
+        path: this.Routes[i].Path,
+        name: this.Routes[i].Name,
       });
     }
 
@@ -29,3 +29,5 @@ export default class VueRouterRouter implements IVueRouterPlugin {
     this.Plugin = router;
   }
 }
+
+// inverse a binary tree
