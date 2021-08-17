@@ -19,7 +19,6 @@ export default defineComponent({
 
   data: function() {
     this.$store.commit("mockday");
-    console.log(this.$store);
     return {
       testdata: this.$store.state,
     };

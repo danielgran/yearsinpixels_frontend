@@ -12,7 +12,6 @@ export default class DefaultMutations implements IMutations {
       },
 
       SetUser(state: any, payload: User) {
-        console.log(payload);
         state.localUser = payload;
       },
     };

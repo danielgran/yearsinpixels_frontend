@@ -1,4 +1,4 @@
-// UI and stuff
+// Fontawesome implementation
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 
@@ -24,6 +24,10 @@ import DefaultActions from "@/vue/Statemanagement/Configuration/DefaultActions";
 
 // Router Configuration
 import DefaultRoutes from "@/vue/Router/Configuration/DefaultRoutes";
+import IState from "./Statemanagement/IState";
+import IMutations from "./Statemanagement/IMutations";
+import IActions from "./Statemanagement/IActions";
+import IRoute from "./Router/IRoute";
 
 // This is the default Vue instance loaded in the project
 export default class VueInstance implements IVueInstance {
@@ -41,22 +45,34 @@ export default class VueInstance implements IVueInstance {
     this.Instance = createApp(this.RootComponent);
 
     // Initialize State management
-    let stmgmt: IVueStorePlugin = new VuexStore(
+    let statemangementInstance = this.CreateStatemanagementInstance(
       new DefaultState(),
       new DefaultMutations(),
       new DefaultActions()
     );
-    this.Instance.use(stmgmt.Plugin);
+    this.Instance.use(statemangementInstance.Plugin);
 
-    // Initialize Vue-Router
-    let router: IVueRouterPlugin = new VueRouterRouter(DefaultRoutes);
+    // Initialize the Vue Router
+    let router = this.CreateRouterInstance(DefaultRoutes);
     this.Instance.use(router.Plugin);
 
-    // Finally mount the app
     this.Instance.mount("#app");
   }
 
   StopInstance(): void {
     this.Instance?.unmount();
+    delete this.Instance
+  }
+
+  private CreateStatemanagementInstance(
+    state: IState,
+    mutations: IMutations,
+    actions: IActions
+  ): IVueStorePlugin {
+    return new VuexStore(state, mutations, actions);
+  }
+
+  private CreateRouterInstance(routes: IRoute[]): IVueRouterPlugin {
+    return new VueRouterRouter(routes);
   }
 }
