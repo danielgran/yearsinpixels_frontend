@@ -51,18 +51,30 @@ export default class VueInstance implements IVueInstance {
       new DefaultMutations(),
       new DefaultActions()
     );
-    this.Instance.use(statemangementInstance.Plugin);
+    this.RegisterPluginOnVueInstance(statemangementInstance.Plugin);
 
     // Initialize the Vue Router
     let router = this.CreateRouterInstance(DefaultRoutes);
-    this.Instance.use(router.Plugin);
+    this.RegisterPluginOnVueInstance(router.Plugin);
 
-    this.Instance.mount("#app");
+    this.MountVueInstanceOnId("#app");
   }
 
   StopInstance(): void {
+    this.UnmountVueInstance();
+    this.DeleteVueInstance();
+  }
+
+  public MountVueInstanceOnId(id: String): void {
+    this.Instance?.mount(id);
+  }
+
+  public UnmountVueInstance(): void {
     this.Instance?.unmount();
-    delete this.Instance
+  }
+
+  public DeleteVueInstance(): void {
+    delete this.Instance;
   }
 
   private CreateStatemanagementInstance(
@@ -75,5 +87,9 @@ export default class VueInstance implements IVueInstance {
 
   private CreateRouterInstance(routes: IRoute[]): IVueRouterPlugin {
     return new VueRouterRouter(routes);
+  }
+
+  RegisterPluginOnVueInstance(plugin: any): void {
+    this.Instance?.use(plugin);
   }
 }
