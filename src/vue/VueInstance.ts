@@ -12,6 +12,10 @@ import { App, Component, createApp, toHandlers } from "vue";
 import IVueInstance from "@/vue/IVueInstance";
 import IVueStorePlugin from "@/vue/Statemanagement/IVueStorePlugin";
 import IVueRouterPlugin from "@/vue//Router/IVueRouterPlugin";
+import IState from "./Statemanagement/IState";
+import IMutations from "./Statemanagement/IMutations";
+import IActions from "./Statemanagement/IActions";
+import IRoute from "./Router/IRoute";
 
 // Plugins
 import VuexStore from "@/vue/Statemanagement/VuexStore";
@@ -24,10 +28,7 @@ import DefaultActions from "@/vue/Statemanagement/Configuration/DefaultActions";
 
 // Router Configuration
 import DefaultRoutes from "@/vue/Router/Configuration/DefaultRoutes";
-import IState from "./Statemanagement/IState";
-import IMutations from "./Statemanagement/IMutations";
-import IActions from "./Statemanagement/IActions";
-import IRoute from "./Router/IRoute";
+
 
 // This is the default Vue instance loaded in the project
 export default class VueInstance implements IVueInstance {
