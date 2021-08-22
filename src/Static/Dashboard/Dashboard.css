@@ -1,0 +1,63 @@
+#dashboard {
+  background: #ececec;
+  height: 100%;
+}
+
+#container {
+  height: inherit;
+  width: 100%;
+  align-items: center;
+  background: #ececec;
+  max-width: 960px;
+}
+
+@media only screen and (min-width: 960px) {
+  #container {
+    border-radius: 30px;
+    box-shadow: 0px 0px 100px rgba(1, 1, 1, 0.1);
+  }
+}
+
+#content {
+  height: max-content;
+  display: flex;
+  margin: 30px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#greeting {
+}
+
+#greeting h4 {
+  color: #010101;
+}
+
+#date {
+  text-align: center;
+  margin: 20px 0 20px 0;
+}
+
+#date h1 {
+  font-size: 6rem;
+}
+
+#daystatus {
+  text-align: center;
+}
+
+#daystatus p,
+b {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+#footer {
+  height: 660px;
+  width: 92%;
+  background: #ececec;
+  box-shadow: 0px 0px 22px rgba(1, 1, 1, 0.2);
+  border-top-left-radius: 1.3rem 1.3rem;
+  border-top-right-radius: 1.3rem 1.3rem;
+  text-align: center;
+}

@@ -1,7 +1,7 @@
 import Frontend from "@/Application/Frontend";
 
 // Concrete Styling Dependencies
-import "@/static/css/style.css";
+import "@/Static/css/style.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 

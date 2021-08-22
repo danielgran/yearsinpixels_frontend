@@ -1,0 +1,127 @@
+/* #region Standard Styling */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: basic-sans, Arial, sans-serif;
+}
+
+a {
+  outline: none;
+  color: #3c1efa;
+  text-decoration: none !important;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #3c79fa;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #c08fc2;
+}
+/* #endregion */
+
+/* #region Button Styling */
+button {
+  background: #3c1efa;
+  color: #ececec;
+}
+/* #endregion */
+
+/* #region Width repair */
+input[type="text"],
+input[type="password"],
+input[type="button"] textarea {
+  box-sizing: border-box;
+}
+/*#endregion */
+
+/* #region Size matching of different input types */
+input[type="text"],
+input[type="password"],
+input[type="button"],
+textarea,
+button {
+  -webkit-border-radius: 0;
+  -webkit-appearance: none;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 30px;
+}
+/*#endregion */
+
+/* #region Remove standard outlines (they are odd) */
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea {
+  outline: none;
+}
+/* #endregion */
+
+/* #region Font Sizes */
+h1 {
+  font-size: 8rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+}
+
+a,
+p,
+input,
+textarea {
+  font-size: 1rem;
+}
+
+/* #endregion */
+
+/* #region Placeholder color */
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder {
+  color: gray;
+}
+/* #endregion */
+
+/* #region Button Color styling */
+input[type="button"] {
+  color: #ececec;
+  background: #3c1efa;
+}
+/* #endregion */
+
+/* #region Button hover and click effect*/
+input[type="button"]:hover {
+  background: #3c79fa;
+  cursor: pointer;
+}
+/* #endregion */
+
+/* #region No troll clients */
+@media only screen and (max-width: 255px) {
+  html {
+    display: none;
+  }
+}
+/* #endregion */
+
+/* #region Color styling */
+p {
+  color: #707070;
+}
+/* #endregion */

@@ -1,15 +1,17 @@
 import { defineComponent } from "vue";
 
-import PixelTable from "@/Static/PixelTable/PixelTable.vue";
+import Catbox from "./Catbox/Catbox.vue";
+import ProfilePicture from "./ProfilePicture/ProfilePicture.vue";
 
 export default defineComponent({
-  name: "Pixels",
+  name: "Profile",
   components: {
-    PixelTable,
+    Catbox,
+    ProfilePicture,
   },
   data: function() {
     return {
-      year: "2020",
+      box1: "",
       box2: "",
       box3: "",
     };

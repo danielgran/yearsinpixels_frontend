@@ -8,7 +8,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import Header from "@/static/Header/Header.vue";
+import Header from "@/Static/Header/Header.vue";
 
 export default defineComponent({
   name: "YearsInPixels",

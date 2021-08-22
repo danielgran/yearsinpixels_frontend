@@ -1,11 +1,11 @@
 import IRoute from "@/Frontend/Router/IRoute";
 
 
-import Dashboard from "@/static/Dashboard/Dashboard.vue";
-import Landing from "@/static/Landing/Landing.vue";
-import Login from "@/static/Login/Login.vue";
-import Profile from "@/static/Profile/Profile.vue";
-import Pixels from "@/static/Pixels/Pixels.vue";
+import Dashboard from "@/Static/Dashboard/Dashboard.vue";
+import Landing from "@/Static/Landing/Landing.vue";
+import Login from "@/Static/Login/Login.vue";
+import Profile from "@/Static/Profile/Profile.vue";
+import Pixels from "@/Static/Pixels/Pixels.vue";
 
 
 const DefaultRoutes: IRoute[] = [

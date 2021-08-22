@@ -1,15 +1,16 @@
 import { defineComponent } from "vue";
 
-import PixelTable from "@/Static/PixelTable/PixelTable.vue";
-
 export default defineComponent({
-  name: "Pixels",
-  components: {
-    PixelTable,
+  name: "Catbox",
+  props: {
+    linkPicture: {
+      type: String,
+      default: "https://www.grandaniel.com/profile.png",
+    },
   },
   data: function() {
     return {
-      year: "2020",
+      box1: "",
       box2: "",
       box3: "",
     };
