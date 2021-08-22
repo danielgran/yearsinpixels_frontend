@@ -9,8 +9,6 @@ export default class Username implements IUserAttribute {
 
   constructor() {
     this.DBIdentifier = "user";
-    // todo get the proper value from the database Backend etc, class would not really be needed
-
     this.Value = "danielkillergriller";
   }
 }

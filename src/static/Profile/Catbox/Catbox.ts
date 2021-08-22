@@ -12,7 +12,6 @@ export default defineComponent({
       default: function() {
         return [
           {
-            // make a class from an ipreference model from that to achive better defaults by object creation!
             name: "undefined",
             value: "undefined",
             displayEdit: true,

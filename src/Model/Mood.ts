@@ -1,5 +1,3 @@
-// This class is describing a selectable MoodState in the day selection
-
 export default class Mood {
   ID: number;
 

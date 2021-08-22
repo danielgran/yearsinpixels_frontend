@@ -10,22 +10,26 @@ export default class VueRouterRouter implements IVueRouterPlugin {
   constructor(routes: IRoute[]) {
     this.Routes = routes;
 
-    // Convert the interface array back to a normal array
-    let realRoutes = [];
-    for (let i = 0; i < this.Routes.length; i++) {
-      realRoutes.push({
-        component: this.Routes[i].Component,
-        path: this.Routes[i].Path,
-        name: this.Routes[i].Name,
-      });
-    }
-
-    // That is the "implementation of the adapter" which connects to another interface
+    let routerRoutes = this.ConvertToLegacyArray(routes);
     const router = createRouter({
-      routes: realRoutes,
+      routes: routerRoutes,
       history: createWebHistory(),
     });
 
     this.Plugin = router;
+  }
+
+  private ConvertToLegacyArray(routes: IRoute[]): Array<any> {
+    let returnRoutes = [];
+
+    for (let i = 0; i < routes.length; i++) {
+      returnRoutes.push({
+        component: routes[i].Component,
+        path: routes[i].Path,
+        name: routes[i].Name,
+      });
+    }
+
+    return returnRoutes;
   }
 }

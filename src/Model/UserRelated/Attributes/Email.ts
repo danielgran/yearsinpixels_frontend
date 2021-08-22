@@ -9,8 +9,6 @@ export default class Email implements IUserAttribute {
 
   constructor() {
     this.DBIdentifier = "email";
-    // todo get the proper value from the database Backend etc, class would not really be needed
-
     this.Value = "daniel.gran@mailbox.org";
   }
 }
