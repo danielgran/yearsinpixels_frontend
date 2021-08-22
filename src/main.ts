@@ -1,7 +1,7 @@
-import IFrontend from "@/struct/IFrontend";
-import VueFrontend from "@/vue/VueFrontend";
+import Frontend from "./Application/Frontend";
+import FrontendFactory from "./Application/FrontendFactory";
+import FrontendFactoryImplementation from "./Application/FrontendFactoryImplementation";
 
-import YearsInPixels from "@/vue/YearsInPixels.vue";
-
-let frontend: IFrontend = new VueFrontend(YearsInPixels);
+let factory: FrontendFactory= new FrontendFactoryImplementation();
+let frontend: Frontend = factory.MakeFrontend();
 frontend.StartFrontend();

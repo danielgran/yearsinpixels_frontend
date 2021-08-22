@@ -5,11 +5,16 @@ import "@fortawesome/fontawesome-free/js/all.js";
 // Global CSS defines
 import "@/static/css/style.css";
 
+// Inheritance from the Frontend Interface
+import Frontend from "@/Application/Frontend";
+
+// The Root Component
+import YearsInPixels from "@/vue/YearsInPixels.vue";
+
 // Vue itself
-import { App, Component, createApp, toHandlers } from "vue";
+import { App, Component, createApp } from "vue";
 
 // Interfaces
-import IVueInstance from "@/vue/IVueInstance";
 import IVueStorePlugin from "@/vue/Statemanagement/IVueStorePlugin";
 import IVueRouterPlugin from "@/vue//Router/IVueRouterPlugin";
 import IState from "./Statemanagement/IState";
@@ -30,22 +35,20 @@ import DefaultActions from "@/vue/Statemanagement/Configuration/DefaultActions";
 import DefaultRoutes from "@/vue/Router/Configuration/DefaultRoutes";
 
 
-// This is the default Vue instance loaded in the project
-export default class VueInstance implements IVueInstance {
-  Instance: App | undefined;
 
+// This is the default Vue instance loaded in the project
+export default class YearsInPixelsFrontend implements Frontend {
+  Instance: App | undefined;
   RootComponent: Component;
 
-  constructor(rootComponent: Component) {
-    this.RootComponent = rootComponent;
-    this.Instance = createApp({});
+  constructor() {
+    this.RootComponent = YearsInPixels;
   }
 
-  StartInstance(): void {
-    // Create the Root Vue Instance
+  StartFrontend(): void {
+    // Set the Root Vue Instance with the Root Component
     this.Instance = createApp(this.RootComponent);
 
-    // Initialize State management
     let statemangementInstance = this.CreateStatemanagementInstance(
       new DefaultState(),
       new DefaultMutations(),
@@ -53,14 +56,13 @@ export default class VueInstance implements IVueInstance {
     );
     this.RegisterPluginOnVueInstance(statemangementInstance.Plugin);
 
-    // Initialize the Vue Router
     let router = this.CreateRouterInstance(DefaultRoutes);
     this.RegisterPluginOnVueInstance(router.Plugin);
 
     this.MountVueInstanceOnId("#app");
   }
 
-  StopInstance(): void {
+  StopFrontend(): void {
     this.UnmountVueInstance();
     this.DeleteVueInstance();
   }
