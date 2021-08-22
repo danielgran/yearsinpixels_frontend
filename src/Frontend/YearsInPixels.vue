@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!--<p>localUser: {{ testdata }}</p>-->
     <Header id="header" />
     <router-view id="main-view" />
   </div>
