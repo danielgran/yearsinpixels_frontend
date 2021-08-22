@@ -1,12 +1,15 @@
-// Fontawesome implementation
+import Frontend from "@/Application/Frontend";
+
+// Concrete Styling Dependencies
+import "@/static/css/style.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all.js";
 
-// Global CSS defines
-import "@/static/css/style.css";
-
-// Inheritance from the Frontend Interface
-import Frontend from "@/Application/Frontend";
+// Interfaces
+import IState from "./Statemanagement/IState";
+import IMutations from "./Statemanagement/IMutations";
+import IActions from "./Statemanagement/IActions";
+import IRoute from "./Router/IRoute";
 
 // The Root Component
 import YearsInPixels from "@/Frontend/YearsInPixels.vue";
@@ -14,29 +17,21 @@ import YearsInPixels from "@/Frontend/YearsInPixels.vue";
 // Vue itself
 import { App, Component, createApp } from "vue";
 
-// Interfaces
-import IVueStorePlugin from "@/Frontend/Statemanagement/IVueStorePlugin";
-import IVueRouterPlugin from "@/Frontend/Router/IVueRouterPlugin";
-import IState from "./Statemanagement/IState";
-import IMutations from "./Statemanagement/IMutations";
-import IActions from "./Statemanagement/IActions";
-import IRoute from "./Router/IRoute";
-
 // Plugins
+import IVueStorePlugin from "@/Frontend/Statemanagement/IVueStorePlugin";
 import VuexStore from "@/Frontend/Statemanagement/VuexStore";
+
+import IVueRouterPlugin from "@/Frontend/Router/IVueRouterPlugin";
 import VueRouterRouter from "@/Frontend/Router/VueRouterRouter";
 
-// Statemanagement Configuration
+// Statemamangement Concretion
 import DefaultState from "@/Frontend/Statemanagement/Configuration/DefaultState";
 import DefaultMutations from "@/Frontend/Statemanagement/Configuration/DefaultMutations";
 import DefaultActions from "@/Frontend/Statemanagement/Configuration/DefaultActions";
 
-// Router Configuration
+// Router Concretion
 import DefaultRoutes from "@/Frontend/Router/Configuration/DefaultRoutes";
 
-
-
-// This is the default Vue instance loaded in the project
 export default class YearsInPixelsFrontend implements Frontend {
   Instance: App | undefined;
   RootComponent: Component;

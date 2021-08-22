@@ -1,4 +1,4 @@
 export default interface Frontend {
-  StartFrontend(): void
-  StopFrontend(): void
+  StartFrontend(): void;
+  StopFrontend(): void;
 }
