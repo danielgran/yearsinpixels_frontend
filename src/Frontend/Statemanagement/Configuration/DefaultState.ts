@@ -1,6 +1,6 @@
 import Day from "@/Model/Day";
 import User from "@/Model/User";
-import IState from "@/vue/Statemanagement/IState";
+import IState from "@/Frontend/Statemanagement/IState";
 
 export default class DefaultState implements IState {
   Name: String;

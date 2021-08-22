@@ -1,4 +1,4 @@
-import YearsInPixelsFrontend from "@/vue/YearsInPixelsFrontend";
+import YearsInPixelsFrontend from "@/Frontend/YearsInPixelsFrontend";
 import Frontend from "./Frontend";
 import FrontendFactory from "./FrontendFactory";
 

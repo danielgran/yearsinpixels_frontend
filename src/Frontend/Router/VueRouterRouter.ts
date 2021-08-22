@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, Router } from "vue-router";
 
-import IVueRouterPlugin from "@/vue/Router/IVueRouterPlugin";
-import IRoute from "@/vue/Router/IRoute";
+import IVueRouterPlugin from "@/Frontend/Router/IVueRouterPlugin";
+import IRoute from "@/Frontend/Router/IRoute";
 
 export default class VueRouterRouter implements IVueRouterPlugin {
   Plugin: Router;

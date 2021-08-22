@@ -2,7 +2,7 @@ import { createStore, Store } from "vuex";
 import createPersistedState from "vuex-persistedstate";
 
 import IState from "./IState";
-import IVueStorePlugin from "@/vue/Statemanagement/IVueStorePlugin";
+import IVueStorePlugin from "@/Frontend/Statemanagement/IVueStorePlugin";
 import IMutations from "./IMutations";
 import IActions from "./IActions";
 

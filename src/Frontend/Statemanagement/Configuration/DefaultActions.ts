@@ -1,4 +1,4 @@
-import IActions from "@/vue/Statemanagement/IActions";
+import IActions from "@/Frontend/Statemanagement/IActions";
 
 import User from "@/Model/User";
 

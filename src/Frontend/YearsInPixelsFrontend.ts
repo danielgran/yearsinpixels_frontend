@@ -9,30 +9,30 @@ import "@/static/css/style.css";
 import Frontend from "@/Application/Frontend";
 
 // The Root Component
-import YearsInPixels from "@/vue/YearsInPixels.vue";
+import YearsInPixels from "@/Frontend/YearsInPixels.vue";
 
 // Vue itself
 import { App, Component, createApp } from "vue";
 
 // Interfaces
-import IVueStorePlugin from "@/vue/Statemanagement/IVueStorePlugin";
-import IVueRouterPlugin from "@/vue//Router/IVueRouterPlugin";
+import IVueStorePlugin from "@/Frontend/Statemanagement/IVueStorePlugin";
+import IVueRouterPlugin from "@/Frontend/Router/IVueRouterPlugin";
 import IState from "./Statemanagement/IState";
 import IMutations from "./Statemanagement/IMutations";
 import IActions from "./Statemanagement/IActions";
 import IRoute from "./Router/IRoute";
 
 // Plugins
-import VuexStore from "@/vue/Statemanagement/VuexStore";
-import VueRouterRouter from "@/vue/Router/VueRouterRouter";
+import VuexStore from "@/Frontend/Statemanagement/VuexStore";
+import VueRouterRouter from "@/Frontend/Router/VueRouterRouter";
 
 // Statemanagement Configuration
-import DefaultState from "@/vue/Statemanagement/Configuration/DefaultState";
-import DefaultMutations from "@/vue/Statemanagement/Configuration/DefaultMutations";
-import DefaultActions from "@/vue/Statemanagement/Configuration/DefaultActions";
+import DefaultState from "@/Frontend/Statemanagement/Configuration/DefaultState";
+import DefaultMutations from "@/Frontend/Statemanagement/Configuration/DefaultMutations";
+import DefaultActions from "@/Frontend/Statemanagement/Configuration/DefaultActions";
 
 // Router Configuration
-import DefaultRoutes from "@/vue/Router/Configuration/DefaultRoutes";
+import DefaultRoutes from "@/Frontend/Router/Configuration/DefaultRoutes";
 
 
 

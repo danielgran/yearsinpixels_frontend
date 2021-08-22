@@ -1,4 +1,4 @@
-import IMutations from "@/vue/Statemanagement/IMutations";
+import IMutations from "@/Frontend/Statemanagement/IMutations";
 
 import User from "@/Model/User";
 

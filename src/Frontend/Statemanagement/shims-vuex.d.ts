@@ -1,5 +1,5 @@
 // This file fixes the vuex store in the components
-import { DefaultVuexStore } from "@/vue/Statemanagement/VuexStore";
+import { DefaultVuexStore } from "@/Frontend/Statemanagement/VuexStore";
 import { Store } from "vuex";
 import IState from "./IState";
 
