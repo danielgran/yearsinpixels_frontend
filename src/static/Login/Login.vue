@@ -2,7 +2,7 @@
   <div>
     <div id="login">
       <div id="loginbox">
-        <img src="@/assets/logo-primary-transparent.png" style="width: 158px" />
+        <img src="@/Assets/logo-primary-transparent.png" style="width: 158px" />
         <form class="userform login">
           <input tabindex="0" type="text" placeholder="E-Mail" v-model="box2" />
           <input tabindex="1" type="password" placeholder="Password" v-model="box2" />
