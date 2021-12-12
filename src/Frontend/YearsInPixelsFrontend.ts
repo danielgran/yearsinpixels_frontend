@@ -15,7 +15,7 @@ import IRoute from "./Router/IRoute";
 import YearsInPixels from "@/Frontend/YearsInPixels.vue";
 
 // Vue itself
-import { App, Component, createApp } from "vue";
+import {App, Component, createApp} from "vue";
 
 // Plugins
 import IVueStorePlugin from "@/Frontend/Statemanagement/IVueStorePlugin";
@@ -44,7 +44,7 @@ export default class YearsInPixelsFrontend implements Frontend {
     // Set the Root Vue Instance with the Root Component
     this.Instance = createApp(this.RootComponent);
 
-    let statemangementInstance = this.CreateStatemanagementInstance(
+    let statemangementInstance = this.CreateStateManagementInstance(
       new DefaultState(),
       new DefaultMutations(),
       new DefaultActions()
@@ -62,6 +62,10 @@ export default class YearsInPixelsFrontend implements Frontend {
     this.DeleteVueInstance();
   }
 
+  protected CreateStateManagementInstance(state: IState, mutations: IMutations, actions: IActions): IVueStorePlugin {
+    return new VuexStore(state, mutations, actions);
+  }
+
   public MountVueInstanceOnId(id: String): void {
     this.Instance?.mount(id);
   }
@@ -74,15 +78,7 @@ export default class YearsInPixelsFrontend implements Frontend {
     delete this.Instance;
   }
 
-  private CreateStatemanagementInstance(
-    state: IState,
-    mutations: IMutations,
-    actions: IActions
-  ): IVueStorePlugin {
-    return new VuexStore(state, mutations, actions);
-  }
-
-  private CreateRouterInstance(routes: IRoute[]): IVueRouterPlugin {
+  protected CreateRouterInstance(routes: IRoute[]): IVueRouterPlugin {
     return new VueRouterRouter(routes);
   }
 

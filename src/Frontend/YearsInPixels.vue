@@ -1,12 +1,12 @@
 <template>
   <div id="app">
-    <Header id="header" />
-    <router-view id="main-view" />
+    <Header id="header"/>
+    <router-view id="main-view"/>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import {defineComponent} from "vue";
 
 import Header from "@/Static/Header/Header.vue";
 
@@ -15,8 +15,10 @@ export default defineComponent({
   components: {
     Header,
   },
-
-  data: function() {
+  mounted() {
+    document.title = "yearsinpixels.com | For Elina"
+  },
+  data: function () {
     this.$store.commit("mockday");
     return {
       testdata: this.$store.state,
@@ -24,4 +26,4 @@ export default defineComponent({
   },
 });
 </script>
-<style scoped src="./YearsInPixels.css" />
+<style scoped src="./YearsInPixels.css"/>
