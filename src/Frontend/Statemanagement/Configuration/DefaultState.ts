@@ -6,11 +6,13 @@ export default class DefaultState implements IState {
   Name: String;
   Days: Day[];
   LocalUser: User;
+  LoggedIn: Boolean
 
   constructor() {
     this.Name = "Testing key";
     this.Days = [];
     this.Days.push(new Day());
     this.LocalUser = new User();
+    this.LoggedIn = false;
   }
 }

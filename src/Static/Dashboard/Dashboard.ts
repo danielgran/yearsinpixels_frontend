@@ -7,4 +7,9 @@ export default defineComponent({
       username: this.$store.state.LocalUser.Username
     };
   },
+  beforeCreate() {
+    if (!this.$store.state.LoggedIn) {
+      this.$router.push("/login")
+    }
+  },
 });

@@ -5,4 +5,5 @@ export default interface IState {
   Name: String;
   LocalUser: User;
   Days: Day[];
+  LoggedIn: Boolean;
 }
