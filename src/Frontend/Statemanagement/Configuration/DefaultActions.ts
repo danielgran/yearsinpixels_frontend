@@ -39,15 +39,12 @@ export default class DefaultActions implements IActions {
         // @ts-ignore
         let jwt = returned_data.data.login_user.jwt;
 
-        context.state.LoggedIn = true;
-
         if (jwt === null) {
-          let a = 1;
+          context.state.LoggedIn = false;
+        } else {
+          context.state.LoggedIn = true;
+          context.state.SessionTokenAsJWT = jwt;
         }
-
-
-
-        //context.commit('SetToken', returned_data.)
       }
     };
   }

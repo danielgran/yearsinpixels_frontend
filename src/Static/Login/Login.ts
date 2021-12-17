@@ -11,7 +11,9 @@ export default defineComponent({
   methods: {
     async loginUser() {
       await this.$store.dispatch("loginUser", {email: this.box_email, password: this.box_password});
-      console.log(this.$store.state.LoggedIn)
+      if (this.$store.state.LoggedIn) {
+        this.$router.push("/dashboard");
+      }
     },
   },
 });
