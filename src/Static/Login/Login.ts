@@ -9,8 +9,8 @@ export default defineComponent({
     };
   },
   methods: {
-    loginUser() {
-      this.$store.dispatch("loginUser", {email: this.box_email, password: this.box_password});
+    async loginUser() {
+      await this.$store.dispatch("loginUser", {email: this.box_email, password: this.box_password});
       console.log(this.$store.state.LoggedIn)
     },
   },
