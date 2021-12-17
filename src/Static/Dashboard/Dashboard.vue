@@ -4,14 +4,14 @@
       <div id="container">
         <div id="content">
           <div id="greeting">
-            <h4>Hallo,</h4>
-            <h3>{{ username }}</h3>
+            <h4>Hallo, </h4>
+            <h3>{{ name_first }}</h3>
           </div>
           <div id="date">
             <h3>Heute ist der</h3>
-            <h1>13</h1>
-            <h2>07</h2>
-            <h2>2021</h2>
+            <h1>{{ date_day }}</h1>
+            <h2>{{ date_month }}</h2>
+            <h2>{{ date_year }}</h2>
           </div>
           <div id="daystatus">
             <p>Dein heutiger Tag war <b style="color: #07e878">fantastisch</b>.</p>
@@ -28,4 +28,4 @@ import Dashboard from "./Dashboard";
 export default Dashboard;
 </script>
 
-<style scoped src="./Dashboard.css" />
+<style scoped src="./Dashboard.css"/>

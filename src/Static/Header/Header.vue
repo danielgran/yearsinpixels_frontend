@@ -16,7 +16,7 @@
         </router-link>
       </div>
       <div class="header-item">
-        <router-link to="/profile">
+        <router-link to="/logout">
           <span>
             <i class="fas fa-user-circle fa-sm" />
           </span>

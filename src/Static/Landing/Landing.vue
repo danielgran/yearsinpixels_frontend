@@ -6,7 +6,7 @@
     </div>
     <div class="middle">
       <h1>Wie war dein Tag?</h1>
-      <router-link to="/dashboard">
+      <router-link to="/login">
         <button><p>Erzähl es mir!</p></button>
       </router-link>
     </div>

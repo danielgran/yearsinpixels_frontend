@@ -2,6 +2,12 @@ import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "Login",
+  beforeCreate() {
+    if (this.$store.state.LoggedIn) {
+
+      this.$router.push("/dashboard");
+    }
+  },
   data: function () {
     return {
       box_email: "daniel",

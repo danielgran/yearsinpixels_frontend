@@ -8,6 +8,9 @@ export default class DefaultState implements IState {
   LocalUser: User;
   LoggedIn: Boolean;
   SessionTokenAsJWT: String;
+  date_day: Number;
+  date_month: Number;
+  date_year: Number;
 
 
   constructor() {
@@ -17,5 +20,9 @@ export default class DefaultState implements IState {
     this.LocalUser = new User();
     this.LoggedIn = false;
     this.SessionTokenAsJWT = "";
+    this.date_day = 0;
+    this.date_month = 0;
+    this.date_year = 0;
+
   }
 }

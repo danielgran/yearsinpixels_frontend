@@ -6,6 +6,7 @@ import Landing from "@/Static/Landing/Landing.vue";
 import Login from "@/Static/Login/Login.vue";
 import Profile from "@/Static/Profile/Profile.vue";
 import Pixels from "@/Static/Pixels/Pixels.vue";
+import Logout from "@/Static/Logout/Logout.vue";
 
 
 const DefaultRoutes: IRoute[] = [
@@ -33,6 +34,11 @@ const DefaultRoutes: IRoute[] = [
     Component: Pixels,
     Path: "/pixels",
     Name: "Pixels"
+  },
+  {
+    Component: Logout,
+    Path: "/logout",
+    Name: "Logout"
   }
 ]
 
