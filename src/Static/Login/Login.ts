@@ -1,17 +1,17 @@
-import { defineComponent } from "vue";
+import {defineComponent} from "vue";
 
 export default defineComponent({
   name: "Login",
-  data: function() {
+  data: function () {
     return {
-      box1: "",
-      box2: "",
-      box3: "",
+      box_email: "daniel",
+      box_password: "daniel",
     };
   },
   methods: {
     loginUser() {
-      this.$store.dispatch("loginUser", { email: this.box1, password: this.box2 });
+      this.$store.dispatch("loginUser", {email: this.box_email, password: this.box_password});
+      console.log(this.$store.state.LoggedIn)
     },
   },
 });

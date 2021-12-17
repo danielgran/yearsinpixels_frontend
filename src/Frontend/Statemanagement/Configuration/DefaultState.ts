@@ -6,7 +6,9 @@ export default class DefaultState implements IState {
   Name: String;
   Days: Day[];
   LocalUser: User;
-  LoggedIn: Boolean
+  LoggedIn: Boolean;
+  SessionTokenAsJWT: String;
+
 
   constructor() {
     this.Name = "Testing key";
@@ -14,5 +16,6 @@ export default class DefaultState implements IState {
     this.Days.push(new Day());
     this.LocalUser = new User();
     this.LoggedIn = false;
+    this.SessionTokenAsJWT = "";
   }
 }
