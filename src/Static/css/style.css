@@ -37,7 +37,8 @@ button {
 /* #region Width repair */
 input[type="text"],
 input[type="password"],
-input[type="button"] textarea {
+input[type="button"],
+textarea {
   box-sizing: border-box;
 }
 /*#endregion */
@@ -47,7 +48,8 @@ input[type="text"],
 input[type="password"],
 input[type="button"],
 textarea,
-button {
+button,
+select {
   -webkit-border-radius: 0;
   -webkit-appearance: none;
   border: none;
@@ -84,7 +86,8 @@ h4 {
 a,
 p,
 input,
-textarea {
+textarea,
+select {
   font-size: 1rem;
 }
 

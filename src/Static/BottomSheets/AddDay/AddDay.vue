@@ -6,8 +6,15 @@
           <h2>Your day was...</h2>
           <form>
             <input type="text" placeholder="Title"/>
-            <textarea placeholder="Notes"> </textarea>
-            <input type="button" value="Send" @click="send"/>
+            <textarea placeholder="Notes">
+            </textarea>
+            <select name="cars" id="cars">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+            <input type="button" value="Abschicken" @click="send"/>
           </form>
         </div>
       </div>
