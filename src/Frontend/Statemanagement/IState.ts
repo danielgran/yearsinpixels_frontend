@@ -9,4 +9,5 @@ export default interface IState {
   date_day: Number,
   date_month: Number,
   date_year: Number,
+  show_add_day_in_dashboard: Boolean,
 }

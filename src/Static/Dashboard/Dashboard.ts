@@ -1,7 +1,11 @@
 import { defineComponent } from "vue";
+import AddDay from "@/Static/BottomSheets/AddDay/AddDay.vue";
 
 export default defineComponent({
   name: "Dashboard",
+  components: {
+    AddDay
+  },
   data: function() {
     return {
       name_first: this.$store.state.LocalUser.name_first,
@@ -9,6 +13,11 @@ export default defineComponent({
       date_month: this.$store.state.date_month,
       date_year: this.$store.state.date_year,
     };
+  },
+  methods: {
+    open_add_day: function () {
+      this.$store.commit("SetShowDialogInDashboard", true);
+    }
   },
   async beforeCreate() {
     if (!this.$store.state.LoggedIn) {

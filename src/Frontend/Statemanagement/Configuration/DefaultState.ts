@@ -11,6 +11,7 @@ export default class DefaultState implements IState {
   date_day: Number;
   date_month: Number;
   date_year: Number;
+  show_add_day_in_dashboard: boolean;
 
 
   constructor() {
@@ -23,6 +24,7 @@ export default class DefaultState implements IState {
     this.date_day = 0;
     this.date_month = 0;
     this.date_year = 0;
+    this.show_add_day_in_dashboard = false;
 
   }
 }

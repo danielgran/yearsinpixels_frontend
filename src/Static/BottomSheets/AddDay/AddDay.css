@@ -1,10 +1,6 @@
 #addDay {
-  position: absolute;
-  width: 100%;
   height: 80%;
   z-index: 20;
-  transform: translate(-50%, -40px);
-  transform: translate(-50%, -430px);
   background: #ececec;
   box-shadow: 0px 0px 100px rgba(1, 1, 1, 0.3);
   border-radius: 20px;
@@ -20,16 +16,6 @@
   color: #c08fc2;
 }
 
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 15;
-  backdrop-filter: blur(3px);
-}
-
 form {
   margin-top: 19px;
   display: flex;
@@ -39,6 +25,7 @@ form {
 
 textarea,
 input {
+  box-sizing: border-box;
   width: 100%;
   border: 1px solid grey;
   margin: 5px auto;

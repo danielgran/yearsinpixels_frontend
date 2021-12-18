@@ -39,6 +39,9 @@ export default class DefaultMutations implements IMutations {
         state.date_month = month;
         state.date_year = year;
         console.log(state.date_day);
+      },
+      SetShowDialogInDashboard(state: any, show: Boolean) {
+        state.show_add_day_in_dashboard = show;
       }
     };
   }

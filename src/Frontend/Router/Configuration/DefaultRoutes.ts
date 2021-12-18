@@ -7,6 +7,7 @@ import Login from "@/Static/Login/Login.vue";
 import Profile from "@/Static/Profile/Profile.vue";
 import Pixels from "@/Static/Pixels/Pixels.vue";
 import Logout from "@/Static/Logout/Logout.vue";
+import AddDay from "@/Static/BottomSheets/AddDay/AddDay.vue";
 
 
 const DefaultRoutes: IRoute[] = [
@@ -19,6 +20,11 @@ const DefaultRoutes: IRoute[] = [
     Component: Dashboard,
     Path: "/dashboard",
     Name: "Dashboard"
+  },
+  {
+    Component: AddDay,
+    Path: "/add",
+    Name: "AddDay"
   },
   {
     Component: Login,

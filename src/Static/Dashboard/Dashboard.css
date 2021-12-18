@@ -26,9 +26,6 @@
   justify-content: space-between;
 }
 
-#greeting {
-}
-
 #greeting h4 {
   color: #010101;
 }
@@ -50,6 +47,33 @@
 b {
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+#add_day {
+  margin: 65px auto 0 auto;
+  background: #3C1EFA;
+  border-radius: 16px;
+  padding: 7px;
+  display: flex;
+  align-content: center;
+  box-shadow: 2px 2px 5px grey;
+}
+
+img {
+  max-width: 44px;
+}
+
+#add_day p {
+  color: #ececec;
+}
+
+#addaywrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  margin: auto;
+  width: 90vw;
 }
 
 #footer {

@@ -16,6 +16,13 @@
           <div id="daystatus">
             <p>Dein heutiger Tag war <b style="color: #07e878">fantastisch</b>.</p>
           </div>
+            <div id="add_day" @click="open_add_day">
+              <img src="@/Assets/icon_512_8bit.png">
+            </div>
+
+          <div id="addaywrap">
+            <AddDay></AddDay>
+          </div>
         </div>
       </div>
     </div>
