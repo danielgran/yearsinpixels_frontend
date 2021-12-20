@@ -9,13 +9,13 @@ export default defineComponent({
   },
   data: function() {
     return {
-      date_day: this.$store.state.date_day,
-      date_month: this.$store.state.date_month,
-      date_year: this.$store.state.date_year,
     };
   },
   computed: mapState([
-    'LocalUser'
+    'LocalUser',
+    'date_year',
+    'date_month',
+    'date_day'
   ]),
   methods: {
     open_add_day: function () {
