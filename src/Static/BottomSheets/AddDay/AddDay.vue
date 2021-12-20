@@ -5,11 +5,10 @@
         <div id="content">
           <h2>Your day was...</h2>
           <form>
-            <input type="text" placeholder="Title"/>
-            <textarea placeholder="Notes">
-            </textarea>
-            <select name="cars" id="cars">
-              <option v-for="mood in moods" :key="mood.title">
+            <input v-model="box_title" type="text" placeholder="Title"/>
+            <textarea v-model="box_notes" placeholder="Notes"/>
+            <select v-model="selected_mood_id">
+              <option v-for="mood in moods" :key="mood.id" :value="mood.id">
                 {{ mood.title }}
               </option>
             </select>
