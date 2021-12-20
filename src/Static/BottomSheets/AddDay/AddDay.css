@@ -8,12 +8,22 @@
   flex-direction: column;
 }
 
+#close {
+  position: absolute;
+  transform: translateX(-100%);
+  right: -5px;
+  top: 9px;
+  font-size: 2rem;
+  color: grey;
+}
+
 #content {
   margin: 22px;
 }
 
 #content h2 {
   color: #c08fc2;
+  width: fit-content;
 }
 
 form {
@@ -41,11 +51,6 @@ select {
   border-radius: 5px;
   border: 1px solid grey;
 }
-
-option {
-  background: red;
-}
-
 
 input[type="button"] {
   height: 53px;
