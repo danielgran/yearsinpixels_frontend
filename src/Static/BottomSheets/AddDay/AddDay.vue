@@ -9,10 +9,9 @@
             <textarea placeholder="Notes">
             </textarea>
             <select name="cars" id="cars">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
+              <option v-for="mood in moods" :key="mood.title">
+                {{ mood.title }}
+              </option>
             </select>
             <input type="button" value="Abschicken" @click="send"/>
           </form>
