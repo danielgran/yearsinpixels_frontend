@@ -4,7 +4,7 @@ import User from "@/Model/User";
 export default interface IState {
   Name: String;
   LocalUser: User;
-  Days: Day[];
+  days: Day[];
   LoggedIn: Boolean;
   date_day: Number,
   date_month: Number,

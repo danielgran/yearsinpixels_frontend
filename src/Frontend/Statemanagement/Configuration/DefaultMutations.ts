@@ -1,6 +1,8 @@
 import IMutations from "@/Frontend/Statemanagement/IMutations";
 
 import User from "@/Model/User";
+import Mood from "@/Model/Mood";
+import Day from "@/Model/Day";
 
 export default class DefaultMutations implements IMutations {
   Mutations: {};
@@ -38,10 +40,15 @@ export default class DefaultMutations implements IMutations {
         state.date_day = day;
         state.date_month = month;
         state.date_year = year;
-        console.log(state.date_day);
       },
       SetShowDialogInDashboard(state: any, show: Boolean) {
         state.show_add_day_in_dashboard = show;
+      },
+      SetMoods(state: any, moods: Mood[]) {
+        state.moods = moods;
+      },
+      SetDays(state: any, days: Day[]) {
+        state.days = days;
       }
     };
   }

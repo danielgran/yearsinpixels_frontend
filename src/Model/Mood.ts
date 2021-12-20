@@ -1,10 +1,11 @@
 export default class Mood {
-  ID: number;
-
-  Text: string;
+  id: number;
+  title: string;
+  color: Number;
 
   constructor() {
-    this.ID = 0;
-    this.Text = "";
+    this.id = 0;
+    this.title = "";
+    this.color = 0;
   }
 }

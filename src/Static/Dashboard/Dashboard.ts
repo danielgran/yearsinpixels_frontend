@@ -25,6 +25,8 @@ export default defineComponent({
     }
     await this.$store.dispatch("refreshToday");
     await this.$store.dispatch("refreshUser");
+    await this.$store.dispatch("refreshMoods");
+    await this.$store.dispatch("refreshDays");
 
   },
 });

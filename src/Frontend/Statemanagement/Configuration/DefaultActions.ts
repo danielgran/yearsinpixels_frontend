@@ -2,6 +2,8 @@ import IActions from "@/Frontend/Statemanagement/IActions";
 
 import axios from "axios";
 import User from "@/Model/User";
+import Mood from "@/Model/Mood";
+import Day from "@/Model/Day";
 
 export default class DefaultActions implements IActions {
   Actions: {};
@@ -77,8 +79,6 @@ export default class DefaultActions implements IActions {
         }).then((result) => {
           returned_data = result.data
         });
-        console.log(returned_data);
-
 
         let user = new User();
 
@@ -92,13 +92,79 @@ export default class DefaultActions implements IActions {
         context.commit("SetUser", user);
 
 
-
       },
       refreshToday: async function (context: any) {
         const date = new Date();
         console.log(date);
         context.commit('SetGlobalDate', date);
       },
+      refreshMoods: async function (context: any) {
+        const query = "query {\n" +
+          "    moods {\n" +
+          "        id\n" +
+          "        title\n" +
+          "        color\n" +
+          "    }\n" +
+          "}"
+
+        let returned_data;
+        await axios.post("http://localhost:5555/api", {
+          query: query,
+        }, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then((result) => {
+          returned_data = result.data.data;
+
+          let moods = [];
+          for (const mood_from_api of returned_data.moods) {
+            let mood = new Mood();
+            mood.id = mood_from_api.id;
+            mood.title = mood_from_api.title;
+            mood.color = mood_from_api.color;
+            moods.push(mood)
+          }
+          context.commit("SetMoods", moods);
+        });
+      },
+      refreshDays: async  function (context: any) {
+
+        const query = "query {\n" +
+          "    days(user_guid: \"17743754-5192-423f-a5ab-1797fb674081\") {\n" +
+          "        date {\n" +
+          "            year\n" +
+          "            month\n" +
+          "            day\n" +
+          "            \n" +
+          "        }\n" +
+          "        title\n" +
+          "        mood1 {\n" +
+          "                title\n" +
+          "                color\n" +
+          "            }\n" +
+          "    }\n" +
+          "}"
+        await axios.post("http://localhost:5555/api", {
+          query: query,
+        }, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then((result) => {
+          let returned_data = result.data.data;
+
+          let days:Day[] = [];
+          for (const day_from_api of returned_data.days) {
+            console.log(day_from_api);
+            let day = new Day();
+            day.Title = day_from_api.title;
+            day.Date = new Date(day_from_api);
+          }
+          context.commit("SetDays", days);
+        });
+
+      }
     };
   }
 }
