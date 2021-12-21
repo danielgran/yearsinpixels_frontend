@@ -12,7 +12,6 @@ export default defineComponent({
   },
   computed: {
     ...mapState([
-      'show_add_day_in_dashboard',
       'moods'
     ]),
     send_button_color: function () {
@@ -51,10 +50,9 @@ export default defineComponent({
       day.Mood = this.selected_mood_object;
 
       await this.$store.dispatch("addDay", {day: day, user_guid: this.$store.state.LocalUser.guid});
+      console.log(this.$store.state.days);
 
-    },
-    close: function () {
-      this.$store.commit("SetShowDialogInDashboard", false);
+      this.$emit("close");
     }
   }
 });

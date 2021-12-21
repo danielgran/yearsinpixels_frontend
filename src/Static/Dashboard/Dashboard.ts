@@ -18,50 +18,62 @@ export default defineComponent({
   },
   data: function () {
     return {
-      today: null
+      today: null,
+      today_mood_color: "grey",
+      today_mood_title: "",
+      show_add_day: false,
+      today_logged: false,
     };
   },
   computed: {
-    ...mapState([
-      'show_add_day_in_dashboard',
-      'LocalUser',
-    ]),
-    date_today: function() {
+    ...mapState({
+      LocalUser: function () {
+        return this.$store.state.LocalUser;
+      },
+      todays_mood_title() {
+        if (this.today == null)
+          return "";
+        let today: Day = this.get_today()!;
+        return today.Mood.title;
+      },
+    }),
+    date_today: function () {
       return new Date()
     },
-    today_logged: function() {
-      if (this.today == null)
-        return false;
-      else
-        return true;
-    },
-    todays_mood_title: function () {
-      if (this.today == null)
-        return "";
-      let today: Day = this.get_today()!;
-      return today.Mood.title;
-    },
-    todays_mood_color: function () {
-      if (this.today == null)
-        return "color: none;";
-      let today: Day = this.get_today()!;
-      return "color: #" + today.Mood.color.toString(16) + ";";
-    }
   },
   methods: {
     open_add_day: function () {
-      this.$store.commit("SetShowDialogInDashboard", true);
+      this.show_add_day = true;
+    },
+    handle_addday_update: function () {
+      console.log(this.get_today);
+      // @ts-ignore
+      this.today = this.get_today();
+      this.show_add_day = false;
+
+
+      if (this.today == null)
+        return;
+      this.today_logged = true;
+
+      // @ts-ignore
+      this.today_mood_color = `color: #${this.today.Mood.color.toString(16)};`;
+      // @ts-ignore
+      this.today_mood_title = this.today.Mood.title;
+
+
     },
     get_today: function () {
-      console.log(this.$store.state);
       let days_from_store = this.$store.state.days;
       let latest_day;
-      console.log(days_from_store);
-      for (const day of days_from_store)
+      console.log(days_from_store.length);
+      for (const day of days_from_store) {
+
         if (isToday(day.Date))
           latest_day = day;
         else
           latest_day = null;
+      }
 
       return latest_day;
     },
@@ -74,8 +86,17 @@ export default defineComponent({
     await this.$store.dispatch("refreshMoods");
     await this.$store.dispatch("refreshDays");
 
+
     // @ts-ignore
-    this.today = this.get_today()!;
+    this.today = this.get_today();
+    if (this.today == null)
+      return;
+    this.today_logged = true;
+    // @ts-ignore
+    this.today_mood_color = `color: #${this.today.Mood.color.toString(16)};`;
+    // @ts-ignore
+    this.today_mood_title = this.today.Mood.title;
+
 
   },
 });

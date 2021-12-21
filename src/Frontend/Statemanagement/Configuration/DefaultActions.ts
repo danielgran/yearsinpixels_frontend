@@ -4,6 +4,7 @@ import axios from "axios";
 import User from "@/Model/User";
 import Mood from "@/Model/Mood";
 import Day from "@/Model/Day";
+import {compileScript} from "@vue/compiler-sfc";
 
 export default class DefaultActions implements IActions {
   Actions: {};
@@ -126,7 +127,6 @@ export default class DefaultActions implements IActions {
       refreshDays: async function (context: any) {
 
         context.commit("SetDays", []);
-        context.commit("SetTodayLogged", false);
 
 
         const query = "query {\n" +
@@ -154,8 +154,8 @@ export default class DefaultActions implements IActions {
         }).then((result) => {
           let returned_days = result.data.data.days;
 
-
           let days: Day[] = [];
+
           for (const day_from_api of returned_days) {
             let day = new Day();
             day.Title = day_from_api.title;
@@ -166,15 +166,8 @@ export default class DefaultActions implements IActions {
             mood.id = day_from_api.mood1.id;
             mood.title = day_from_api.mood1.title;
             mood.color = day_from_api.mood1.color;
-
             day.Mood = mood;
 
-            let today = new Date();
-            today.setHours(0, 0, 0, 0);
-            day.Date.setHours(0, 0, 0, 0);
-            if (day.Date.getFullYear() == today.getFullYear() && day.Date.getMonth() == today.getMonth() && day.Date.getDate() == today.getDate()) {
-              context.commit("SetTodayLogged", true);
-            }
             days.push(day);
           }
           context.commit("SetDays", days);
@@ -210,15 +203,15 @@ export default class DefaultActions implements IActions {
           headers: {
             'Content-Type': 'application/json'
           }
-        }).then((result) => {
-          let returned_data = result.data.data;
-          if (returned_data.create_day.success == true) {
-            context.commit("SetTodayLogged", true);
-          } else {
-            alert("Error setting day.");
+        }).then((r) => {
+          console.log(r.data);
+          if (r.data.data.create_day.success) {
+            let new_days = context.state.days;
+            new_days.push(payload.day);
+            console.log(new_days);
+            context.commit("SetDays", new_days);
           }
-        });
-
+        })
       }
     };
   }

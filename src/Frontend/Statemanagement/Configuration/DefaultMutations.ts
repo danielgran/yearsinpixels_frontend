@@ -50,9 +50,6 @@ export default class DefaultMutations implements IMutations {
       SetDays(state: any, days: Day[]) {
         state.days = days;
       },
-      SetTodayLogged(state: any, flag: boolean) {
-        state.today_logged = flag;
-      }
     };
   }
 }

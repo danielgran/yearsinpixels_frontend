@@ -8,7 +8,6 @@ export default class DefaultState implements IState {
   LocalUser: User;
   LoggedIn: Boolean;
   SessionTokenAsJWT: String;
-  show_add_day_in_dashboard: boolean;
   moods: Mood[];
 
   constructor() {
@@ -16,7 +15,6 @@ export default class DefaultState implements IState {
     this.LocalUser = new User();
     this.LoggedIn = false;
     this.SessionTokenAsJWT = "";
-    this.show_add_day_in_dashboard = false;
     this.moods = [];
 
   }

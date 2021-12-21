@@ -3,7 +3,7 @@
     <div>
       <div id="addDay">
         <div id="content">
-        <div id="close" v-on:click="close">
+        <div id="close" v-on:click="$emit('close')">
           <span>
             <i class="editIcon fas fa-times"/>
           </span>
