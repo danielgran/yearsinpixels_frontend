@@ -164,7 +164,7 @@ export default class DefaultActions implements IActions {
             let day = new Day();
             day.Title = day_from_api.title;
             day.Notes = day_from_api.notes;
-            day.Date = new Date(day_from_api.date.year, day_from_api.date.month-1, day_from_api.date.day);
+            day.Date = new Date(day_from_api.date.year, day_from_api.date.month - 1, day_from_api.date.day);
 
             let mood = new Mood();
             mood.id = day_from_api.mood1.id;
