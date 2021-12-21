@@ -21,7 +21,7 @@
             </div>
 
           <div id="addaywrap">
-            <AddDay></AddDay>
+            <AddDay :date_to_add="new Date()"></AddDay>
           </div>
         </div>
       </div>

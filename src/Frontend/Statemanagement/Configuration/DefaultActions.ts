@@ -128,7 +128,7 @@ export default class DefaultActions implements IActions {
           context.commit("SetMoods", moods);
         });
       },
-      refreshDays: async  function (context: any) {
+      refreshDays: async function (context: any) {
 
         const query = "query {\n" +
           "    days(user_guid: \"17743754-5192-423f-a5ab-1797fb674081\") {\n" +
@@ -154,7 +154,7 @@ export default class DefaultActions implements IActions {
         }).then((result) => {
           let returned_data = result.data.data;
 
-          let days:Day[] = [];
+          let days: Day[] = [];
           for (const day_from_api of returned_data.days) {
             console.log(day_from_api);
             let day = new Day();
@@ -162,6 +162,46 @@ export default class DefaultActions implements IActions {
             day.Date = new Date(day_from_api);
           }
           context.commit("SetDays", days);
+        });
+
+      },
+      addDay: async function (context: any, payload: { day: Day, user_guid: String }) {
+        const query = "mutation CreateDayInSummary($input_user_guid: String!, $input_day: DayInput) {\n" +
+          "    create_day(user_guid: $input_user_guid, day: $input_day) {\n" +
+          "        success\n" +
+          "        text\n" +
+          "    }\n" +
+          "}"
+
+        let variables = {
+          "input_user_guid": payload.user_guid,
+          "input_day": {
+            "title": payload.day.Title,
+            "notes": payload.day.Notes,
+            "id_mood1": payload.day.Mood.id,
+            "date": {
+              "year": payload.day.Date.getFullYear(),
+              "month": payload.day.Date.getMonth() + 1,
+              "day": payload.day.Date.getDate()
+            }
+          }
+        };
+
+        await axios.post("http://localhost:5555/api", {
+          query: query,
+          variables: variables,
+        }, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }).then((result) => {
+          let returned_data = result.data.data;
+
+          if (returned_data.success == true) {
+            context.commit("SetToday", payload.day);
+          } else {
+            alert("Error setting day.");
+          }
         });
 
       }

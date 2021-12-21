@@ -16,7 +16,7 @@ export default class DefaultMutations implements IMutations {
         state.SessionTokenAsJWT = token;
 
       },
-      SetLoggedIn(state: any, loggedIn:boolean) {
+      SetLoggedIn(state: any, loggedIn: boolean) {
         state.LoggedIn = loggedIn;
       },
       SetGlobalUserGuid(state: any, guid: string) {
@@ -49,6 +49,9 @@ export default class DefaultMutations implements IMutations {
       },
       SetDays(state: any, days: Day[]) {
         state.days = days;
+      },
+      SetToday(state: any, day: Day) {
+        state.today = day;
       }
     };
   }

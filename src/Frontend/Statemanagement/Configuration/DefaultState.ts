@@ -4,7 +4,6 @@ import Mood from "@/Model/Mood";
 import IState from "@/Frontend/Statemanagement/IState";
 
 export default class DefaultState implements IState {
-  Name: String;
   days: Day[];
   LocalUser: User;
   LoggedIn: Boolean;
@@ -14,10 +13,9 @@ export default class DefaultState implements IState {
   date_year: Number;
   show_add_day_in_dashboard: boolean;
   moods: Mood[];
-
+  today: Day;
 
   constructor() {
-    this.Name = "Testing key";
     this.days = [];
     this.LocalUser = new User();
     this.LoggedIn = false;
@@ -28,5 +26,7 @@ export default class DefaultState implements IState {
     this.show_add_day_in_dashboard = false;
     this.moods = [];
 
+
   }
+
 }
