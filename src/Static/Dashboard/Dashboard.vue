@@ -9,14 +9,14 @@
           </div>
           <div id="date">
             <h3>Heute ist der</h3>
-            <h1>{{ date_day }}</h1>
-            <h2>{{ date_month }}</h2>
-            <h2>{{ date_year }}</h2>
+            <h1>{{ date_today.getDate() }}</h1>
+            <h2>{{ date_today.getMonth() + 1 }}</h2>
+            <h2>{{ date_today.getFullYear() }}</h2>
           </div>
           <div id="daystatus">
             <p v-if="!today_logged">Erfasse deinen heutigen Tag!</p>
             <div v-if="today_logged">
-              <p>Dein Tag war heute <b v-bind:style="todays_mood_color">{{ today.Mood.title }}</b>.</p>
+              <p>Dein Tag war heute <b v-bind:style="todays_mood_color">{{ todays_mood_title }}</b>.</p>
             </div>
           </div>
           <div v-if="!today_logged" id="add_day" @click="open_add_day">

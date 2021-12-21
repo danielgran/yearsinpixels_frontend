@@ -93,10 +93,6 @@ export default class DefaultActions implements IActions {
 
 
       },
-      refreshToday: async function (context: any) {
-        const date = new Date();
-        context.commit('SetGlobalDate', date);
-      },
       refreshMoods: async function (context: any) {
         const query = "query {\n" +
           "    moods {\n" +
@@ -129,7 +125,6 @@ export default class DefaultActions implements IActions {
       },
       refreshDays: async function (context: any) {
 
-        context.commit("SetToday", new Day());
         context.commit("SetDays", []);
         context.commit("SetTodayLogged", false);
 
@@ -157,10 +152,11 @@ export default class DefaultActions implements IActions {
             'Content-Type': 'application/json'
           }
         }).then((result) => {
-          let returned_data = result.data.data;
+          let returned_days = result.data.data.days;
+
 
           let days: Day[] = [];
-          for (const day_from_api of returned_data.days) {
+          for (const day_from_api of returned_days) {
             let day = new Day();
             day.Title = day_from_api.title;
             day.Notes = day_from_api.notes;
@@ -177,9 +173,9 @@ export default class DefaultActions implements IActions {
             today.setHours(0, 0, 0, 0);
             day.Date.setHours(0, 0, 0, 0);
             if (day.Date.getFullYear() == today.getFullYear() && day.Date.getMonth() == today.getMonth() && day.Date.getDate() == today.getDate()) {
-              context.commit("SetToday", day);
               context.commit("SetTodayLogged", true);
             }
+            days.push(day);
           }
           context.commit("SetDays", days);
         });
@@ -217,7 +213,6 @@ export default class DefaultActions implements IActions {
         }).then((result) => {
           let returned_data = result.data.data;
           if (returned_data.create_day.success == true) {
-            context.commit("SetToday", payload.day);
             context.commit("SetTodayLogged", true);
           } else {
             alert("Error setting day.");
