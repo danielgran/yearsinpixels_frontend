@@ -1,5 +1,5 @@
 <template>
-  <div v-if="show_add_day_in_dashboard">
+  <div>
     <div>
       <div id="addDay">
         <div id="content">

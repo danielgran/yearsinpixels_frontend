@@ -14,9 +14,12 @@ export default class DefaultState implements IState {
   show_add_day_in_dashboard: boolean;
   moods: Mood[];
   today: Day;
+  today_logged: boolean;
 
   constructor() {
     this.days = [];
+    this.today = new Day();
+    this.today_logged = false;
     this.LocalUser = new User();
     this.LoggedIn = false;
     this.SessionTokenAsJWT = "";
@@ -25,7 +28,6 @@ export default class DefaultState implements IState {
     this.date_year = 0;
     this.show_add_day_in_dashboard = false;
     this.moods = [];
-
 
   }
 

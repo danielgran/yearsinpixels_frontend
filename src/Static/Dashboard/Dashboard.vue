@@ -14,13 +14,16 @@
             <h2>{{ date_year }}</h2>
           </div>
           <div id="daystatus">
-            <p>Dein heutiger Tag war <b style="color: #07e878">fantastisch</b>.</p>
-          </div>
-            <div id="add_day" @click="open_add_day">
-              <img src="@/Assets/icon_512_8bit.png">
+            <p v-if="!today_logged">Erfasse deinen heutigen Tag!</p>
+            <div v-if="today_logged">
+              <p>Dein Tag war heute <b v-bind:style="todays_mood_color">{{ today.Mood.title }}</b>.</p>
             </div>
+          </div>
+          <div v-if="!today_logged" id="add_day" @click="open_add_day">
+            <img src="@/Assets/icon_512_8bit.png">
+          </div>
 
-          <div id="addaywrap">
+          <div id="addaywrap" v-if="show_add_day_in_dashboard">
             <AddDay :date_to_add="new Date()"></AddDay>
           </div>
         </div>

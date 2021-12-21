@@ -95,7 +95,6 @@ export default class DefaultActions implements IActions {
       },
       refreshToday: async function (context: any) {
         const date = new Date();
-        console.log(date);
         context.commit('SetGlobalDate', date);
       },
       refreshMoods: async function (context: any) {
@@ -130,6 +129,11 @@ export default class DefaultActions implements IActions {
       },
       refreshDays: async function (context: any) {
 
+        context.commit("SetToday", new Day());
+        context.commit("SetDays", []);
+        context.commit("SetTodayLogged", false);
+
+
         const query = "query {\n" +
           "    days(user_guid: \"17743754-5192-423f-a5ab-1797fb674081\") {\n" +
           "        date {\n" +
@@ -140,6 +144,7 @@ export default class DefaultActions implements IActions {
           "        }\n" +
           "        title\n" +
           "        mood1 {\n" +
+          "                id\n" +
           "                title\n" +
           "                color\n" +
           "            }\n" +
@@ -156,10 +161,25 @@ export default class DefaultActions implements IActions {
 
           let days: Day[] = [];
           for (const day_from_api of returned_data.days) {
-            console.log(day_from_api);
             let day = new Day();
             day.Title = day_from_api.title;
-            day.Date = new Date(day_from_api);
+            day.Notes = day_from_api.notes;
+            day.Date = new Date(day_from_api.date.year, day_from_api.date.month-1, day_from_api.date.day);
+
+            let mood = new Mood();
+            mood.id = day_from_api.mood1.id;
+            mood.title = day_from_api.mood1.title;
+            mood.color = day_from_api.mood1.color;
+
+            day.Mood = mood;
+
+            let today = new Date();
+            today.setHours(0, 0, 0, 0);
+            day.Date.setHours(0, 0, 0, 0);
+            if (day.Date.getFullYear() == today.getFullYear() && day.Date.getMonth() == today.getMonth() && day.Date.getDate() == today.getDate()) {
+              context.commit("SetToday", day);
+              context.commit("SetTodayLogged", true);
+            }
           }
           context.commit("SetDays", days);
         });
@@ -196,9 +216,9 @@ export default class DefaultActions implements IActions {
           }
         }).then((result) => {
           let returned_data = result.data.data;
-
-          if (returned_data.success == true) {
+          if (returned_data.create_day.success == true) {
             context.commit("SetToday", payload.day);
+            context.commit("SetTodayLogged", true);
           } else {
             alert("Error setting day.");
           }

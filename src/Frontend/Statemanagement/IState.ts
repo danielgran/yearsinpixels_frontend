@@ -5,6 +5,7 @@ export default interface IState {
   LocalUser: User;
   days: Day[];
   today: Day;
+  today_logged: boolean;
   LoggedIn: Boolean;
   date_day: Number;
   date_month: Number;
