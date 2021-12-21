@@ -46,7 +46,6 @@ export default defineComponent({
       this.show_add_day = true;
     },
     handle_addday_update: function () {
-      console.log(this.get_today);
       // @ts-ignore
       this.today = this.get_today();
       this.show_add_day = false;
@@ -66,14 +65,11 @@ export default defineComponent({
     get_today: function () {
       let days_from_store = this.$store.state.days;
       let latest_day;
-      console.log(days_from_store.length);
-      for (const day of days_from_store) {
-
+      for (const day of days_from_store)
         if (isToday(day.Date))
           latest_day = day;
         else
           latest_day = null;
-      }
 
       return latest_day;
     },

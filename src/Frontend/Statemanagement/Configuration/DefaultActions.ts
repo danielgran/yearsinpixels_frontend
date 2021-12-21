@@ -47,7 +47,6 @@ export default class DefaultActions implements IActions {
 
           let claims = jwt.split('.')[1];
           let user_guid = JSON.parse(window.atob(claims)).user_guid;
-          console.log(user_guid);
           context.commit("SetGlobalUserGuid", user_guid);
         }
       },
@@ -204,11 +203,9 @@ export default class DefaultActions implements IActions {
             'Content-Type': 'application/json'
           }
         }).then((r) => {
-          console.log(r.data);
           if (r.data.data.create_day.success) {
             let new_days = context.state.days;
             new_days.push(payload.day);
-            console.log(new_days);
             context.commit("SetDays", new_days);
           }
         })
