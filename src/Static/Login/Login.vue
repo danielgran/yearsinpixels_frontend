@@ -7,6 +7,9 @@
           <input tabindex="0" type="text" placeholder="E-Mail" v-model="box_email" />
           <input tabindex="1" type="password" placeholder="Password" v-model="box_password" />
           <input tabindex="2" type="button" value="Login" v-on:click="loginUser" />
+          <input type="submit" value="Login"
+                 data-sitekey="6LcY9mgaAAAAALdWDRjHAIYlEr5xODj-VsDLnjCD"
+                 data-action='submit'/>
         </form>
         <router-link to="/register">
           <a>Register instead</a>
