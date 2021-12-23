@@ -32,3 +32,8 @@ input {
 input:not(:first-of-type) {
   margin: 5px 0 0;
 }
+
+#captcha {
+  max-width: 200px;
+  overflow: hidden;
+}

@@ -2,18 +2,15 @@
   <div>
     <div id="login">
       <div id="loginbox">
-        <img src="@/Assets/logo-primary-transparent.png" style="width: 158px" />
+        <img src="@/Assets/logo-primary-transparent.png" style="width: 158px"/>
         <form class="userform login">
-          <input tabindex="0" type="text" placeholder="E-Mail" v-model="box_email" />
-          <input tabindex="1" type="password" placeholder="Password" v-model="box_password" />
-          <input tabindex="2" type="button" value="Login" v-on:click="loginUser" />
-          <input type="submit" value="Login"
-                 data-sitekey="6LcY9mgaAAAAALdWDRjHAIYlEr5xODj-VsDLnjCD"
-                 data-action='submit'/>
+          <input tabindex="0" @click="execute_captcha" type="text" placeholder="E-Mail" v-model="box_email"/>
+          <input tabindex="1" @click="execute_captcha" type="password" placeholder="Password" v-model="box_password"/>
+          <input tabindex="2" @click="execute_captcha" type="button" value="Login" v-on:click="loginUser"/>
+          <vue-recaptcha ref="recaptcha"
+                         size="invisible"
+                         sitekey="6LeVFcMdAAAAAGO2lC3ZfZtjzekvKwTjHwzU13ev" @verify="captcha_callback"></vue-recaptcha>
         </form>
-        <router-link to="/register">
-          <a>Register instead</a>
-        </router-link>
       </div>
     </div>
   </div>
@@ -25,4 +22,4 @@ import Login from "./Login";
 export default Login;
 </script>
 
-<style scoped src="./Login.css" />
+<style scoped src="./Login.css"/>

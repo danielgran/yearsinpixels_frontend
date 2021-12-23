@@ -58,6 +58,9 @@ select {
 }
 /*#endregion */
 
+/* Hide the Google captcha batch */
+/*.grecaptcha-badge { visibility: hidden; } */
+
 /* #region Remove standard outlines (they are odd) */
 input[type="text"]:focus,
 input[type="password"]:focus,
