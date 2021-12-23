@@ -5,7 +5,6 @@ import User from "@/Model/User";
 import Mood from "@/Model/Mood";
 import Day from "@/Model/Day";
 import Cookies from "js-cookie";
-import {resolveDynamicComponent} from "vue";
 
 export default class DefaultActions implements IActions {
   Actions: {};
@@ -75,7 +74,8 @@ export default class DefaultActions implements IActions {
           }
         }, {
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + context.state.SessionTokenAsJWT
           }
         }).then((result) => {
           returned_data = result.data
@@ -108,7 +108,8 @@ export default class DefaultActions implements IActions {
           query: query,
         }, {
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + context.state.SessionTokenAsJWT
           }
         }).then((result) => {
           returned_data = result.data.data;
@@ -149,7 +150,8 @@ export default class DefaultActions implements IActions {
           query: query,
         }, {
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + context.state.SessionTokenAsJWT
           }
         }).then((result) => {
           let returned_days = result.data.data.days;
@@ -203,7 +205,8 @@ export default class DefaultActions implements IActions {
           variables: variables,
         }, {
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + context.state.SessionTokenAsJWT
           }
         }).then((r) => {
           if (r.data.data.create_day.success) {
