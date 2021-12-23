@@ -48,10 +48,8 @@ export default defineComponent({
       day.Title = this.box_title;
       day.Notes = this.box_notes;
       day.Mood = this.selected_mood_object;
-
+      
       await this.$store.dispatch("addDay", {day: day, user_guid: this.$store.state.LocalUser.guid});
-      console.log(this.$store.state.days);
-
       this.$emit("close");
     }
   }
