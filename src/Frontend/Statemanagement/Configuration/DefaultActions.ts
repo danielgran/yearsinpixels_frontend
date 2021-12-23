@@ -4,7 +4,8 @@ import axios from "axios";
 import User from "@/Model/User";
 import Mood from "@/Model/Mood";
 import Day from "@/Model/Day";
-import {compileScript} from "@vue/compiler-sfc";
+import Cookies from "js-cookie";
+import {resolveDynamicComponent} from "vue";
 
 export default class DefaultActions implements IActions {
   Actions: {};
@@ -161,6 +162,7 @@ export default class DefaultActions implements IActions {
             day.Notes = day_from_api.notes;
             day.Date = new Date(day_from_api.date.year, day_from_api.date.month - 1, day_from_api.date.day);
 
+            console.log(day.Date);
             let mood = new Mood();
             mood.id = day_from_api.mood1.id;
             mood.title = day_from_api.mood1.title;
@@ -169,6 +171,7 @@ export default class DefaultActions implements IActions {
 
             days.push(day);
           }
+          Cookies.set("days", JSON.stringify(days));
           context.commit("SetDays", days);
         });
 

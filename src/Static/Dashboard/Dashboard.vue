@@ -22,10 +22,14 @@
           <div v-if="!today_logged" id="add_day" @click="open_add_day">
             <img src="@/Assets/icon_512_8bit.png">
           </div>
-
           <div id="addaywrap" v-if="show_add_day">
             <AddDay :date_to_add="new Date()" @close="handle_addday_update"></AddDay>
           </div>
+        </div>
+        <div>
+          <router-link to="/pixels">
+            <b>Show pixel table</b>
+          </router-link>
         </div>
       </div>
     </div>

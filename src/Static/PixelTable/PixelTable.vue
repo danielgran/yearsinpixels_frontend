@@ -15,12 +15,12 @@
               <!-- This represents the day column on the left hand side -->
               {{ day }}
             </td>
-            <td v-for="month in months" :key="month">
+            <td v-for="month in months" :key="month.id">
               <!-- This is the needed information for the days
               {{day}}.
               {{month.name}}
               -->
-              <div class="daypixel" :style="{ backgroundColor: randomColor() }"></div>
+              <div class="daypixel" :style="{ backgroundColor: get_color_for_day(new Date().getFullYear(), month.num, day) }"></div>
             </td>
           </tr>
         </table>
