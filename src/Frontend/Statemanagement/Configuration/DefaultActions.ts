@@ -6,6 +6,8 @@ import Mood from "@/Model/Mood";
 import Day from "@/Model/Day";
 import Cookies from "js-cookie";
 
+const api_url = "http://localhost:5555/api"
+
 export default class DefaultActions implements IActions {
   Actions: {};
 
@@ -23,7 +25,7 @@ export default class DefaultActions implements IActions {
           "    }\n" +
           "}"
 
-        await axios.post("http://localhost:5555/api", {
+        await axios.post(api_url, {
           query: query,
           variables: {
             input_email: payload.email,
@@ -66,7 +68,7 @@ export default class DefaultActions implements IActions {
           "}"
 
         let returned_data;
-        await axios.post("http://localhost:5555/api", {
+        await axios.post(api_url, {
           query: query,
           variables: {
             input_guid: context.state.LocalUser.guid,
@@ -103,7 +105,7 @@ export default class DefaultActions implements IActions {
           "}"
 
         let returned_data;
-        await axios.post("http://localhost:5555/api", {
+        await axios.post(api_url, {
           query: query,
         }, {
           headers: {
@@ -145,7 +147,7 @@ export default class DefaultActions implements IActions {
           "            }\n" +
           "    }\n" +
           "}"
-        await axios.post("http://localhost:5555/api", {
+        await axios.post(api_url, {
           query: query,
         }, {
           headers: {
@@ -199,7 +201,7 @@ export default class DefaultActions implements IActions {
           }
         };
 
-        await axios.post("http://localhost:5555/api", {
+        await axios.post(api_url, {
           query: query,
           variables: variables,
         }, {
