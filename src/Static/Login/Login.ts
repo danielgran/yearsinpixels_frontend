@@ -7,7 +7,7 @@ export default defineComponent({
   components: {
     VueRecaptcha
   },
-  beforeCreate() {
+  mounted() {
     if (this.$store.state.LoggedIn) {
       this.$router.push("/dashboard");
     }
@@ -22,10 +22,9 @@ export default defineComponent({
   },
   methods: {
     async loginUser() {
-      await this.$store.dispatch("loginUser", {email: this.box_email, password: this.box_password});
-      if (this.$store.state.LoggedIn && this.captcha_secret != "") {
+      await this.$store.dispatch("loginUser", {email: this.box_email, password: this.box_password, captcha: this.captcha_secret});
+      if (this.$store.state.LoggedIn)
         this.$router.push("/dashboard");
-      }
     },
     captcha_callback(result: any) {
       console.log(result)

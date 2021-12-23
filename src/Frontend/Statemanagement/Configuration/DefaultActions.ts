@@ -11,44 +11,43 @@ export default class DefaultActions implements IActions {
 
   constructor() {
     this.Actions = {
-      loginUser: async function (context: any, payload: { email: string; password: string }) {
+      loginUser: async function (context: any, payload: { email: string, password: string, captcha: string }) {
 
-        let in_email = payload.email
-        let in_password = payload.password
+        console.log(payload);
 
-        const query = `mutation LoginUser($input_email: String!, $input_password: String!) {
-    login_user(email: $input_email, password: $input_password) {
-        success
-        message
-        jwt
-    }
-}`
-        let returned_data;
+        const query = "mutation LoginUser($input_email: String!, $input_password: String!, $input_captcha: String!) {\n" +
+          "    login_user(email: $input_email, password: $input_password, captcha: $input_captcha) {\n" +
+          "        success\n" +
+          "        message\n" +
+          "        jwt\n" +
+          "    }\n" +
+          "}"
+
         await axios.post("http://localhost:5555/api", {
           query: query,
           variables: {
-            input_email: in_email,
-            input_password: in_password
+            input_email: payload.email,
+            input_password: payload.password,
+            input_captcha: payload.captcha
           }
         }, {
           headers: {
             'Content-Type': 'application/json'
           }
         }).then((result) => {
-          returned_data = result.data
+          let returned_data = result.data
+          // @ts-ignore
+          let jwt = returned_data.data.login_user.jwt;
+          if (jwt != null) {
+            context.commit('SetToken', jwt)
+            context.commit('SetLoggedIn', true)
+
+
+            let claims = jwt.split('.')[1];
+            let user_guid = JSON.parse(window.atob(claims)).user_guid;
+            context.commit("SetGlobalUserGuid", user_guid);
+          }
         });
-
-        // @ts-ignore
-        let jwt = returned_data.data.login_user.jwt;
-        if (jwt != null) {
-          context.commit('SetToken', jwt)
-          context.commit('SetLoggedIn', true)
-
-
-          let claims = jwt.split('.')[1];
-          let user_guid = JSON.parse(window.atob(claims)).user_guid;
-          context.commit("SetGlobalUserGuid", user_guid);
-        }
       },
       logoutUser: async function (context: any) {
         context.commit('LogoutUser');
@@ -131,7 +130,7 @@ export default class DefaultActions implements IActions {
 
 
         const query = "query {\n" +
-          "    days(user_guid: \"17743754-5192-423f-a5ab-1797fb674081\") {\n" +
+          "    days(user_guid: \"" + context.state.LocalUser.guid + "\") {\n" +
           "        date {\n" +
           "            year\n" +
           "            month\n" +

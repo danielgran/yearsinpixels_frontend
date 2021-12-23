@@ -19,9 +19,8 @@ export default defineComponent({
     document.title = "yearsinpixels.com | For Elina"
   },
   data: function () {
-    this.$store.commit("mockday");
     return {
-      testdata: this.$store.state,
+      state: this.$store.state,
     };
   },
 });

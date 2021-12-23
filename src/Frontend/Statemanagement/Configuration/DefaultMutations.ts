@@ -9,12 +9,11 @@ export default class DefaultMutations implements IMutations {
 
   constructor() {
     this.Mutations = {
-      mockday(state: any) {
-        state.name = "Whoop";
+      SetGlobalCaptchaSecret(state: any, secret: string) {
+        state.CaptchaSecret = secret
       },
       SetToken(state: any, token: string) {
         state.SessionTokenAsJWT = token;
-
       },
       SetLoggedIn(state: any, loggedIn: boolean) {
         state.LoggedIn = loggedIn;
@@ -28,9 +27,11 @@ export default class DefaultMutations implements IMutations {
         state.LocalUser = user;
       },
       LogoutUser(state: any) {
-        state.SessionTokenAsJWT = "";
-        state.LoggedIn = false;
+        state.days = [];
         state.LocalUser = new User();
+        state.LoggedIn = false;
+        state.SessionTokenAsJWT = "";
+        state.moods = [];
       },
       SetGlobalDate(state: any, date: Date) {
         let day = date.getDate();
