@@ -53,6 +53,31 @@ export default class DefaultActions implements IActions {
 
 
       },
+      registerUser: async function (context: any, payload: { email: string, password: string, captcha: string }) {
+
+        console.log(payload);
+
+        const query = "mutation RegisterUser($input_email: String!, $input_password: String!, $input_captcha: String!) {\n" +
+          "    register_user(email: $input_email, password: $input_password, captcha: $input_captcha) {\n" +
+          "        success\n" +
+          "        message\n" +
+          "        user_guid\n" +
+          "    }\n" +
+          "}";
+
+        await axios.post(api_url, {
+          query: query,
+          variables: {
+            input_email: payload.email,
+            input_password: payload.password,
+            input_captcha: payload.captcha
+          }
+        }, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+      },
       logoutUser: async function (context: any) {
         context.commit('LogoutUser');
       },

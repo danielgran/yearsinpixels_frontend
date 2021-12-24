@@ -7,6 +7,9 @@ export default defineComponent({
   components: {
     PixelTable,
   },
+  beforeCreate() {
+    this.$store.dispatch("refreshDays");
+  },
   data: function() {
     return {
       year: "2020",

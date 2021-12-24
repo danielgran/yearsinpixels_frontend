@@ -8,6 +8,7 @@ import Profile from "@/Static/Profile/Profile.vue";
 import Pixels from "@/Static/Pixels/Pixels.vue";
 import Logout from "@/Static/Logout/Logout.vue";
 import AddDay from "@/Static/BottomSheets/AddDay/AddDay.vue";
+import Register from "@/Static/Register/Register.vue";
 
 
 const DefaultRoutes: IRoute[] = [
@@ -30,6 +31,11 @@ const DefaultRoutes: IRoute[] = [
     Component: Login,
     Path: "/login",
     Name: "Login"
+  },
+  {
+    Component: Register,
+    Path: "/register",
+    Name: "Register"
   },
   {
     Component: Profile,

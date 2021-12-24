@@ -1,4 +1,4 @@
-#login {
+#register {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,14 +6,14 @@
   height: 100vh;
 }
 
-#loginbox {
+#registerbox {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80%;
 }
 
-#loginbox a {
+#registerbox a {
   margin-top: 25px;
   color: black;
 }

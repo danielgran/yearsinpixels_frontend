@@ -60,7 +60,6 @@ export default defineComponent({
       // @ts-ignore
       this.today_mood_title = this.today.Mood.title;
 
-
     },
     get_today: function () {
       let days_from_store = this.$store.state.days;

@@ -16,9 +16,9 @@
         </router-link>
       </div>
       <div class="header-item">
-        <router-link to="/logout">
+        <router-link to="/logout" v-show="LoggedIn">
           <span>
-            <i class="fas fa-user-circle fa-sm" />
+            <i class="fas fa-sign-out-alt fa-sm" />
           </span>
         </router-link>
       </div>
