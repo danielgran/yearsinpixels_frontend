@@ -25,11 +25,11 @@
           <div id="addaywrap" v-if="show_add_day">
             <AddDay :date_to_add="new Date()" @close="handle_addday_update"></AddDay>
           </div>
-        </div>
-        <div>
-          <router-link to="/pixels">
-            <b>Show pixel table</b>
-          </router-link>
+          <div id="link_to_pixel_table">
+            <router-link to="/pixels">
+              <b>Pixeltabelle</b>
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
