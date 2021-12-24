@@ -3,7 +3,7 @@
     <div id="pixels">
       <div id="content">
         <h2>{{ year }}</h2>
-        <PixelTable />
+        <PixelTable id="table" />
       </div>
     </div>
   </div>
