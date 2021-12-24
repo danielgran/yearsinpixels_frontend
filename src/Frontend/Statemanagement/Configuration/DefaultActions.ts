@@ -6,7 +6,7 @@ import Mood from "@/Model/Mood";
 import Day from "@/Model/Day";
 import Cookies from "js-cookie";
 
-const api_url = "http://localhost:5555/api"
+const api_url = "https://api.yearsinpixels.de/api"
 
 export default class DefaultActions implements IActions {
   Actions: {};
@@ -50,6 +50,8 @@ export default class DefaultActions implements IActions {
             context.commit("SetGlobalUserGuid", user_guid);
           }
         });
+
+
       },
       logoutUser: async function (context: any) {
         context.commit('LogoutUser');

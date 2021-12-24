@@ -14,8 +14,8 @@ export default defineComponent({
   },
   data: function () {
     return {
-      box_email: "daniel",
-      box_password: "daniel",
+      box_email: "",
+      box_password: "",
       captcha_secret: "",
       last_clicked: 0
     };
