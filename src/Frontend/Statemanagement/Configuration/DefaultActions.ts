@@ -6,7 +6,7 @@ import Mood from "@/Model/Mood";
 import Day from "@/Model/Day";
 import Cookies from "js-cookie";
 
-const api_url = "https://api.yearsinpixels.de/api"
+const api_url = "http://localhost:5555/api"
 
 export default class DefaultActions implements IActions {
   Actions: {};
@@ -40,10 +40,10 @@ export default class DefaultActions implements IActions {
           let returned_data = result.data
           // @ts-ignore
           let jwt = returned_data.data.login_user.jwt;
+          console.log(returned_data);
           if (jwt != null) {
             context.commit('SetToken', jwt)
             context.commit('SetLoggedIn', true)
-
 
             let claims = jwt.split('.')[1];
             let user_guid = JSON.parse(window.atob(claims)).user_guid;

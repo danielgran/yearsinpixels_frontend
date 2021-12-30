@@ -1,9 +1,10 @@
 <template>
   <div>
     <div id="pixeltable">
+      <h2>{{ year_to_display }}</h2>
       <div id="tablewrapper">
         <table>
-          <th />
+          <th/>
           <th v-for="month in months" :key="month">
             {{ month.name }}
           </th>
@@ -20,7 +21,7 @@
               {{day}}.
               {{month.name}}
               -->
-              <div class="daypixel" :style="{ backgroundColor: get_color_for_day(new Date().getFullYear(), month.num, day) }"></div>
+              <div class="daypixel" :style="{ backgroundColor: get_color_for_day(month.num, day) }"></div>
             </td>
           </tr>
         </table>

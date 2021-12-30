@@ -10,6 +10,12 @@ const isEqual = (date1: Date, date2: Date) => {
 
 export default defineComponent({
   name: "PixelTable",
+  props: {
+    year_to_display: {
+      required: true,
+      type: Number
+    }
+  },
   data: function () {
     return {
       months: [
@@ -37,11 +43,10 @@ export default defineComponent({
       let rgb = `rgb(${r()}, ${r()}, ${r()})`;
       return rgb;
     },
-    get_color_for_day(year: number, month: number, day: number) {
-      let dat = new Date(year, month - 1, day);
+    get_color_for_day(month: number, day: number) {
+      let dat = new Date(this.year_to_display, month - 1, day);
       let color = "none";
       let days = JSON.parse(Cookies.get("days")!);
-      console.log(days);
       for (const day_in_stmgt of days) {
         if (isEqual(dat, new Date(day_in_stmgt.Date)))
           color = "#" + day_in_stmgt.Mood.color.toString(16);

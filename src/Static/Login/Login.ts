@@ -22,7 +22,14 @@ export default defineComponent({
   },
   methods: {
     async loginUser() {
-      await this.$store.dispatch("loginUser", {email: this.box_email, password: this.box_password, captcha: this.captcha_secret});
+      await this.$store.dispatch("loginUser", {
+        email: this.box_email,
+        password: this.box_password,
+        captcha: this.captcha_secret
+      });
+
+
+
       if (this.$store.state.LoggedIn)
         this.$router.push("/dashboard");
     },
@@ -32,7 +39,7 @@ export default defineComponent({
     },
     execute_captcha() {
       //@ts-ignore
-      this.$refs.recaptcha.execute();
+     // this.$refs.recaptcha.execute();
     }
   },
 })

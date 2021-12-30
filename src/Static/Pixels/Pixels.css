@@ -11,6 +11,40 @@
   overflow: scroll;
 }
 
+.space_bottom {
+  margin-bottom: 130px;
+}
+
 #table {
   max-width: 300px;
 }
+
+#agenda {
+  position: fixed;
+  padding: 5px;
+  border-radius: 22px;
+  overflow: hidden;
+  left: 0;
+  bottom: 0;
+  backdrop-filter: blur(2px);
+}
+
+#agendatable {
+  display: flex;
+}
+
+table {
+  border-spacing: 0;
+  font-size: 0.8rem;
+}
+
+
+.agendapoint {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  margin: 0 3px;
+}
+

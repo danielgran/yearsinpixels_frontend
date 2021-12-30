@@ -8,9 +8,10 @@
           <input tabindex="1" @click="execute_captcha" type="password" placeholder="Password" v-model="box_password1"/>
           <input tabindex="1" @click="execute_captcha" type="password" placeholder="Password" v-model="box_password2"/>
           <input tabindex="2" @click="registerUser" type="button" value="Registrieren" />
-          <vue-recaptcha ref="recaptcha"
+          <!--<vue-recaptcha ref="recaptcha"
                          size="invisible"
                          sitekey="6LeVFcMdAAAAAGO2lC3ZfZtjzekvKwTjHwzU13ev" @verify="captcha_callback"></vue-recaptcha>
+        -->
         </form>
         <router-link to="/login">
           <a>

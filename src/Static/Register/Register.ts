@@ -38,7 +38,7 @@ export default defineComponent({
     },
     execute_captcha() {
       //@ts-ignore
-      this.$refs.recaptcha.execute();
+      //this.$refs.recaptcha.execute();
     }
   },
 })
