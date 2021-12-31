@@ -4,7 +4,7 @@
       <div id="content">
         <PixelTable class="space_bottom" :year_to_display="new Date().getFullYear()" id="table"/>
         <div id="agenda">
-          <h5>Agenda</h5>
+          <h5>Legende</h5>
           <div id="agendatable">
             <table>
               <tr v-for="mood in moods" :key="mood.id">
