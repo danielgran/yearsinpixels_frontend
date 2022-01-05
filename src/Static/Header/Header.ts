@@ -1,13 +1,12 @@
 import {defineComponent} from 'vue'
 import {mapState} from "vuex";
-import Day from "@/Model/Day";
 
 export default defineComponent({
   name: "Header",
   data: function () {
     return {
       shouldRender: true,
-      title: "yearsinpixels.com"
+      title: "yearsinpixels.de"
     };
   },
   computed: {
