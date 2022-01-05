@@ -45,7 +45,7 @@ export default defineComponent({
     open_add_day: function () {
       this.show_add_day = true;
     },
-    handle_addday_update: function () {
+    handle_addday_update: async function () {
       // @ts-ignore
       this.today = this.get_today();
       this.show_add_day = false;
@@ -59,7 +59,7 @@ export default defineComponent({
       this.today_mood_color = `color: #${this.today.Mood.color.toString(16)};`;
       // @ts-ignore
       this.today_mood_title = this.today.Mood.title;
-
+      await this.$store.dispatch("refreshDays");
     },
     get_today: function () {
       let days_from_store = this.$store.state.days;
