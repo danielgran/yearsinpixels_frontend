@@ -16,7 +16,7 @@ export default defineComponent({
     Header,
   },
   mounted() {
-    document.title = "yearsinpixels.com | For Elina"
+    document.title = "yearsinpixels.de | For Elina"
   },
   data: function () {
     return {
