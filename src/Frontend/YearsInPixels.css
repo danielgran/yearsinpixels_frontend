@@ -10,4 +10,5 @@
 #main-view {
   height: 100%;
   flex: 1 1 auto;
+  padding-bottom: 21px;
 }
