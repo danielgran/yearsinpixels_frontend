@@ -11,11 +11,11 @@
   align-items: center;
   background: #ececec;
   max-width: 960px;
-  box-shadow: 0px 0px 100px rgba(1, 1, 1, 0.1);
 }
 
 @media only screen and (min-width: 960px) {
   #container {
+    box-shadow: 0px 0px 100px rgba(1, 1, 1, 0.1);
     border-radius: 30px;
     margin-top: 7vh;
   }
@@ -80,8 +80,8 @@ img {
 }
 
 #link_to_pixel_table {
-  margin: 100px;
   text-align: center;
+  padding-top: 40px;
 }
 
 #footer {
