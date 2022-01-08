@@ -9,6 +9,7 @@ import Pixels from "@/Static/Pixels/Pixels.vue";
 import Logout from "@/Static/Logout/Logout.vue";
 import Register from "@/Static/Register/Register.vue";
 import Imprint from "@/Static/Imprint/Imprint.vue";
+import PrivacyPolicy from "@/Static/PrivacyPolicy/PrivacyPolicy.vue";
 
 
 const DefaultRoutes: IRoute[] = [
@@ -51,6 +52,11 @@ const DefaultRoutes: IRoute[] = [
     Component: Imprint,
     Path: "/imprint",
     Name: "Imprint"
+  },
+  {
+    Component: PrivacyPolicy,
+    Path: "/privacypolicy",
+    Name: "PrivacyPolicy"
   }
 ]
 

@@ -1,4 +1,4 @@
-#imprint {
+#privacypolicy {
   margin: auto;
   width: fit-content;
   min-width: 320px;
@@ -7,6 +7,18 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.black {
+ color: black;
+}
+
+.italic {
+ font-style: italic;
+}
+
+.moretext {
+  text-align: justify;
 }
 
 h1 {
@@ -29,3 +41,4 @@ h2 {
 .right-3 {
   padding-left: 22px;
 }
+
