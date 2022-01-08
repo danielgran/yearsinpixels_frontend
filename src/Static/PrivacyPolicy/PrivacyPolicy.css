@@ -1,8 +1,8 @@
 #privacypolicy {
   margin: auto;
-  width: fit-content;
+  width: 80vw;
   min-width: 320px;
-  max-width: 80vw;
+  max-width: 960px;
 
   display: flex;
   flex-direction: column;
