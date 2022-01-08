@@ -1,7 +1,10 @@
 <template>
-  <div id="app">
-    <Header id="header"/>
-    <router-view id="main-view"/>
+  <div>
+    <div id="app">
+      <Header id="header"/>
+      <router-view id="main-view"/>
+    </div>
+    <Footer/>
   </div>
 </template>
 
@@ -9,10 +12,12 @@
 import {defineComponent} from "vue";
 
 import Header from "@/Static/Header/Header.vue";
+import Footer from "@/Static/Footer/Footer.vue";
 
 export default defineComponent({
   name: "YearsInPixels",
   components: {
+    Footer,
     Header,
   },
   mounted() {
