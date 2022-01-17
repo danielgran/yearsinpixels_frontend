@@ -167,6 +167,7 @@ export default class DefaultActions implements IActions {
           "            \n" +
           "        }\n" +
           "        title\n" +
+          "        notes\n" +
           "        mood1 {\n" +
           "                id\n" +
           "                title\n" +
@@ -184,7 +185,7 @@ export default class DefaultActions implements IActions {
         }).then((result) => {
           let returned_days = result.data.data.days;
 
-          let days: Day[] = [];
+          let days = [];
 
           for (const day_from_api of returned_days) {
             let day = new Day();
@@ -192,13 +193,11 @@ export default class DefaultActions implements IActions {
             day.Notes = day_from_api.notes;
             day.Date = new Date(day_from_api.date.year, day_from_api.date.month - 1, day_from_api.date.day);
 
-            console.log(day.Date);
             let mood = new Mood();
             mood.id = day_from_api.mood1.id;
             mood.title = day_from_api.mood1.title;
             mood.color = day_from_api.mood1.color;
             day.Mood = mood;
-
             days.push(day);
           }
           Cookies.set("days", JSON.stringify(days));
