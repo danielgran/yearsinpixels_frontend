@@ -200,7 +200,6 @@ export default class DefaultActions implements IActions {
             day.Mood = mood;
             days.push(day);
           }
-          Cookies.set("days", JSON.stringify(days));
           context.commit("SetDays", days);
         });
 

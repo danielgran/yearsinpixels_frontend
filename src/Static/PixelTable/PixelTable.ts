@@ -21,9 +21,9 @@ export default defineComponent({
       months: [
         {name: "Jan", num: 1},
         {name: "Feb", num: 2},
-        {name: "Mar", num: 3},
+        {name: "Mär", num: 3},
         {name: "Apr", num: 4},
-        {name: "May", num: 5},
+        {name: "Mai", num: 5},
         {name: "Jun", num: 6},
         {name: "Jul", num: 7},
         {name: "Aug", num: 8},
@@ -36,22 +36,19 @@ export default defineComponent({
     };
   },
   methods: {
-
-    randomColor() {
-      const r = () => Math.floor(256 * Math.random());
-
-      let rgb = `rgb(${r()}, ${r()}, ${r()})`;
-      return rgb;
-    },
-    get_color_for_day(month: number, day: number) {
+    get_color_for_day: function (month: number, day: number) {
       let dat = new Date(this.year_to_display, month - 1, day);
       let color = "none";
-      let days = JSON.parse(Cookies.get("days")!);
-      for (const day_in_stmgt of days) {
-        if (isEqual(dat, new Date(day_in_stmgt.Date)))
-          color = "#" + day_in_stmgt.Mood.color.toString(16);
+      try {
+        let days = this.$store.state.days;
+        for (const day_in_stmgt of days) {
+          if (isEqual(dat, new Date(day_in_stmgt.Date)))
+            color = "#" + day_in_stmgt.Mood.color.toString(16);
+        }
+        return color;
+      } catch (e) {
+        return "red";
       }
-      return color;
     }
   },
 });
