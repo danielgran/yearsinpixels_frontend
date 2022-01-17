@@ -16,11 +16,11 @@
         </router-link>
       </div>
       <div class="header-item">
-        <router-link to="/logout" v-if="LoggedIn">
+        <a href="/logout" v-if="LoggedIn">
           <span>
             <i class="fas fa-sign-out-alt fa-sm" />
           </span>
-        </router-link>
+        </a>
         <router-link to="/login" v-if="!LoggedIn">
            <span>
             <i class="fas fa-sign-in-alt fa-sm" />
