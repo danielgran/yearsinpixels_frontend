@@ -38,3 +38,9 @@ td:not(:first-of-type) {
   width: 100%;
   clear: both;
 }
+
+.triangle {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom right, #fff 0%, #fff 50%, green 50%, green 100%);
+}

@@ -39,11 +39,19 @@ export default defineComponent({
     get_color_for_day: function (month: number, day: number) {
       let dat = new Date(this.year_to_display, month - 1, day);
       let color = "none";
+      //.linear-gradient(to bottom right, #fff 0%, #fff 50%, green 50%, green 100%);background: linear-gradient(to bottom right, #fff 0%, #fff 50%, green 50%, green 100%);
       try {
         let days = this.$store.state.days;
         for (const day_in_stmgt of days) {
-          if (isEqual(dat, new Date(day_in_stmgt.Date)))
-            color = "#" + day_in_stmgt.mood1.color.toString(16);
+          if (isEqual(dat, new Date(day_in_stmgt.Date))) {
+            if (day_in_stmgt.mood2.id == 0)
+              return "#" + day_in_stmgt.mood1.color.toString(16);
+            console.log(day_in_stmgt);
+            let c1 = day_in_stmgt.mood1.color.toString(16);
+            let c2 = day_in_stmgt.mood2.color.toString(16)
+            return "linear-gradient(to bottom right, transparent 0%, transparent 49%, #" + c1 + " 49%, #" + c1 + " 100%)," +
+              "linear-gradient(to top left, transparent 0%, transparent 49%, #" + c2 + " 49%, #" + c2 + " 100%)";
+          }
         }
         return color;
       } catch (e) {

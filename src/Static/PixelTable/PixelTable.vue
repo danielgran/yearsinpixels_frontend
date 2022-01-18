@@ -17,7 +17,8 @@
               {{ day }}
             </td>
             <td v-for="month in months" :key="month.id">
-              <div class="daypixel" :style="{ backgroundColor: get_color_for_day(month.num, day) }"></div>
+
+              <div class="daypixel" :style="{ background: get_color_for_day(month.num, day) }">a</div>
             </td>
           </tr>
         </table>

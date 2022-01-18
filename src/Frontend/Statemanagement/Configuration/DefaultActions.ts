@@ -4,9 +4,8 @@ import axios from "axios";
 import User from "@/Model/User";
 import Mood from "@/Model/Mood";
 import Day from "@/Model/Day";
-import Cookies from "js-cookie";
 
-const api_url = "https://api.yearsinpixels.de/api"
+let api_url = "https://api.yearsinpixels.de/api";
 
 export default class DefaultActions implements IActions {
   Actions: {};
