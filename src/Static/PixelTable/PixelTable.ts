@@ -49,8 +49,8 @@ export default defineComponent({
             console.log(day_in_stmgt);
             let c1 = day_in_stmgt.mood1.color.toString(16);
             let c2 = day_in_stmgt.mood2.color.toString(16)
-            return "linear-gradient(to bottom right, transparent 0%, transparent 49%, #" + c1 + " 49%, #" + c1 + " 100%)," +
-              "linear-gradient(to top left, transparent 0%, transparent 49%, #" + c2 + " 49%, #" + c2 + " 100%)";
+            return "linear-gradient(to top left, transparent 0%, transparent 49%, #" + c1 + " 49%, #" + c1 + " 100%)," +
+              "linear-gradient(to bottom right, transparent 0%, transparent 49%, #" + c2 + " 49%, #" + c2 + " 100%)";
           }
         }
         return color;
