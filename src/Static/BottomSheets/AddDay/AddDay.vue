@@ -12,9 +12,24 @@
           <form>
             <input v-model="box_title" type="text" placeholder="Title"/>
             <textarea v-model="box_notes" placeholder="Notes"/>
-            <select v-model="selected_mood_object" :style="select_box_background_color">
+            <select v-model="selected_mood1_object" :style="select_box1_background_color">
               <option value="" disabled selected>Auswählen</option>
-              <option v-for="mood in moods" :key="mood.id" :value="mood">
+              <option v-for="mood in moodbox1" :key="mood.id" :value="mood">
+                {{ mood.title }}
+              </option>
+            </select>
+            <div id="divider" @click="change_divider()">
+              <p>(und…)</p>
+              <span v-if="divider_opened">
+                <i class="editIcon fas fa-chevron-up"/>
+              </span>
+              <span v-if="!divider_opened">
+                <i class="editIcon fas fa-chevron-down"/>
+            </span>
+            </div>
+            <select v-if="divider_opened" v-model="selected_mood2_object" :style="select_box2_background_color">
+              <option value="" disabled selected>Auswählen</option>
+              <option v-for="mood in moodbox2" :key="mood.id" :value="mood">
                 {{ mood.title }}
               </option>
             </select>

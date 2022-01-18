@@ -6,7 +6,7 @@ import Mood from "@/Model/Mood";
 import Day from "@/Model/Day";
 import Cookies from "js-cookie";
 
-const api_url = "https://api.yearsinpixels.de/api"
+const api_url = "http://localhost:5555/api"
 
 export default class DefaultActions implements IActions {
   Actions: {};
@@ -173,6 +173,11 @@ export default class DefaultActions implements IActions {
           "                title\n" +
           "                color\n" +
           "            }\n" +
+          "         mood2 {\n" +
+          "                id\n" +
+          "                title\n" +
+          "                color\n" +
+          "            }" +
           "    }\n" +
           "}"
         await axios.post(api_url, {
@@ -193,11 +198,19 @@ export default class DefaultActions implements IActions {
             day.Notes = day_from_api.notes;
             day.Date = new Date(day_from_api.date.year, day_from_api.date.month - 1, day_from_api.date.day);
 
-            let mood = new Mood();
-            mood.id = day_from_api.mood1.id;
-            mood.title = day_from_api.mood1.title;
-            mood.color = day_from_api.mood1.color;
-            day.Mood = mood;
+            let mood1 = new Mood();
+            mood1.id = day_from_api.mood1.id;
+            mood1.title = day_from_api.mood1.title;
+            mood1.color = day_from_api.mood1.color;
+            day.mood1 = mood1;
+
+            if (day_from_api.mood2 != null) {
+              let mood2 = new Mood();
+              mood2.id = day_from_api.mood2.id;
+              mood2.title = day_from_api.mood2.title;
+              mood2.color = day_from_api.mood2.color;
+              day.mood2 = mood2;
+            }
             days.push(day);
           }
           context.commit("SetDays", days);
@@ -217,14 +230,24 @@ export default class DefaultActions implements IActions {
           "input_day": {
             "title": payload.day.Title,
             "notes": payload.day.Notes,
-            "id_mood1": payload.day.Mood.id,
+            "id_mood1": payload.day.mood1.id,
             "date": {
               "year": payload.day.Date.getFullYear(),
               "month": payload.day.Date.getMonth() + 1,
               "day": payload.day.Date.getDate()
             }
-          }
+          },
         };
+
+
+        console.log(payload.day);
+        
+        if (payload.day.mood2 != null) {
+          // @ts-ignore
+          variables.input_day["id_mood2"] = payload.day.mood2.id;
+        }
+
+        console.log(variables);
 
         await axios.post(api_url, {
           query: query,

@@ -25,6 +25,16 @@ h5,
 h6 {
   color: #c08fc2;
 }
+
+.btn-big {
+  font-size: 1rem;
+}
+
+.font-normal {
+  color: #010101;
+  font-size: 1.09rem;
+}
+
 /* #endregion */
 
 /* #region Button Styling */

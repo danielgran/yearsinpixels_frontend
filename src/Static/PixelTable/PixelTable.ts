@@ -43,7 +43,7 @@ export default defineComponent({
         let days = this.$store.state.days;
         for (const day_in_stmgt of days) {
           if (isEqual(dat, new Date(day_in_stmgt.Date)))
-            color = "#" + day_in_stmgt.Mood.color.toString(16);
+            color = "#" + day_in_stmgt.mood1.color.toString(16);
         }
         return color;
       } catch (e) {

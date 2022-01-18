@@ -6,12 +6,14 @@ export default class Day {
   Title: String;
   Notes: String;
 
-  Mood: Mood;
+  mood1: Mood;
+  mood2: Mood;
 
   constructor() {
     this.Date = new Date();
     this.Title = "";
     this.Notes = "";
-    this.Mood = new Mood();
+    this.mood1 = new Mood();
+    this.mood2 = new Mood();
   }
 }

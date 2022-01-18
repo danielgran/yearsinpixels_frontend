@@ -16,7 +16,12 @@
           <div id="daystatus">
             <p v-if="!today_logged">Erfasse deinen heutigen Tag!</p>
             <div v-if="today_logged">
-              <p>Dein Tag war heute <b v-bind:style="today_mood_color">{{ today_mood_title }}</b>.</p>
+              <p>Dein Tag war heute</p>
+              <b v-bind:style="today_mood1_color">{{ today_mood1_title }}</b>
+              <div v-if="today_mood2_title !== ''">
+                <p>und</p>
+                <b v-bind:style="today_mood2_color">{{ today_mood2_title }}</b>
+              </div>
             </div>
           </div>
           <div v-if="!today_logged" id="add_day" @click="open_add_day">

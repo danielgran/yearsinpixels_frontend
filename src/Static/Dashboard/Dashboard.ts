@@ -19,8 +19,10 @@ export default defineComponent({
   data: function () {
     return {
       today: null,
-      today_mood_color: "grey",
-      today_mood_title: "",
+      today_mood1_color: "grey",
+      today_mood1_title: "",
+      today_mood2_color: "grey",
+      today_mood2_title: "",
       show_add_day: false,
       today_logged: false,
     };
@@ -34,7 +36,7 @@ export default defineComponent({
         if (this.today == null)
           return "";
         let today: Day = this.get_today()!;
-        return today.Mood.title;
+        return today.mood1.title;
       },
     }),
     date_today: function () {
@@ -56,9 +58,15 @@ export default defineComponent({
       this.today_logged = true;
 
       // @ts-ignore
-      this.today_mood_color = `color: #${this.today.Mood.color.toString(16)};`;
+      this.today_mood1_color = `color: #${this.today.mood1.color.toString(16)};`;
       // @ts-ignore
-      this.today_mood_title = this.today.Mood.title;
+      this.today_mood1_title = this.today.mood1.title;
+
+      // @ts-ignore
+      this.today_mood2_color = `color: #${this.today.mood2.color.toString(16)};`;
+      // @ts-ignore
+      this.today_mood2_title = this.today.mood2.title;
+
       await this.$store.dispatch("refreshDays");
     },
     get_today: function () {
@@ -87,10 +95,16 @@ export default defineComponent({
     if (this.today == null)
       return;
     this.today_logged = true;
+    console.log(this.today);
     // @ts-ignore
-    this.today_mood_color = `color: #${this.today.Mood.color.toString(16)};`;
+    this.today_mood1_color = `color: #${this.today.mood1.color.toString(16)};`;
     // @ts-ignore
-    this.today_mood_title = this.today.Mood.title;
+    this.today_mood1_title = this.today.mood1.title;
+
+    // @ts-ignore
+    this.today_mood2_color = `color: #${this.today.mood2.color.toString(16)};`;
+    // @ts-ignore
+    this.today_mood2_title = this.today.mood2.title;
 
 
   },
