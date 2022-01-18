@@ -3,11 +3,11 @@
     <div>
       <div id="addDay">
         <div id="content">
-        <div id="close" v-on:click="$emit('close')">
+          <div id="close" v-on:click="$emit('close')">
           <span>
             <i class="editIcon fas fa-times"/>
           </span>
-        </div>
+          </div>
           <h2>Your day was...</h2>
           <form>
             <input v-model="box_title" type="text" placeholder="Title"/>
