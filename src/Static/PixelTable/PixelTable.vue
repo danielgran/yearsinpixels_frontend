@@ -17,10 +17,6 @@
               {{ day }}
             </td>
             <td v-for="month in months" :key="month.id">
-              <!-- This is the needed information for the days
-              {{day}}.
-              {{month.name}}
-              -->
               <div class="daypixel" :style="{ backgroundColor: get_color_for_day(month.num, day) }"></div>
             </td>
           </tr>
