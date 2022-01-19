@@ -28,7 +28,7 @@
             <img src="@/Assets/icon_512_8bit.png">
           </div>
           <div id="addaywrap" v-if="show_add_day">
-            <AddDay :date_to_add="new Date()" @close="handle_addday_update"></AddDay>
+            <AddDay id="addb" :date_to_add="new Date()" @close="handle_addday_update"></AddDay>
           </div>
           <div id="link_to_pixel_table">
             <router-link to="/pixels">

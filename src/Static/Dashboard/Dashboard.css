@@ -75,8 +75,8 @@ img {
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
-  margin: auto;
   width: 90vw;
+  max-width: 480px;
 }
 
 #link_to_pixel_table {
