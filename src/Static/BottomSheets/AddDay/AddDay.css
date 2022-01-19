@@ -1,5 +1,6 @@
 #addDay {
   height: 80%;
+  max-width: 480px;
   z-index: 20;
   background: #ececec;
   box-shadow: 0px 0px 100px rgba(1, 1, 1, 0.3);
@@ -9,10 +10,9 @@
 }
 
 #close {
-  position: absolute;
-  transform: translateX(-100%);
-  right: -5px;
-  top: 9px;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-5px);
   font-size: 2rem;
   color: grey;
 }
