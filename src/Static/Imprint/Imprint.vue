@@ -10,7 +10,7 @@
           90547 Stein<br/>
           <br/>
           <a href="https://www.grandaniel.com">Private Website</a> <br/>
-          <a href="mailto:daniel.gran@mailbox.org">E-Mail</a>
+          <a href="mailto:yearsinpixels@grandaniel.com">E-Mail</a>
         </ul>
       </div>
       <div>
