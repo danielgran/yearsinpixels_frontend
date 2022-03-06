@@ -1,6 +1,5 @@
 import {defineComponent} from "vue";
 import Day from "@/Model/Day";
-import Cookies from "js-cookie";
 
 const isEqual = (date1: Date, date2: Date) => {
   return date1.getDate() == date2.getDate() &&
@@ -39,23 +38,25 @@ export default defineComponent({
     get_color_for_day: function (month: number, day: number) {
       let dat = new Date(this.year_to_display, month - 1, day);
       let color = "none";
-      //.linear-gradient(to bottom right, #fff 0%, #fff 50%, green 50%, green 100%);background: linear-gradient(to bottom right, #fff 0%, #fff 50%, green 50%, green 100%);
+      if (month == 2 && day > 28) {
+        return "none"
+      }
       try {
         let days = this.$store.state.days;
-        for (const day_in_stmgt of days) {
-          if (isEqual(dat, new Date(day_in_stmgt.Date))) {
-            if (day_in_stmgt.mood2.id == 0)
-              return "#" + day_in_stmgt.mood1.color.toString(16);
-            console.log(day_in_stmgt);
-            let c1 = day_in_stmgt.mood1.color.toString(16);
-            let c2 = day_in_stmgt.mood2.color.toString(16)
-            return "linear-gradient(to top left, transparent 0%, transparent 50%, #" + c1 + " 50%, #" + c1 + " 100%)," +
-              "linear-gradient(to bottom right, transparent 0%, transparent 50%, #" + c2 + " 50%, #" + c2 + " 100%)";
-          }
+        let a = days.find(i => i.Date.getTime() == dat.getTime())
+        if (a) {
+
+          console.log(month + "." + day)
+          if (a.mood2.id == 0)
+            return "#" + a.mood1.color.toString(16);
+          let c1 = a.mood1.color.toString(16);
+          let c2 = a.mood2.color.toString(16)
+          return "linear-gradient(to top left, transparent 0%, transparent 50%, #" + c1 + " 50%, #" + c1 + " 100%)," +
+            "linear-gradient(to bottom right, transparent 0%, transparent 50%, #" + c2 + " 50%, #" + c2 + " 100%)";
         }
         return color;
       } catch (e) {
-        return "red";
+        return "black";
       }
     }
   },
