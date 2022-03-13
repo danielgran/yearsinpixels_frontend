@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "strictPropertyInitialization": false,
     "target": "es6",
     "module": "esnext",
     "strict": true,

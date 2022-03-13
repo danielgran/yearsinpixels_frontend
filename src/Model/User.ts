@@ -1,5 +1,3 @@
-import UserProfile from "./UserProfile";
-
 export default class User {
   guid: String;
   email: String;

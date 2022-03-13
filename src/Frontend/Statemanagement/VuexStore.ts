@@ -1,14 +1,10 @@
-import {createStore, Store} from "vuex";
+import {createStore} from "vuex";
 import createPersistedState from "vuex-persistedstate";
-
 
 import IState from "./IState";
 import IVueStorePlugin from "@/Frontend/Statemanagement/IVueStorePlugin";
 import IMutations from "./IMutations";
 import IActions from "./IActions";
-import SecureLS from "secure-ls";
-
-const ls = new SecureLS({isCompression: false});
 
 export default class VuexStore implements IVueStorePlugin {
   Plugin: any;
@@ -22,7 +18,6 @@ export default class VuexStore implements IVueStorePlugin {
       actions: actions.Actions,
       plugins: [createPersistedState()]
     });
-
     this.Plugin = store;
   }
 }

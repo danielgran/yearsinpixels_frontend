@@ -2,7 +2,6 @@ import {defineComponent} from "vue";
 
 import PixelTable from "@/Static/PixelTable/PixelTable.vue";
 import {mapState} from "vuex";
-import Cookies from "js-cookie";
 
 export default defineComponent({
   name: "Pixels",
