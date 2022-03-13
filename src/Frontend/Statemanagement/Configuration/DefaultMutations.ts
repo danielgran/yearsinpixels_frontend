@@ -22,8 +22,7 @@ export default class DefaultMutations implements IMutations {
         state.LocalUser.guid = guid;
       },
       SetUser(state: any, user: User) {
-        let old_guid = state.LocalUser.guid;
-        user.guid = old_guid;
+        user.guid = state.LocalUser.guid;
         state.LocalUser = user;
       },
       LogoutUser(state: any) {
@@ -41,9 +40,6 @@ export default class DefaultMutations implements IMutations {
         state.date_day = day;
         state.date_month = month;
         state.date_year = year;
-      },
-      SetShowDialogInDashboard(state: any, show: Boolean) {
-        state.show_add_day_in_dashboard = show;
       },
       SetMoods(state: any, moods: Mood[]) {
         state.moods = moods;

@@ -1,12 +1,7 @@
 import {defineComponent} from "vue";
 
-import {VueRecaptcha} from "vue-recaptcha";
-
 export default defineComponent({
   name: "Login",
-  components: {
-    VueRecaptcha
-  },
   mounted() {
     if (this.$store.state.LoggedIn) {
       this.$router.push("/dashboard");

@@ -1,12 +1,7 @@
 import {defineComponent} from "vue";
 
-import {VueRecaptcha} from "vue-recaptcha";
-
 export default defineComponent({
   name: "Register",
-  components: {
-    VueRecaptcha
-  },
   mounted() {
     if (this.$store.state.LoggedIn) {
       this.$router.push("/dashboard");
@@ -31,15 +26,7 @@ export default defineComponent({
           this.$router.push("/login")
         });
       }
-
     },
-    captcha_callback(result: any) {
-      this.captcha_secret = result
-    },
-    execute_captcha() {
-      //@ts-ignore
-      //this.$refs.recaptcha.execute();
-    }
   },
 })
 ;

@@ -25,14 +25,14 @@ export default defineComponent({
   },
   data: function () {
     return {
-      today: null,
-      today_mood1_color: "grey",
+      today: {},
+      not_logged_days: [],
+      today_mood1_color: "",
       today_mood1_title: "",
-      today_mood2_color: "grey",
+      today_mood2_color: "",
       today_mood2_title: "",
       show_add_day: false,
       today_logged: false,
-      not_logged_days: null
     };
   },
   computed: {
