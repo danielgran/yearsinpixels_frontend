@@ -11,6 +11,13 @@ const isToday = (someDate: Date) => {
     someDate.getFullYear() == today.getFullYear()
 }
 
+const sameDate = (someDate: Date, someDate2: Date) => {
+  return someDate.getDate() == someDate2.getDate() &&
+    someDate.getMonth() == someDate2.getMonth() &&
+    someDate.getFullYear() == someDate2.getFullYear()
+}
+
+
 export default defineComponent({
   name: "Dashboard",
   components: {
@@ -25,6 +32,7 @@ export default defineComponent({
       today_mood2_title: "",
       show_add_day: false,
       today_logged: false,
+      not_logged_days: null
     };
   },
   computed: {
@@ -81,10 +89,11 @@ export default defineComponent({
       return latest_day;
     },
   },
-  async beforeCreate() {
+  beforeCreate: async function () {
     if (!this.$store.state.LoggedIn) {
       this.$router.push("/login")
     }
+
     await this.$store.dispatch("refreshUser");
     await this.$store.dispatch("refreshMoods");
     await this.$store.dispatch("refreshDays");
@@ -92,20 +101,54 @@ export default defineComponent({
 
     // @ts-ignore
     this.today = this.get_today();
-    if (this.today == null)
-      return;
-    this.today_logged = true;
-    console.log(this.today);
-    // @ts-ignore
-    this.today_mood1_color = `color: #${this.today.mood1.color.toString(16)};`;
-    // @ts-ignore
-    this.today_mood1_title = this.today.mood1.title;
+    if (this.today != null) {
+      this.today_logged = true;
+      console.log(this.today);
+      // @ts-ignore
+      this.today_mood1_color = `color: #${this.today.mood1.color.toString(16)};`;
+      // @ts-ignore
+      this.today_mood1_title = this.today.mood1.title;
 
+      // @ts-ignore
+      this.today_mood2_color = `color: #${this.today.mood2.color.toString(16)};`;
+      // @ts-ignore
+      this.today_mood2_title = this.today.mood2.title;
+    }
+
+    let possible_not_logged_dates: Date[] = []
+
+    let date: Date = new Date((new Date()).getFullYear().toString() + "-01-01")
+    while (date <= new Date()) {
+      possible_not_logged_dates.push(date)
+      date = new Date(date.getTime() + (1000 * 60 * 60 * 24));
+    }
+    //check
+    let logged_dates: Date[] = []
+    for (const loggedDatesKey in this.$store.state.days) {
+      // @ts-ignore
+      let day = this.$store.state.days[loggedDatesKey]
+      logged_dates.push(day.Date)
+    }
+    //check
+
+    let not_logged_dates_until_now: Date[] = [];
+
+    for (const notLoggedDays in possible_not_logged_dates) {
+      let date = possible_not_logged_dates[notLoggedDays]
+
+      // get the possibly logged day
+      const found_date = logged_dates.find(
+        found_date => sameDate(date, found_date),
+      );
+
+      // @ts-ignore
+      if (!found_date)
+        // @ts-ignore
+        not_logged_dates_until_now.push(date)
+    }
     // @ts-ignore
-    this.today_mood2_color = `color: #${this.today.mood2.color.toString(16)};`;
-    // @ts-ignore
-    this.today_mood2_title = this.today.mood2.title;
+    this.not_logged_days = not_logged_dates_until_now;
 
 
-  },
-});
+  }
+})

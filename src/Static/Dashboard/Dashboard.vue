@@ -24,11 +24,11 @@
               </div>
             </div>
           </div>
-          <div v-if="!today_logged" id="add_day" @click="open_add_day">
+          <div  id="add_day" @click="open_add_day">
             <img src="@/Assets/icon_512_8bit.png">
           </div>
           <div id="addaywrap" v-if="show_add_day">
-            <AddDay id="addb" :date_to_add="new Date()" @close="handle_addday_update"></AddDay>
+            <AddDay id="addb" :date_to_add="new Date()" :possible_dates_to_add="this.not_logged_days" @close="handle_addday_update"></AddDay>
           </div>
           <div id="link_to_pixel_table">
             <router-link to="/pixels">

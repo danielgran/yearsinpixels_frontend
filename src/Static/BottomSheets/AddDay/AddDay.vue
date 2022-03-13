@@ -3,7 +3,7 @@
     <div id="addDay">
       <div id="content">
         <div id="close" v-on:click="$emit('close')">
-          <h2>Your day was...</h2>
+          <h2>Dein Tag war...</h2>
           <span>
             <i class="editIcon fas fa-times"/>
           </span>
@@ -11,6 +11,11 @@
         <form>
           <input v-model="box_title" type="text" placeholder="Title"/>
           <textarea v-model="box_notes" placeholder="Notes"/>
+          <select v-model="editDate">
+            <option v-for="item in possible_dates_to_add" :key="item" :value="item">
+              {{ item.getDate() + "." + (item.getMonth() + 1) + "." + item.getFullYear() }}
+            </option>
+          </select>
           <select v-model="selected_mood1_object" :style="select_box1_background_color">
             <option value="" disabled selected>Auswählen</option>
             <option v-for="mood in moodbox1" :key="mood.id" :value="mood">

@@ -6,13 +6,20 @@ import Mood from "@/Model/Mood";
 export default defineComponent({
   name: "AddDay",
   props: {
+    possible_dates_to_add: {
+      type: Array
+    },
     date_to_add: {
       required: true,
       type: Date
     }
   },
   beforeCreate() {
-    this.selected_mood2_object = new Mood();
+    this.selected_mood2_object = new Mood()
+  },
+  mounted() {
+    // @ts-ignore
+    this.editDate = this.possible_dates_to_add[this.possible_dates_to_add?.length - 1]
   },
   computed: {
     ...mapState([
@@ -42,12 +49,12 @@ export default defineComponent({
     },
     moodbox1: function () {
       // @ts-ignore
-      return this.moods.filter((i:Mood) => i.id !== this.selected_mood2_object.id)
+      return this.moods.filter((i: Mood) => i.id !== this.selected_mood2_object.id)
     },
     moodbox2: function () {
       // @ts-ignore
-      return this.moods.filter((i:Mood) => i.id !== this.selected_mood1_object.id)
-    },
+      return this.moods.filter((i: Mood) => i.id !== this.selected_mood1_object.id)
+    }
   },
   data: function () {
     return {
@@ -57,6 +64,8 @@ export default defineComponent({
       selected_mood2_object: new Mood(),
       send_button_enabled: false,
 
+      // @ts-ignore
+      editDate: new Date(),
       divider_opened: false
     };
   },
@@ -66,7 +75,8 @@ export default defineComponent({
         return;
 
       let day = new Day();
-      day.Date = this.date_to_add;
+      // @ts-ignore
+      day.Date = this.editDate;
       day.Title = this.box_title;
       day.Notes = this.box_notes;
       day.mood1 = this.selected_mood1_object;
@@ -74,7 +84,7 @@ export default defineComponent({
       if (this.selected_mood2_object != null) {
         day.mood2 = this.selected_mood2_object;
       }
-      
+
       await this.$store.dispatch("addDay", {day: day, user_guid: this.$store.state.LocalUser.guid});
       this.$emit("close");
     },
